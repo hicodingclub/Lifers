@@ -11,7 +11,7 @@ var hackSchema = new Schema(
 
 // Virtual for hack's full name
 
-var hackBrief = "title";
+var hackBrief = "title description";
 var hackDetail = "title | description";
 var hackCreat = "title description";
 var hackEdit = "title description";
