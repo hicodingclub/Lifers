@@ -23,5265 +23,6 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/academics.conf.ts":
-/*!***********************************!*\
-  !*** ./src/app/academics.conf.ts ***!
-  \***********************************/
-/*! exports provided: AcademicsRoutes, academics_server_root_uri */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AcademicsRoutes", function() { return AcademicsRoutes; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "academics_server_root_uri", function() { return academics_server_root_uri; });
-/* harmony import */ var _academics_academics_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./academics/academics.component */ "./src/app/academics/academics.component.ts");
-/* harmony import */ var _academics_academics_routing_path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./academics/academics-routing.path */ "./src/app/academics/academics-routing.path.ts");
-
-//Import routing paths
-
-var AcademicsRoutes = [
-    { path: 'academics',
-        component: _academics_academics_component__WEBPACK_IMPORTED_MODULE_0__["AcademicsComponent"],
-        children: [
-            { path: '', redirectTo: 'student', pathMatch: 'full' },
-            { path: "student",
-                children: _academics_academics_routing_path__WEBPACK_IMPORTED_MODULE_1__["studentRoutingPath"],
-                data: { "mraLevel": 1, "item": "student" }
-            },
-            { path: "teacher",
-                children: _academics_academics_routing_path__WEBPACK_IMPORTED_MODULE_1__["teacherRoutingPath"],
-                data: { "mraLevel": 1, "item": "teacher" }
-            },
-            { path: "course",
-                children: _academics_academics_routing_path__WEBPACK_IMPORTED_MODULE_1__["courseRoutingPath"],
-                data: { "mraLevel": 1, "item": "course" }
-            },
-            { path: "class",
-                children: _academics_academics_routing_path__WEBPACK_IMPORTED_MODULE_1__["classRoutingPath"],
-                data: { "mraLevel": 1, "item": "class" }
-            },
-            { path: "studentclass",
-                children: _academics_academics_routing_path__WEBPACK_IMPORTED_MODULE_1__["studentclassRoutingPath"],
-                data: { "mraLevel": 1, "item": "studentclass" }
-            },
-        ]
-    }
-];
-var academics_server_root_uri = "/api/academics";
-/*>>> Please check this recent updates and merge with existing ones***
-**Date: Sat Mar 30 2019 19:21:45 GMT-0700 (Pacific Daylight Time)
-
-import { Routes } from '@angular/router';
-
-import { AcademicsComponent } from './academics/academics.component';
-
-//Import routing paths
-import {studentRoutingPath, teacherRoutingPath, courseRoutingPath, classRoutingPath, studentclassRoutingPath,  } from './academics/academics-routing.path';
-
-export const AcademicsRoutes: Routes = [
-  { path: 'academics',
-    component: AcademicsComponent,
-    children: [
-      {path: '',  redirectTo: 'student', pathMatch: 'full'},
-
-      { path: "student",
-        children: studentRoutingPath,
-        data: {"mraLevel": 1, "item": "student"}
-      },
-      { path: "teacher",
-        children: teacherRoutingPath,
-        data: {"mraLevel": 1, "item": "teacher"}
-      },
-      { path: "course",
-        children: courseRoutingPath,
-        data: {"mraLevel": 1, "item": "course"}
-      },
-      { path: "class",
-        children: classRoutingPath,
-        data: {"mraLevel": 1, "item": "class"}
-      },
-      { path: "studentclass",
-        children: studentclassRoutingPath,
-        data: {"mraLevel": 1, "item": "studentclass"}
-      },
-    ]
-  }
-];
-
-export const academics_server_root_uri:string = "/api/academics";**** End of recent updates.<<<*/
-
-
-/***/ }),
-
-/***/ "./src/app/academics/academics-routing.module.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/academics/academics-routing.module.ts ***!
-  \*******************************************************/
-/*! exports provided: AcademicsRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AcademicsRoutingModule", function() { return AcademicsRoutingModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-/* harmony import */ var _academics_conf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../academics.conf */ "./src/app/academics.conf.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-var AcademicsRoutingModule = /** @class */ (function () {
-    function AcademicsRoutingModule() {
-    }
-    AcademicsRoutingModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_academics_conf__WEBPACK_IMPORTED_MODULE_3__["AcademicsRoutes"])],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
-            providers: [
-                { provide: _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouteReuseStrategy"], useClass: mean_rest_angular__WEBPACK_IMPORTED_MODULE_2__["MraRouteReuseStrategy"] },
-            ],
-        })
-    ], AcademicsRoutingModule);
-    return AcademicsRoutingModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/academics-routing.path.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/academics/academics-routing.path.ts ***!
-  \*****************************************************/
-/*! exports provided: studentRoutingPath, teacherRoutingPath, courseRoutingPath, classRoutingPath, studentclassRoutingPath */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "studentRoutingPath", function() { return studentRoutingPath; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "teacherRoutingPath", function() { return teacherRoutingPath; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "courseRoutingPath", function() { return courseRoutingPath; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "classRoutingPath", function() { return classRoutingPath; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "studentclassRoutingPath", function() { return studentclassRoutingPath; });
-/* harmony import */ var _student_student_list_student_list_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./student/student-list/student-list.component */ "./src/app/academics/student/student-list/student-list.component.ts");
-/* harmony import */ var _student_student_detail_student_detail_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./student/student-detail/student-detail.component */ "./src/app/academics/student/student-detail/student-detail.component.ts");
-/* harmony import */ var _student_student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./student/student-edit/student-edit.component */ "./src/app/academics/student/student-edit/student-edit.component.ts");
-/* harmony import */ var _teacher_teacher_list_teacher_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./teacher/teacher-list/teacher-list.component */ "./src/app/academics/teacher/teacher-list/teacher-list.component.ts");
-/* harmony import */ var _teacher_teacher_detail_teacher_detail_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./teacher/teacher-detail/teacher-detail.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.ts");
-/* harmony import */ var _teacher_teacher_edit_teacher_edit_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./teacher/teacher-edit/teacher-edit.component */ "./src/app/academics/teacher/teacher-edit/teacher-edit.component.ts");
-/* harmony import */ var _teacher_teacher_list_teacher_list_sub_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./teacher/teacher-list/teacher-list-sub.component */ "./src/app/academics/teacher/teacher-list/teacher-list-sub.component.ts");
-/* harmony import */ var _course_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./course/course-list/course-list.component */ "./src/app/academics/course/course-list/course-list.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./course/course-detail/course-detail.component */ "./src/app/academics/course/course-detail/course-detail.component.ts");
-/* harmony import */ var _course_course_edit_course_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./course/course-edit/course-edit.component */ "./src/app/academics/course/course-edit/course-edit.component.ts");
-/* harmony import */ var _class_class_list_class_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./class/class-list/class-list.component */ "./src/app/academics/class/class-list/class-list.component.ts");
-/* harmony import */ var _class_class_detail_class_detail_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./class/class-detail/class-detail.component */ "./src/app/academics/class/class-detail/class-detail.component.ts");
-/* harmony import */ var _class_class_edit_class_edit_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./class/class-edit/class-edit.component */ "./src/app/academics/class/class-edit/class-edit.component.ts");
-/* harmony import */ var _class_class_list_class_list_sub_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./class/class-list/class-list-sub.component */ "./src/app/academics/class/class-list/class-list-sub.component.ts");
-/* harmony import */ var _studentclass_studentclass_list_studentclass_list_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./studentclass/studentclass-list/studentclass-list.component */ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.ts");
-/* harmony import */ var _studentclass_studentclass_detail_studentclass_detail_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./studentclass/studentclass-detail/studentclass-detail.component */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.ts");
-/* harmony import */ var _studentclass_studentclass_edit_studentclass_edit_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./studentclass/studentclass-edit/studentclass-edit.component */ "./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.ts");
-/* harmony import */ var _studentclass_studentclass_list_studentclass_list_sub_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./studentclass/studentclass-list/studentclass-list-sub.component */ "./src/app/academics/studentclass/studentclass-list/studentclass-list-sub.component.ts");
-/* harmony import */ var mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! mdds-angular-auth */ "./node_modules/mdds-angular-auth/fesm5/mdds-angular-auth.js");
-// Import components for each schema
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var teacherSubPath = [
-    { path: 'list', component: _teacher_teacher_list_teacher_list_sub_component__WEBPACK_IMPORTED_MODULE_6__["TeacherListSubComponent"] }
-];
-var classSubPath = [
-    { path: 'list', component: _class_class_list_class_list_sub_component__WEBPACK_IMPORTED_MODULE_13__["ClassListSubComponent"] }
-];
-var studentclassSubPath = [
-    { path: 'list', component: _studentclass_studentclass_list_studentclass_list_sub_component__WEBPACK_IMPORTED_MODULE_17__["StudentclassListSubComponent"] }
-];
-var studentDetailPath = [
-    { path: 'studentclass', children: studentclassSubPath,
-        data: { 'mraLevel': 2, 'item': 'studentclass' } },
-];
-var teacherDetailPath = [
-    { path: 'class', children: classSubPath,
-        data: { 'mraLevel': 2, 'item': 'class' } },
-];
-var courseDetailPath = [
-    { path: 'teacher', children: teacherSubPath,
-        data: { 'mraLevel': 2, 'item': 'teacher' } },
-    { path: 'class', children: classSubPath,
-        data: { 'mraLevel': 2, 'item': 'class' } },
-];
-var classDetailPath = [
-    { path: 'studentclass', children: studentclassSubPath,
-        data: { 'mraLevel': 2, 'item': 'studentclass' } },
-];
-var studentRoutingPath = [
-    { path: 'list', component: _student_student_list_student_list_component__WEBPACK_IMPORTED_MODULE_0__["StudentListComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'detail/:id', component: _student_student_detail_student_detail_component__WEBPACK_IMPORTED_MODULE_1__["StudentDetailComponent"], children: studentDetailPath, canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'edit/:id', component: _student_student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_2__["StudentEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'new', component: _student_student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_2__["StudentEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: '**', redirectTo: 'list', pathMatch: 'full' }
-];
-var teacherRoutingPath = [
-    { path: 'list', component: _teacher_teacher_list_teacher_list_component__WEBPACK_IMPORTED_MODULE_3__["TeacherListComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'detail/:id', component: _teacher_teacher_detail_teacher_detail_component__WEBPACK_IMPORTED_MODULE_4__["TeacherDetailComponent"], children: teacherDetailPath, canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'edit/:id', component: _teacher_teacher_edit_teacher_edit_component__WEBPACK_IMPORTED_MODULE_5__["TeacherEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'new', component: _teacher_teacher_edit_teacher_edit_component__WEBPACK_IMPORTED_MODULE_5__["TeacherEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: '**', redirectTo: 'list', pathMatch: 'full' }
-];
-var courseRoutingPath = [
-    { path: 'list', component: _course_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_7__["CourseListComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'detail/:id', component: _course_course_detail_course_detail_component__WEBPACK_IMPORTED_MODULE_8__["CourseDetailComponent"], children: courseDetailPath, canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'edit/:id', component: _course_course_edit_course_edit_component__WEBPACK_IMPORTED_MODULE_9__["CourseEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'new', component: _course_course_edit_course_edit_component__WEBPACK_IMPORTED_MODULE_9__["CourseEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: '**', redirectTo: 'list', pathMatch: 'full' }
-];
-var classRoutingPath = [
-    { path: 'list', component: _class_class_list_class_list_component__WEBPACK_IMPORTED_MODULE_10__["ClassListComponent"] },
-    { path: 'detail/:id', component: _class_class_detail_class_detail_component__WEBPACK_IMPORTED_MODULE_11__["ClassDetailComponent"], children: classDetailPath },
-    { path: 'edit/:id', component: _class_class_edit_class_edit_component__WEBPACK_IMPORTED_MODULE_12__["ClassEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'new', component: _class_class_edit_class_edit_component__WEBPACK_IMPORTED_MODULE_12__["ClassEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: '**', redirectTo: 'list', pathMatch: 'full' }
-];
-var studentclassRoutingPath = [
-    { path: 'list', component: _studentclass_studentclass_list_studentclass_list_component__WEBPACK_IMPORTED_MODULE_14__["StudentclassListComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'detail/:id', component: _studentclass_studentclass_detail_studentclass_detail_component__WEBPACK_IMPORTED_MODULE_15__["StudentclassDetailComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'edit/:id', component: _studentclass_studentclass_edit_studentclass_edit_component__WEBPACK_IMPORTED_MODULE_16__["StudentclassEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: 'new', component: _studentclass_studentclass_edit_studentclass_edit_component__WEBPACK_IMPORTED_MODULE_16__["StudentclassEditComponent"], canActivate: [mdds_angular_auth__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
-    { path: '**', redirectTo: 'list', pathMatch: 'full' }
-];
-
-
-/***/ }),
-
-/***/ "./src/app/academics/academics.component.css":
-/*!***************************************************!*\
-  !*** ./src/app/academics/academics.component.css ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcy9hY2FkZW1pY3MuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/academics/academics.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/academics/academics.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col\">\n\t\t<div class=\"card\">\n\t\t  <div class=\"card-header\">\n\t\t\t  <nav class=\"nav nav-pills\">\n\n\t\t\t    <a class=\"nav-item nav-link\" routerLink=\"./student\" \n\t\t\t    \trouterLinkActive=\"active\">Student</a>\n\n\t\t\t    <a class=\"nav-item nav-link\" routerLink=\"./teacher\" \n\t\t\t    \trouterLinkActive=\"active\">Teacher</a>\n\n\t\t\t    <a class=\"nav-item nav-link\" routerLink=\"./course\" \n\t\t\t    \trouterLinkActive=\"active\">Course</a>\n\n\t\t\t    <a class=\"nav-item nav-link\" routerLink=\"./class\" \n\t\t\t    \trouterLinkActive=\"active\">Class</a>\n\n\t\t\t  </nav>\n\t\t  </div>\n\t\t  <div class=\"card-body\">\n\t\t\t<router-outlet></router-outlet>\n\t\t  </div>\n\t\t</div>\n\t</div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/academics/academics.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/academics/academics.component.ts ***!
-  \**************************************************/
-/*! exports provided: AcademicsRefSelectDirective, AcademicsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AcademicsRefSelectDirective", function() { return AcademicsRefSelectDirective; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AcademicsComponent", function() { return AcademicsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var AcademicsRefSelectDirective = /** @class */ (function () {
-    function AcademicsRefSelectDirective(viewContainerRef) {
-        this.viewContainerRef = viewContainerRef;
-    }
-    AcademicsRefSelectDirective = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
-            selector: '[academics-ref-select]',
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"]])
-    ], AcademicsRefSelectDirective);
-    return AcademicsRefSelectDirective;
-}());
-
-var AcademicsComponent = /** @class */ (function () {
-    function AcademicsComponent() {
-    }
-    AcademicsComponent.prototype.ngOnInit = function () {
-    };
-    AcademicsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-academics',
-            template: __webpack_require__(/*! ./academics.component.html */ "./src/app/academics/academics.component.html"),
-            styles: [__webpack_require__(/*! ./academics.component.css */ "./src/app/academics/academics.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], AcademicsComponent);
-    return AcademicsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/academics.directive.ts":
-/*!**************************************************!*\
-  !*** ./src/app/academics/academics.directive.ts ***!
-  \**************************************************/
-/*! exports provided: MraNgbDateFormatterService, DirectiveMultiSelectionRequired */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MraNgbDateFormatterService", function() { return MraNgbDateFormatterService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DirectiveMultiSelectionRequired", function() { return DirectiveMultiSelectionRequired; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var MraNgbDateFormatterService = /** @class */ (function (_super) {
-    __extends(MraNgbDateFormatterService, _super);
-    function MraNgbDateFormatterService() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.dateFormat = 'MM-DD-YYYY';
-        _this.timeFormat = 'hh:mm:ss';
-        return _this;
-    }
-    // from input -> internal model
-    MraNgbDateFormatterService.prototype.parse = function (value) {
-        return Object(mean_rest_angular__WEBPACK_IMPORTED_MODULE_3__["stringToDateStructure"])(value, this.dateFormat);
-    };
-    // from internal model -> string
-    MraNgbDateFormatterService.prototype.format = function (date) {
-        return Object(mean_rest_angular__WEBPACK_IMPORTED_MODULE_3__["dateStructureToString"])(date, this.dateFormat);
-    };
-    return MraNgbDateFormatterService;
-}(_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbDateParserFormatter"]));
-
-var DirectiveMultiSelectionRequired = /** @class */ (function () {
-    function DirectiveMultiSelectionRequired() {
-    }
-    DirectiveMultiSelectionRequired_1 = DirectiveMultiSelectionRequired;
-    DirectiveMultiSelectionRequired.prototype.validate = function (control) {
-        var selected = false;
-        var controlGroup = control; //cast to FormGroup
-        if (controlGroup) {
-            for (var ctrl in controlGroup.controls) {
-                if (controlGroup.controls[ctrl].value) { //true or false of the selected item
-                    selected = true;
-                    break;
-                }
-            }
-        }
-        if (selected) {
-            return null; //no error
-        }
-        else {
-            return { 'required': true };
-        }
-    };
-    var DirectiveMultiSelectionRequired_1;
-    DirectiveMultiSelectionRequired = DirectiveMultiSelectionRequired_1 = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
-            selector: '[directiveMultiSelectionRequired]',
-            providers: [{ provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALIDATORS"], useExisting: DirectiveMultiSelectionRequired_1, multi: true }]
-        })
-    ], DirectiveMultiSelectionRequired);
-    return DirectiveMultiSelectionRequired;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/academics.module.ts":
-/*!***********************************************!*\
-  !*** ./src/app/academics/academics.module.ts ***!
-  \***********************************************/
-/*! exports provided: AcademicsModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AcademicsModule", function() { return AcademicsModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var _academics_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./academics.directive */ "./src/app/academics/academics.directive.ts");
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-/* harmony import */ var _academics_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./academics-routing.module */ "./src/app/academics/academics-routing.module.ts");
-/* harmony import */ var _academics_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./academics.component */ "./src/app/academics/academics.component.ts");
-/* harmony import */ var _academics_tokens__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./academics.tokens */ "./src/app/academics/academics.tokens.ts");
-/* harmony import */ var _academics_conf__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../academics.conf */ "./src/app/academics.conf.ts");
-/* harmony import */ var _student_student_list_student_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./student/student-list/student-list.component */ "./src/app/academics/student/student-list/student-list.component.ts");
-/* harmony import */ var _student_student_detail_student_detail_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./student/student-detail/student-detail.component */ "./src/app/academics/student/student-detail/student-detail.component.ts");
-/* harmony import */ var _student_student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./student/student-edit/student-edit.component */ "./src/app/academics/student/student-edit/student-edit.component.ts");
-/* harmony import */ var _student_student_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./student/student.service */ "./src/app/academics/student/student.service.ts");
-/* harmony import */ var _teacher_teacher_list_teacher_list_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./teacher/teacher-list/teacher-list.component */ "./src/app/academics/teacher/teacher-list/teacher-list.component.ts");
-/* harmony import */ var _teacher_teacher_detail_teacher_detail_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./teacher/teacher-detail/teacher-detail.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.ts");
-/* harmony import */ var _teacher_teacher_edit_teacher_edit_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./teacher/teacher-edit/teacher-edit.component */ "./src/app/academics/teacher/teacher-edit/teacher-edit.component.ts");
-/* harmony import */ var _teacher_teacher_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./teacher/teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-/* harmony import */ var _course_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./course/course-list/course-list.component */ "./src/app/academics/course/course-list/course-list.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./course/course-detail/course-detail.component */ "./src/app/academics/course/course-detail/course-detail.component.ts");
-/* harmony import */ var _course_course_edit_course_edit_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./course/course-edit/course-edit.component */ "./src/app/academics/course/course-edit/course-edit.component.ts");
-/* harmony import */ var _course_course_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./course/course.service */ "./src/app/academics/course/course.service.ts");
-/* harmony import */ var _class_class_list_class_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./class/class-list/class-list.component */ "./src/app/academics/class/class-list/class-list.component.ts");
-/* harmony import */ var _class_class_detail_class_detail_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./class/class-detail/class-detail.component */ "./src/app/academics/class/class-detail/class-detail.component.ts");
-/* harmony import */ var _class_class_edit_class_edit_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./class/class-edit/class-edit.component */ "./src/app/academics/class/class-edit/class-edit.component.ts");
-/* harmony import */ var _class_class_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./class/class.service */ "./src/app/academics/class/class.service.ts");
-/* harmony import */ var _studentclass_studentclass_list_studentclass_list_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./studentclass/studentclass-list/studentclass-list.component */ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.ts");
-/* harmony import */ var _studentclass_studentclass_detail_studentclass_detail_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./studentclass/studentclass-detail/studentclass-detail.component */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.ts");
-/* harmony import */ var _studentclass_studentclass_edit_studentclass_edit_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./studentclass/studentclass-edit/studentclass-edit.component */ "./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.ts");
-/* harmony import */ var _studentclass_studentclass_service__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./studentclass/studentclass.service */ "./src/app/academics/studentclass/studentclass.service.ts");
-/* harmony import */ var _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./course/course-list/course-select.component */ "./src/app/academics/course/course-list/course-select.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./course/course-detail/course-detail-pop.component */ "./src/app/academics/course/course-detail/course-detail-pop.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./course/course-detail/course-detail-sel.component */ "./src/app/academics/course/course-detail/course-detail-sel.component.ts");
-/* harmony import */ var _teacher_teacher_list_teacher_select_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./teacher/teacher-list/teacher-select.component */ "./src/app/academics/teacher/teacher-list/teacher-select.component.ts");
-/* harmony import */ var _teacher_teacher_detail_teacher_detail_pop_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./teacher/teacher-detail/teacher-detail-pop.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail-pop.component.ts");
-/* harmony import */ var _teacher_teacher_detail_teacher_detail_sel_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./teacher/teacher-detail/teacher-detail-sel.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail-sel.component.ts");
-/* harmony import */ var _student_student_list_student_select_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./student/student-list/student-select.component */ "./src/app/academics/student/student-list/student-select.component.ts");
-/* harmony import */ var _student_student_detail_student_detail_pop_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./student/student-detail/student-detail-pop.component */ "./src/app/academics/student/student-detail/student-detail-pop.component.ts");
-/* harmony import */ var _student_student_detail_student_detail_sel_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./student/student-detail/student-detail-sel.component */ "./src/app/academics/student/student-detail/student-detail-sel.component.ts");
-/* harmony import */ var _class_class_list_class_select_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./class/class-list/class-select.component */ "./src/app/academics/class/class-list/class-select.component.ts");
-/* harmony import */ var _class_class_detail_class_detail_pop_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./class/class-detail/class-detail-pop.component */ "./src/app/academics/class/class-detail/class-detail-pop.component.ts");
-/* harmony import */ var _class_class_detail_class_detail_sel_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./class/class-detail/class-detail-sel.component */ "./src/app/academics/class/class-detail/class-detail-sel.component.ts");
-/* harmony import */ var _teacher_teacher_list_teacher_list_sub_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./teacher/teacher-list/teacher-list-sub.component */ "./src/app/academics/teacher/teacher-list/teacher-list-sub.component.ts");
-/* harmony import */ var _teacher_teacher_detail_teacher_detail_sub_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./teacher/teacher-detail/teacher-detail-sub.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail-sub.component.ts");
-/* harmony import */ var _class_class_list_class_list_sub_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./class/class-list/class-list-sub.component */ "./src/app/academics/class/class-list/class-list-sub.component.ts");
-/* harmony import */ var _class_class_detail_class_detail_sub_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./class/class-detail/class-detail-sub.component */ "./src/app/academics/class/class-detail/class-detail-sub.component.ts");
-/* harmony import */ var _studentclass_studentclass_list_studentclass_list_sub_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./studentclass/studentclass-list/studentclass-list-sub.component */ "./src/app/academics/studentclass/studentclass-list/studentclass-list-sub.component.ts");
-/* harmony import */ var _studentclass_studentclass_detail_studentclass_detail_sub_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./studentclass/studentclass-detail/studentclass-detail-sub.component */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail-sub.component.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Import components for each schema
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var AcademicsModule = /** @class */ (function () {
-    function AcademicsModule() {
-    }
-    AcademicsModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbModule"],
-                mean_rest_angular__WEBPACK_IMPORTED_MODULE_6__["MraModule"],
-                _academics_routing_module__WEBPACK_IMPORTED_MODULE_7__["AcademicsRoutingModule"]
-            ],
-            declarations: [
-                _academics_component__WEBPACK_IMPORTED_MODULE_8__["AcademicsComponent"],
-                _academics_component__WEBPACK_IMPORTED_MODULE_8__["AcademicsRefSelectDirective"],
-                _student_student_list_student_list_component__WEBPACK_IMPORTED_MODULE_11__["StudentListComponent"],
-                _student_student_detail_student_detail_component__WEBPACK_IMPORTED_MODULE_12__["StudentDetailComponent"],
-                _student_student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_13__["StudentEditComponent"],
-                _teacher_teacher_list_teacher_list_component__WEBPACK_IMPORTED_MODULE_15__["TeacherListComponent"],
-                _teacher_teacher_detail_teacher_detail_component__WEBPACK_IMPORTED_MODULE_16__["TeacherDetailComponent"],
-                _teacher_teacher_edit_teacher_edit_component__WEBPACK_IMPORTED_MODULE_17__["TeacherEditComponent"],
-                _course_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_19__["CourseListComponent"],
-                _course_course_detail_course_detail_component__WEBPACK_IMPORTED_MODULE_20__["CourseDetailComponent"],
-                _course_course_edit_course_edit_component__WEBPACK_IMPORTED_MODULE_21__["CourseEditComponent"],
-                _class_class_list_class_list_component__WEBPACK_IMPORTED_MODULE_23__["ClassListComponent"],
-                _class_class_detail_class_detail_component__WEBPACK_IMPORTED_MODULE_24__["ClassDetailComponent"],
-                _class_class_edit_class_edit_component__WEBPACK_IMPORTED_MODULE_25__["ClassEditComponent"],
-                _studentclass_studentclass_list_studentclass_list_component__WEBPACK_IMPORTED_MODULE_27__["StudentclassListComponent"],
-                _studentclass_studentclass_detail_studentclass_detail_component__WEBPACK_IMPORTED_MODULE_28__["StudentclassDetailComponent"],
-                _studentclass_studentclass_edit_studentclass_edit_component__WEBPACK_IMPORTED_MODULE_29__["StudentclassEditComponent"],
-                _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_31__["CourseSelectComponent"],
-                _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_32__["CourseDetailPopComponent"],
-                _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_33__["CourseDetailSelComponent"],
-                _teacher_teacher_list_teacher_select_component__WEBPACK_IMPORTED_MODULE_34__["TeacherSelectComponent"],
-                _teacher_teacher_detail_teacher_detail_pop_component__WEBPACK_IMPORTED_MODULE_35__["TeacherDetailPopComponent"],
-                _teacher_teacher_detail_teacher_detail_sel_component__WEBPACK_IMPORTED_MODULE_36__["TeacherDetailSelComponent"],
-                _student_student_list_student_select_component__WEBPACK_IMPORTED_MODULE_37__["StudentSelectComponent"],
-                _student_student_detail_student_detail_pop_component__WEBPACK_IMPORTED_MODULE_38__["StudentDetailPopComponent"],
-                _student_student_detail_student_detail_sel_component__WEBPACK_IMPORTED_MODULE_39__["StudentDetailSelComponent"],
-                _class_class_list_class_select_component__WEBPACK_IMPORTED_MODULE_40__["ClassSelectComponent"],
-                _class_class_detail_class_detail_pop_component__WEBPACK_IMPORTED_MODULE_41__["ClassDetailPopComponent"],
-                _class_class_detail_class_detail_sel_component__WEBPACK_IMPORTED_MODULE_42__["ClassDetailSelComponent"],
-                _teacher_teacher_list_teacher_list_sub_component__WEBPACK_IMPORTED_MODULE_43__["TeacherListSubComponent"],
-                _teacher_teacher_detail_teacher_detail_sub_component__WEBPACK_IMPORTED_MODULE_44__["TeacherDetailSubComponent"],
-                _class_class_list_class_list_sub_component__WEBPACK_IMPORTED_MODULE_45__["ClassListSubComponent"],
-                _class_class_detail_class_detail_sub_component__WEBPACK_IMPORTED_MODULE_46__["ClassDetailSubComponent"],
-                _studentclass_studentclass_list_studentclass_list_sub_component__WEBPACK_IMPORTED_MODULE_47__["StudentclassListSubComponent"],
-                _studentclass_studentclass_detail_studentclass_detail_sub_component__WEBPACK_IMPORTED_MODULE_48__["StudentclassDetailSubComponent"],
-                _academics_directive__WEBPACK_IMPORTED_MODULE_5__["DirectiveMultiSelectionRequired"],
-            ],
-            exports: [
-                _academics_component__WEBPACK_IMPORTED_MODULE_8__["AcademicsComponent"],
-                _student_student_list_student_list_component__WEBPACK_IMPORTED_MODULE_11__["StudentListComponent"],
-                _student_student_detail_student_detail_component__WEBPACK_IMPORTED_MODULE_12__["StudentDetailComponent"],
-                _student_student_edit_student_edit_component__WEBPACK_IMPORTED_MODULE_13__["StudentEditComponent"],
-                _teacher_teacher_list_teacher_list_component__WEBPACK_IMPORTED_MODULE_15__["TeacherListComponent"],
-                _teacher_teacher_detail_teacher_detail_component__WEBPACK_IMPORTED_MODULE_16__["TeacherDetailComponent"],
-                _teacher_teacher_edit_teacher_edit_component__WEBPACK_IMPORTED_MODULE_17__["TeacherEditComponent"],
-                _course_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_19__["CourseListComponent"],
-                _course_course_detail_course_detail_component__WEBPACK_IMPORTED_MODULE_20__["CourseDetailComponent"],
-                _course_course_edit_course_edit_component__WEBPACK_IMPORTED_MODULE_21__["CourseEditComponent"],
-                _class_class_list_class_list_component__WEBPACK_IMPORTED_MODULE_23__["ClassListComponent"],
-                _class_class_detail_class_detail_component__WEBPACK_IMPORTED_MODULE_24__["ClassDetailComponent"],
-                _class_class_edit_class_edit_component__WEBPACK_IMPORTED_MODULE_25__["ClassEditComponent"],
-                _studentclass_studentclass_list_studentclass_list_component__WEBPACK_IMPORTED_MODULE_27__["StudentclassListComponent"],
-                _studentclass_studentclass_detail_studentclass_detail_component__WEBPACK_IMPORTED_MODULE_28__["StudentclassDetailComponent"],
-                _studentclass_studentclass_edit_studentclass_edit_component__WEBPACK_IMPORTED_MODULE_29__["StudentclassEditComponent"],
-                _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_31__["CourseSelectComponent"],
-                _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_32__["CourseDetailPopComponent"],
-                _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_33__["CourseDetailSelComponent"],
-                _teacher_teacher_list_teacher_select_component__WEBPACK_IMPORTED_MODULE_34__["TeacherSelectComponent"],
-                _teacher_teacher_detail_teacher_detail_pop_component__WEBPACK_IMPORTED_MODULE_35__["TeacherDetailPopComponent"],
-                _teacher_teacher_detail_teacher_detail_sel_component__WEBPACK_IMPORTED_MODULE_36__["TeacherDetailSelComponent"],
-                _student_student_list_student_select_component__WEBPACK_IMPORTED_MODULE_37__["StudentSelectComponent"],
-                _student_student_detail_student_detail_pop_component__WEBPACK_IMPORTED_MODULE_38__["StudentDetailPopComponent"],
-                _student_student_detail_student_detail_sel_component__WEBPACK_IMPORTED_MODULE_39__["StudentDetailSelComponent"],
-                _class_class_list_class_select_component__WEBPACK_IMPORTED_MODULE_40__["ClassSelectComponent"],
-                _class_class_detail_class_detail_pop_component__WEBPACK_IMPORTED_MODULE_41__["ClassDetailPopComponent"],
-                _class_class_detail_class_detail_sel_component__WEBPACK_IMPORTED_MODULE_42__["ClassDetailSelComponent"],
-                _teacher_teacher_list_teacher_list_sub_component__WEBPACK_IMPORTED_MODULE_43__["TeacherListSubComponent"],
-                _teacher_teacher_detail_teacher_detail_sub_component__WEBPACK_IMPORTED_MODULE_44__["TeacherDetailSubComponent"],
-                _class_class_list_class_list_sub_component__WEBPACK_IMPORTED_MODULE_45__["ClassListSubComponent"],
-                _class_class_detail_class_detail_sub_component__WEBPACK_IMPORTED_MODULE_46__["ClassDetailSubComponent"],
-                _studentclass_studentclass_list_studentclass_list_sub_component__WEBPACK_IMPORTED_MODULE_47__["StudentclassListSubComponent"],
-                _studentclass_studentclass_detail_studentclass_detail_sub_component__WEBPACK_IMPORTED_MODULE_48__["StudentclassDetailSubComponent"],
-            ],
-            providers: [
-                { provide: _academics_tokens__WEBPACK_IMPORTED_MODULE_9__["Academics_SERVER_ROOT_URI"], useValue: _academics_conf__WEBPACK_IMPORTED_MODULE_10__["academics_server_root_uri"] },
-                { provide: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbDateParserFormatter"], useClass: _academics_directive__WEBPACK_IMPORTED_MODULE_5__["MraNgbDateFormatterService"] },
-                _student_student_service__WEBPACK_IMPORTED_MODULE_14__["StudentService"],
-                _teacher_teacher_service__WEBPACK_IMPORTED_MODULE_18__["TeacherService"],
-                _course_course_service__WEBPACK_IMPORTED_MODULE_22__["CourseService"],
-                _class_class_service__WEBPACK_IMPORTED_MODULE_26__["ClassService"],
-                _studentclass_studentclass_service__WEBPACK_IMPORTED_MODULE_30__["StudentclassService"],
-            ],
-            entryComponents: [
-                _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_31__["CourseSelectComponent"],
-                _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_32__["CourseDetailPopComponent"],
-                _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_33__["CourseDetailSelComponent"],
-                _teacher_teacher_list_teacher_select_component__WEBPACK_IMPORTED_MODULE_34__["TeacherSelectComponent"],
-                _teacher_teacher_detail_teacher_detail_pop_component__WEBPACK_IMPORTED_MODULE_35__["TeacherDetailPopComponent"],
-                _teacher_teacher_detail_teacher_detail_sel_component__WEBPACK_IMPORTED_MODULE_36__["TeacherDetailSelComponent"],
-                _student_student_list_student_select_component__WEBPACK_IMPORTED_MODULE_37__["StudentSelectComponent"],
-                _student_student_detail_student_detail_pop_component__WEBPACK_IMPORTED_MODULE_38__["StudentDetailPopComponent"],
-                _student_student_detail_student_detail_sel_component__WEBPACK_IMPORTED_MODULE_39__["StudentDetailSelComponent"],
-                _class_class_list_class_select_component__WEBPACK_IMPORTED_MODULE_40__["ClassSelectComponent"],
-                _class_class_detail_class_detail_pop_component__WEBPACK_IMPORTED_MODULE_41__["ClassDetailPopComponent"],
-                _class_class_detail_class_detail_sel_component__WEBPACK_IMPORTED_MODULE_42__["ClassDetailSelComponent"],
-            ]
-        })
-    ], AcademicsModule);
-    return AcademicsModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/academics.tokens.ts":
-/*!***********************************************!*\
-  !*** ./src/app/academics/academics.tokens.ts ***!
-  \***********************************************/
-/*! exports provided: Academics_SERVER_ROOT_URI */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Academics_SERVER_ROOT_URI", function() { return Academics_SERVER_ROOT_URI; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-var Academics_SERVER_ROOT_URI = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('Academics_SERVER_ROOT_URI');
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail-pop.component.html":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail-pop.component.html ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">{{ItemCamelName}} Detail</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Course</label></div>\n\t\t\t<div class=\"col-3\">                \n               \t  \n\t            \t{{detail['course']?detail['course']['value']:\"\"}}\n\t              \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Price</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['price']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Teacher</label></div>\n\t\t\t<div class=\"col-9\">                \n               \t  \n\t            \t{{detail['teacher']?detail['teacher']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Start Time</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['startTime']?detail['startTime']['value']:\"\"}}\n</div>\n\n\t\t\t<div class=\"col-3\"><label>End Time</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['endTime']?detail['endTime']['value']:\"\"}}\n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Day of Week</label></div>\n\t\t\t<div class=\"col-9\">                \n                    <div class=\"badge badge-pill badge-secondary\" *ngFor=\"let element of enums['dayOfWeek']\">\n                         <div *ngIf=\"detail['dayOfWeek'] && detail['dayOfWeek']['selection'][element]\">{{element}}</div>\n                    </div>\n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Hot</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['hot']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail-pop.component.ts":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail-pop.component.ts ***!
-  \****************************************************************************/
-/*! exports provided: ClassDetailPopComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassDetailPopComponent", function() { return ClassDetailPopComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class-detail.component */ "./src/app/academics/class/class-detail/class-detail.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var ClassDetailPopComponent = /** @class */ (function (_super) {
-    __extends(ClassDetailPopComponent, _super);
-    function ClassDetailPopComponent(classService, injector, router, route, location) {
-        var _this = _super.call(this, null, classService, injector, router, route, location) || this;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    ClassDetailPopComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], ClassDetailPopComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], ClassDetailPopComponent.prototype, "outputData", void 0);
-    ClassDetailPopComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-detail-pop',
-            template: __webpack_require__(/*! ./class-detail-pop.component.html */ "./src/app/academics/class/class-detail/class-detail-pop.component.html"),
-            styles: [__webpack_require__(/*! ./class-detail.component.css */ "./src/app/academics/class/class-detail/class-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassDetailPopComponent);
-    return ClassDetailPopComponent;
-}(_class_detail_component__WEBPACK_IMPORTED_MODULE_3__["ClassDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail-sel.component.html":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail-sel.component.html ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Selected {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <a routerLink=\".\" (click)=\"detailSelBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back to list\">&nbsp; {{ItemCamelName}} List</i></a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"detailSelSelected()\">Select</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail</h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Course</label></div>\n\t\t\t<div class=\"col-3\">                \n               \t  \n\t            \t{{detail['course']?detail['course']['value']:\"\"}}\n\t              \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Price</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['price']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Teacher</label></div>\n\t\t\t<div class=\"col-9\">                \n               \t  \n\t            \t{{detail['teacher']?detail['teacher']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Start Time</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['startTime']?detail['startTime']['value']:\"\"}}\n</div>\n\n\t\t\t<div class=\"col-3\"><label>End Time</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['endTime']?detail['endTime']['value']:\"\"}}\n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Day of Week</label></div>\n\t\t\t<div class=\"col-9\">                \n                    <div class=\"badge badge-pill badge-secondary\" *ngFor=\"let element of enums['dayOfWeek']\">\n                         <div *ngIf=\"detail['dayOfWeek'] && detail['dayOfWeek']['selection'][element]\">{{element}}</div>\n                    </div>\n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Hot</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['hot']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail-sel.component.ts":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail-sel.component.ts ***!
-  \****************************************************************************/
-/*! exports provided: ClassDetailSelComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassDetailSelComponent", function() { return ClassDetailSelComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class-detail.component */ "./src/app/academics/class/class-detail/class-detail.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var ClassDetailSelComponent = /** @class */ (function (_super) {
-    __extends(ClassDetailSelComponent, _super);
-    function ClassDetailSelComponent(classService, injector, router, route, location) {
-        var _this = _super.call(this, null, classService, injector, router, route, location) || this;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    ClassDetailSelComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], ClassDetailSelComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], ClassDetailSelComponent.prototype, "outputData", void 0);
-    ClassDetailSelComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-detail-sel',
-            template: __webpack_require__(/*! ./class-detail-sel.component.html */ "./src/app/academics/class/class-detail/class-detail-sel.component.html"),
-            styles: [__webpack_require__(/*! ./class-detail.component.css */ "./src/app/academics/class/class-detail/class-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassDetailSelComponent);
-    return ClassDetailSelComponent;
-}(_class_detail_component__WEBPACK_IMPORTED_MODULE_3__["ClassDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail-sub.component.html":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail-sub.component.html ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n<div *ngIf=\"detail\">\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Price</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['price']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail-sub.component.ts":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail-sub.component.ts ***!
-  \****************************************************************************/
-/*! exports provided: ClassDetailSubComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassDetailSubComponent", function() { return ClassDetailSubComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class-detail.component */ "./src/app/academics/class/class-detail/class-detail.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var ClassDetailSubComponent = /** @class */ (function (_super) {
-    __extends(ClassDetailSubComponent, _super);
-    function ClassDetailSubComponent(classService, injector, router, route, location) {
-        var _this = _super.call(this, null, classService, injector, router, route, location) || this;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        return _this;
-    }
-    ClassDetailSubComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail sub view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], ClassDetailSubComponent.prototype, "inputData", void 0);
-    ClassDetailSubComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-detail-sub',
-            template: __webpack_require__(/*! ./class-detail-sub.component.html */ "./src/app/academics/class/class-detail/class-detail-sub.component.html"),
-            styles: [__webpack_require__(/*! ./class-detail.component.css */ "./src/app/academics/class/class-detail/class-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassDetailSubComponent);
-    return ClassDetailSubComponent;
-}(_class_detail_component__WEBPACK_IMPORTED_MODULE_3__["ClassDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail.component.css":
-/*!*************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail.component.css ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL2NsYXNzL2NsYXNzLWRldGFpbC9jbGFzcy1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcy9jbGFzcy9jbGFzcy1kZXRhaWwvY2xhc3MtZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Course</label></div>\n\t\t\t<div class=\"col-3\">                \n               \t  \n\t            \t{{detail['course']?detail['course']['value']:\"\"}}\n\t              \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Price</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['price']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Teacher</label></div>\n\t\t\t<div class=\"col-9\">                \n               \t  \n\t            \t{{detail['teacher']?detail['teacher']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Start Time</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['startTime']?detail['startTime']['value']:\"\"}}\n</div>\n\n\t\t\t<div class=\"col-3\"><label>End Time</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['endTime']?detail['endTime']['value']:\"\"}}\n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Day of Week</label></div>\n\t\t\t<div class=\"col-9\">                \n                    <div class=\"badge badge-pill badge-secondary\" *ngFor=\"let element of enums['dayOfWeek']\">\n                         <div *ngIf=\"detail['dayOfWeek'] && detail['dayOfWeek']['selection'][element]\">{{element}}</div>\n                    </div>\n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Hot</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['hot']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n\t<br/>\n\t\n\t<ul class=\"nav nav-tabs\">\n\t  \n\t    <li class=\"nav-item\">\n\t    <a [routerLink]=\"['./studentclass/list']\"\n\t        class=\"nav-link\" routerLinkActive=\"active\">StudentClass</a>\n\t  </li>\n    </ul>\n    <router-outlet></router-outlet>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-detail/class-detail.component.ts":
-/*!************************************************************************!*\
-  !*** ./src/app/academics/class/class-detail/class-detail.component.ts ***!
-  \************************************************************************/
-/*! exports provided: ClassDetailComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassDetailComponent", function() { return ClassDetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../class.component */ "./src/app/academics/class/class.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var ClassDetailComponent = /** @class */ (function (_super) {
-    __extends(ClassDetailComponent, _super);
-    function ClassDetailComponent(componentFactoryResolver, classService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, classService, injector, router, route, location, _class_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.enums['dayOfWeek'] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',];
-        _this.stringFields.push('title');
-        _this.stringFields.push('description');
-        _this.referenceFields = ['course', 'teacher',];
-        _this.referenceFieldsMap = { 'course': 'course', 'teacher': 'teacher', };
-        _this.dateFields = ['startTime', 'endTime',];
-        _this.multiSelectionFields = ['dayOfWeek',];
-        return _this;
-    }
-    ClassDetailComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], ClassDetailComponent.prototype, "id", void 0);
-    ClassDetailComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-detail',
-            template: __webpack_require__(/*! ./class-detail.component.html */ "./src/app/academics/class/class-detail/class-detail.component.html"),
-            styles: [__webpack_require__(/*! ./class-detail.component.css */ "./src/app/academics/class/class-detail/class-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassDetailComponent);
-    return ClassDetailComponent;
-}(_class_component__WEBPACK_IMPORTED_MODULE_3__["ClassComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-edit/class-edit.component.css":
-/*!*********************************************************************!*\
-  !*** ./src/app/academics/class/class-edit/class-edit.component.css ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL2NsYXNzL2NsYXNzLWVkaXQvY2xhc3MtZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL2NsYXNzL2NsYXNzLWVkaXQvY2xhc3MtZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-edit/class-edit.component.html":
-/*!**********************************************************************!*\
-  !*** ./src/app/academics/class/class-edit/class-edit.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} Class</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('title')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTitle\">Title</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditTitle\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['title']\" name=\"EditTitle\"\n\t\t                #EditTitle=\"ngModel\">\n                <div *ngIf=\"detail['title']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('title')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditTitle.valid || EditTitle.pristine || EditTitle.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTitle.errors && EditTitle.errors.required\">\n    \t        Title is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('course')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditCourse\">Course </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('course')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditCourse\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['course']['_id']}\"\n\t\t             (focus)=\"onRefSelect('course')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['course']['value']\" name=\"EditCourse\"\n\t\t             #EditCourse=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['course']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('course')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditCourse.valid || EditCourse.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditCourse.errors && EditCourse.errors.required && !(detail['course']?.date)\">\n    \t        Course is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('description')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDescription\">Description</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditDescription\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['description']\" name=\"EditDescription\"\n\t\t                #EditDescription=\"ngModel\">\n                <div *ngIf=\"detail['description']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('description')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditDescription.valid || EditDescription.pristine || EditDescription.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDescription.errors && EditDescription.errors.required\">\n    \t        Description is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('teacher')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTeacher\">Teacher </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('teacher')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditTeacher\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['teacher']['_id']}\"\n\t\t             (focus)=\"onRefSelect('teacher')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['teacher']['value']\" name=\"EditTeacher\"\n\t\t             #EditTeacher=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['teacher']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('teacher')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditTeacher.valid || EditTeacher.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTeacher.errors && EditTeacher.errors.required && !(detail['teacher']?.date)\">\n    \t        Teacher is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('price')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditPrice\">Price</label>\n\t        \n\t        <input type=\"number\" class=\"form-control\" id=\"EditPrice\" \n\t                \n\t                \n\t                required\n\t\t        \t \n\t                [(ngModel)]=\"detail['price']\" name=\"EditPrice\"\n\t                #EditPrice=\"ngModel\">\n\t        <div [hidden]=\"EditPrice.valid || EditPrice.pristine || EditPrice.errors.minnumber\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditPrice.errors && EditPrice.errors.required\">\n    \t        Price is required.\n  \t          </div>\n \n\n\t        </div>\n\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('startTime')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditStartTime\">Start Time </label> <span> ({{dateFormat}})</span>\n\t        \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"EditStartTime\" placeholder=\"{{dateFormat}}\"\n\t                 required\n\t\t        \t  \n\t\t             [(ngModel)]=\"detail['startTime']['date']\" name=\"EditStartTime\"\n\t\t             ngbDatepicker #EditStartTimeDate=\"ngbDatepicker\" #EditStartTime=\"ngModel\">\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"EditStartTimeDate.toggle()\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group -->         \n\t        <div [hidden]=\"EditStartTime.valid || EditStartTime.pristine || (EditStartTime.errors && EditStartTime.errors.ngbDate)\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditStartTime.errors && EditStartTime.errors.required && !(detail['startTime']?.date)\">\n    \t        StartTime is required.\n  \t          </div>\n \n\t        </div>\n\t        <div [hidden]=\"EditStartTime.valid || EditStartTime.untouched || !(EditStartTime.errors && EditStartTime.errors.ngbDate)\"\n     \t\t\tclass=\"alert alert-danger\">\n\t          <div *ngIf=\"EditStartTime.errors && EditStartTime.errors.ngbDate\">\n    \t        StartTime must be in {{dateFormat}} format.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('endTime')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEndTime\">End Time </label> <span> ({{dateFormat}})</span>\n\t        \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"EditEndTime\" placeholder=\"{{dateFormat}}\"\n\t                 required\n\t\t        \t  \n\t\t             [(ngModel)]=\"detail['endTime']['date']\" name=\"EditEndTime\"\n\t\t             ngbDatepicker #EditEndTimeDate=\"ngbDatepicker\" #EditEndTime=\"ngModel\">\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"EditEndTimeDate.toggle()\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group -->         \n\t        <div [hidden]=\"EditEndTime.valid || EditEndTime.pristine || (EditEndTime.errors && EditEndTime.errors.ngbDate)\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEndTime.errors && EditEndTime.errors.required && !(detail['endTime']?.date)\">\n    \t        EndTime is required.\n  \t          </div>\n \n\t        </div>\n\t        <div [hidden]=\"EditEndTime.valid || EditEndTime.untouched || !(EditEndTime.errors && EditEndTime.errors.ngbDate)\"\n     \t\t\tclass=\"alert alert-danger\">\n\t          <div *ngIf=\"EditEndTime.errors && EditEndTime.errors.ngbDate\">\n    \t        EndTime must be in {{dateFormat}} format.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('dayOfWeek')\">\n\n          <fieldset class=\"form-group\">\n\t        <label for=\"EditDayOfWeek\">Day of Week</label>\n\t        \n\n            <div class=\"form-check\"\n                ngModelGroup=\"EditDayOfWeek\"\n                directiveMultiSelectionRequired\n                #EditDayOfWeek=\"ngModelGroup\" \n\t\t        >\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekMon\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekMon\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Mon']\"\n\t\t        \t#EditDayOfWeekMon=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Mon</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekTue\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekTue\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Tue']\"\n\t\t        \t#EditDayOfWeekTue=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Tue</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekWed\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekWed\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Wed']\"\n\t\t        \t#EditDayOfWeekWed=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Wed</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekThu\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekThu\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Thu']\"\n\t\t        \t#EditDayOfWeekThu=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Thu</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekFri\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekFri\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Fri']\"\n\t\t        \t#EditDayOfWeekFri=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Fri</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekSat\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekSat\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sat']\"\n\t\t        \t#EditDayOfWeekSat=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sat</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekSun\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekSun\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sun']\"\n\t\t        \t#EditDayOfWeekSun=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sun</label>\n\t\t      </div>\n\n\t\t      <span *ngIf=\"multiselectionSelected('dayOfWeek')\" \n\t\t          class=\"icon-clear\" (click)=\"clearValueFromDetail('dayOfWeek')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></span>\n\t\t    </div>\n\n\t        <div [hidden]=\"EditDayOfWeek.valid || EditDayOfWeek.pristine\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDayOfWeek.errors && EditDayOfWeek.errors.required\">\n    \t        DayOfWeek is required.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('hot')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditHot\">Hot</label>\n\t        \n\t        <div class=\"form-check\"\n\n\t\t          [ngClass]=\"{'ng-valid': true} \"\n\t\t        >\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"EditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditHotYes\" [value]=\"true\" \n\t\t        \t\n\t\t        \t \n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#EditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Yes</label>\n\t\t      </div>\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"EditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditHotNo\" [value]=\"false\"\n\t\t        \t\n\t\t        \t \n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#EditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">No</label>\n\t\t      </div>\n\t\t      <div *ngIf=\"detail['hot'] == true || detail['hot'] == false\" \n\t\t          class=\"form-check-inline\" (click)=\"clearValueFromDetail('hot')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div> \n\t\t    </div>\n\t        <div [hidden]=\"EditHot.valid || EditHot.pristine\"\n     \t\t\tclass=\"alert alert-danger\">\n\n \n\t        </div>\n\t\t  </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('title')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTitle\">Title</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditTitle\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['title']\" name=\"EditTitle\"\n\t\t                #EditTitle=\"ngModel\">\n                <div *ngIf=\"detail['title']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('title')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditTitle.valid || EditTitle.pristine || EditTitle.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTitle.errors && EditTitle.errors.required\">\n    \t        Title is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('course')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditCourse\">Course </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('course')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditCourse\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['course']['_id']}\"\n\t\t             (focus)=\"onRefSelect('course')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['course']['value']\" name=\"EditCourse\"\n\t\t             #EditCourse=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['course']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('course')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditCourse.valid || EditCourse.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditCourse.errors && EditCourse.errors.required && !(detail['course']?.date)\">\n    \t        Course is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('description')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDescription\">Description</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditDescription\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['description']\" name=\"EditDescription\"\n\t\t                #EditDescription=\"ngModel\">\n                <div *ngIf=\"detail['description']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('description')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditDescription.valid || EditDescription.pristine || EditDescription.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDescription.errors && EditDescription.errors.required\">\n    \t        Description is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('teacher')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTeacher\">Teacher </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('teacher')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditTeacher\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['teacher']['_id']}\"\n\t\t             (focus)=\"onRefSelect('teacher')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['teacher']['value']\" name=\"EditTeacher\"\n\t\t             #EditTeacher=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['teacher']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('teacher')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditTeacher.valid || EditTeacher.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTeacher.errors && EditTeacher.errors.required && !(detail['teacher']?.date)\">\n    \t        Teacher is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('price')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditPrice\">Price</label>\n\t        \n\t        <input type=\"number\" class=\"form-control\" id=\"EditPrice\" \n\t                \n\t                \n\t                required\n\t\t        \t \n\t                [(ngModel)]=\"detail['price']\" name=\"EditPrice\"\n\t                #EditPrice=\"ngModel\">\n\t        <div [hidden]=\"EditPrice.valid || EditPrice.pristine || EditPrice.errors.minnumber\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditPrice.errors && EditPrice.errors.required\">\n    \t        Price is required.\n  \t          </div>\n \n\n\t        </div>\n\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('startTime')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditStartTime\">Start Time </label> <span> ({{dateFormat}})</span>\n\t        \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"EditStartTime\" placeholder=\"{{dateFormat}}\"\n\t                 required\n\t\t        \t  \n\t\t             [(ngModel)]=\"detail['startTime']['date']\" name=\"EditStartTime\"\n\t\t             ngbDatepicker #EditStartTimeDate=\"ngbDatepicker\" #EditStartTime=\"ngModel\">\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"EditStartTimeDate.toggle()\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group -->         \n\t        <div [hidden]=\"EditStartTime.valid || EditStartTime.pristine || (EditStartTime.errors && EditStartTime.errors.ngbDate)\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditStartTime.errors && EditStartTime.errors.required && !(detail['startTime']?.date)\">\n    \t        StartTime is required.\n  \t          </div>\n \n\t        </div>\n\t        <div [hidden]=\"EditStartTime.valid || EditStartTime.untouched || !(EditStartTime.errors && EditStartTime.errors.ngbDate)\"\n     \t\t\tclass=\"alert alert-danger\">\n\t          <div *ngIf=\"EditStartTime.errors && EditStartTime.errors.ngbDate\">\n    \t        StartTime must be in {{dateFormat}} format.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('endTime')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEndTime\">End Time </label> <span> ({{dateFormat}})</span>\n\t        \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"EditEndTime\" placeholder=\"{{dateFormat}}\"\n\t                 required\n\t\t        \t  \n\t\t             [(ngModel)]=\"detail['endTime']['date']\" name=\"EditEndTime\"\n\t\t             ngbDatepicker #EditEndTimeDate=\"ngbDatepicker\" #EditEndTime=\"ngModel\">\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"EditEndTimeDate.toggle()\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group -->         \n\t        <div [hidden]=\"EditEndTime.valid || EditEndTime.pristine || (EditEndTime.errors && EditEndTime.errors.ngbDate)\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEndTime.errors && EditEndTime.errors.required && !(detail['endTime']?.date)\">\n    \t        EndTime is required.\n  \t          </div>\n \n\t        </div>\n\t        <div [hidden]=\"EditEndTime.valid || EditEndTime.untouched || !(EditEndTime.errors && EditEndTime.errors.ngbDate)\"\n     \t\t\tclass=\"alert alert-danger\">\n\t          <div *ngIf=\"EditEndTime.errors && EditEndTime.errors.ngbDate\">\n    \t        EndTime must be in {{dateFormat}} format.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('dayOfWeek')\">\n\n          <fieldset class=\"form-group\">\n\t        <label for=\"EditDayOfWeek\">Day of Week</label>\n\t        \n\n            <div class=\"form-check\"\n                ngModelGroup=\"EditDayOfWeek\"\n                directiveMultiSelectionRequired\n                #EditDayOfWeek=\"ngModelGroup\" \n\t\t        >\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekMon\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekMon\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Mon']\"\n\t\t        \t#EditDayOfWeekMon=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Mon</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekTue\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekTue\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Tue']\"\n\t\t        \t#EditDayOfWeekTue=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Tue</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekWed\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekWed\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Wed']\"\n\t\t        \t#EditDayOfWeekWed=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Wed</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekThu\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekThu\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Thu']\"\n\t\t        \t#EditDayOfWeekThu=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Thu</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekFri\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekFri\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Fri']\"\n\t\t        \t#EditDayOfWeekFri=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Fri</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekSat\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekSat\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sat']\"\n\t\t        \t#EditDayOfWeekSat=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sat</label>\n\t\t      </div>\n\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"EditDayOfWeekSun\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditDayOfWeekSun\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sun']\"\n\t\t        \t#EditDayOfWeekSun=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sun</label>\n\t\t      </div>\n\n\t\t      <span *ngIf=\"multiselectionSelected('dayOfWeek')\" \n\t\t          class=\"icon-clear\" (click)=\"clearValueFromDetail('dayOfWeek')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></span>\n\t\t    </div>\n\n\t        <div [hidden]=\"EditDayOfWeek.valid || EditDayOfWeek.pristine\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDayOfWeek.errors && EditDayOfWeek.errors.required\">\n    \t        DayOfWeek is required.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('hot')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditHot\">Hot</label>\n\t        \n\t        <div class=\"form-check\"\n\n\t\t          [ngClass]=\"{'ng-valid': true} \"\n\t\t        >\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"EditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditHotYes\" [value]=\"true\" \n\t\t        \t\n\t\t        \t \n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#EditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Yes</label>\n\t\t      </div>\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"EditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"EditHotNo\" [value]=\"false\"\n\t\t        \t\n\t\t        \t \n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#EditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">No</label>\n\t\t      </div>\n\t\t      <div *ngIf=\"detail['hot'] == true || detail['hot'] == false\" \n\t\t          class=\"form-check-inline\" (click)=\"clearValueFromDetail('hot')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div> \n\t\t    </div>\n\t        <div [hidden]=\"EditHot.valid || EditHot.pristine\"\n     \t\t\tclass=\"alert alert-danger\">\n\n \n\t        </div>\n\t\t  </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n<ng-template academics-ref-select></ng-template>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-edit/class-edit.component.ts":
-/*!********************************************************************!*\
-  !*** ./src/app/academics/class/class-edit/class-edit.component.ts ***!
-  \********************************************************************/
-/*! exports provided: ClassEditComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassEditComponent", function() { return ClassEditComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../class.component */ "./src/app/academics/class/class.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var ClassEditComponent = /** @class */ (function (_super) {
-    __extends(ClassEditComponent, _super);
-    function ClassEditComponent(componentFactoryResolver, classService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, classService, injector, router, route, location, _class_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.enums['dayOfWeek'] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',];
-        _this.stringFields.push('title');
-        _this.stringFields.push('description');
-        _this.referenceFields = ['course', 'teacher',];
-        _this.referenceFieldsMap = { 'course': 'course', 'teacher': 'teacher', };
-        _this.dateFields = ['startTime', 'endTime',];
-        _this.multiSelectionFields = ['dayOfWeek',];
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    ClassEditComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id) {
-            this.action = "Edit";
-            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
-        }
-        else {
-            this.action = "Create";
-            if (!this.cid)
-                this.cid = this.route.snapshot.queryParamMap.get('cid');
-            if (this.cid) {
-                this.populateDetailFromCopy(this.cid);
-            }
-            else if (this.initData) {
-                this.action = "Add";
-                this.subEdit = true;
-                var detail = {
-                    dayOfWeek: ["Mon"], hot: false,
-                };
-                for (var prop in this.initData) {
-                    detail[prop] = this.initData[prop];
-                    this.hiddenFields.push(prop);
-                }
-                this.detail = this.formatDetail(detail);
-            }
-            else {
-                var detail = {
-                    dayOfWeek: ["Mon"], hot: false,
-                };
-                this.detail = this.formatDetail(detail);
-            }
-        }
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], ClassEditComponent.prototype, "id", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], ClassEditComponent.prototype, "cid", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], ClassEditComponent.prototype, "initData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], ClassEditComponent.prototype, "done", void 0);
-    ClassEditComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-edit',
-            template: __webpack_require__(/*! ./class-edit.component.html */ "./src/app/academics/class/class-edit/class-edit.component.html"),
-            styles: [__webpack_require__(/*! ./class-edit.component.css */ "./src/app/academics/class/class-edit/class-edit.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassEditComponent);
-    return ClassEditComponent;
-}(_class_component__WEBPACK_IMPORTED_MODULE_3__["ClassComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-list/class-list-sub.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/academics/class/class-list/class-list-sub.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n      \n\t<div class=\"container search\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table\">\n\t    <thead>\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">\n\t\t        \tTitle\n\t\t        </th>\n\t\t        <th *ngIf=\"referenceFieldsMap['course'] != parentItem\"  scope=\"col\">\n\t\t        \tCourse\n\t\t        </th>\n\t\t        <th *ngIf=\"referenceFieldsMap['teacher'] != parentItem\"  scope=\"col\">\n\t\t        \tTeacher\n\t\t        </th>\n\t\t        <th scope=\"col\">\n\t\t        \tStart Time\n\t\t        </th>\n\t\t        <th scope=\"col\">\n\t\t        \tEnd Time\n\t\t        </th>\n\t\t        <th scope=\"col\">\n\t\t        \tDay of Week\n\t\t        </th>\n\t\t        <th scope=\"col\">\n\t\t        \tHot\n\t\t        </th>\t\t        \n                <th scope=\"col\" style=\"width:2rem;\"></th>\n\n\t\t        <th scope=\"col\" style=\"width:2rem;\"></th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t      <ng-template ngFor let-detail [ngForOf]=\"list\" let-i=\"index\">\n\t        <tr [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\"> <!-- *ngFor=\"let detail of list;  let i = index\" -->\n\t            <td scope=\"row\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td >\n\t            \t                  {{detail['title']}} \n\n                </td>\n\t            <td *ngIf=\"referenceFieldsMap['course'] != parentItem\"  >\n\t            \t                \n               \t  \n\t            \t{{detail['course']?detail['course']['value']:\"\"}}\n\t              \n\n                </td>\n\t            <td *ngIf=\"referenceFieldsMap['teacher'] != parentItem\"  >\n\t            \t                \n               \t  \n\t            \t{{detail['teacher']?detail['teacher']['value']:\"\"}}\n\t              \n\n                </td>\n\t            <td >\n\t            \t                  {{detail['startTime']?detail['startTime']['value']:\"\"}}\n\n                </td>\n\t            <td >\n\t            \t                  {{detail['endTime']?detail['endTime']['value']:\"\"}}\n\n                </td>\n\t            <td >\n\t            \t                \n                    <div class=\"badge badge-pill badge-secondary\" *ngFor=\"let element of enums['dayOfWeek']\">\n                         <div *ngIf=\"detail['dayOfWeek'] && detail['dayOfWeek']['selection'][element]\">{{element}}</div>\n                    </div>\n\n                </td>\n\t            <td >\n\t            \t                  {{detail['hot']}} \n\n                </td>\n\t            <td>\n\n                    \t\n\t\t\t        <span class=\"pointer\" (click)=\"toggleCheckedItem(i)\">\n\t\t\t            <i *ngIf=\"!checkedItem[i]\" class=\"fas fa-caret-down\" title=\"More\"></i>\n\t\t\t            <i *ngIf=\"checkedItem[i]\" class=\"fas fa-caret-up\" title=\"Less\"></i>\n\t\t\t        </span>\n                </td>\n\n\t            <td>\n\n\t            \t<a routerLink=\".\" (click)=\"onDetailLinkClicked(detail['_id'])\"><i class=\"fas fa-external-link-square-alt\" title=\"View Details\"></i></a>\n\n                </td>\n\t        </tr>\n\n\t        <tr *ngIf=\"checkedItem[i]\" >\n\t        \t<td colspan=\"7\"><app-class-detail-sub [inputData]=\"detail['_id']\"></app-class-detail-sub></td>\n\t        </tr>\n\t      </ng-template>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-list/class-list-sub.component.ts":
-/*!************************************************************************!*\
-  !*** ./src/app/academics/class/class-list/class-list-sub.component.ts ***!
-  \************************************************************************/
-/*! exports provided: ClassListSubComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassListSubComponent", function() { return ClassListSubComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class-list.component */ "./src/app/academics/class/class-list/class-list.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var ClassListSubComponent = /** @class */ (function (_super) {
-    __extends(ClassListSubComponent, _super);
-    function ClassListSubComponent(classService, injector, router, route, location) {
-        var _this = _super.call(this, null, classService, injector, router, route, location) || this;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.parentData = {};
-        return _this;
-    }
-    ClassListSubComponent.prototype.ngOnInit = function () {
-        var ref = this.getParentRouteRefField();
-        var id = this.getParentRouteItemId();
-        this.detail = {};
-        if (this.arrayFields.some(function (x) { return x[0] == ref; })) {
-            this.parentData[ref] = { 'selection': [{ '_id': id }] };
-            this.detail[ref] = { 'selection': [{ '_id': id }] }; //search on array list
-        }
-        else {
-            this.parentData[ref] = { '_id': id };
-            this.detail[ref] = { '_id': id }; //make this as the search context
-        }
-        this.processSearchContext();
-        this.populateList();
-    };
-    ClassListSubComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-list-sub',
-            template: __webpack_require__(/*! ./class-list-sub.component.html */ "./src/app/academics/class/class-list/class-list-sub.component.html"),
-            styles: [__webpack_require__(/*! ./class-list.component.css */ "./src/app/academics/class/class-list/class-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassListSubComponent);
-    return ClassListSubComponent;
-}(_class_list_component__WEBPACK_IMPORTED_MODULE_3__["ClassListComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-list/class-list.component.css":
-/*!*********************************************************************!*\
-  !*** ./src/app/academics/class/class-list/class-list.component.css ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL2NsYXNzL2NsYXNzLWxpc3QvY2xhc3MtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL2NsYXNzL2NsYXNzLWxpc3QvY2xhc3MtbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-list/class-list.component.html":
-/*!**********************************************************************!*\
-  !*** ./src/app/academics/class/class-list/class-list.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"classTextSearch\" \n\t\t\t\t\t\t#classTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for title\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\t<div class=\"text-center\">\n                    <span  class=\"pointer\" (click)=\"toggleMoreSearch()\">\n                        <span class=\"refine-search-text\">Refine Search &nbsp;</span>\n                        <span>\n                            <i *ngIf=\"!moreSearchOpened\"  class=\"fas fa-plus-circle\" title=\"More\"></i>\n                            <i *ngIf=\"moreSearchOpened\" class=\"fas fa-minus-circle\"  title=\"Less\"></i>\n                        </span>\n                    </span>\n\t\t\t\t</div>\n\t\t\t    <div class=\"shadow\" *ngIf=\"moreSearchOpened\">\n\t\t\t\t\t<div class=\"card\">\n\t\t\t\t\t\t<div class=\"card-body\">\n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditCourse\">Course</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"classEditCourse\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['course']['_id']}\"\n\t\t             (focus)=\"detail['course']['_id']?onRefShow('course', 'select', detail['course']['_id']):onRefSelect('course')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['course']['value']\" name=\"classEditCourse\"\n\t\t             #classEditCourse=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('course')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('course')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditTeacher\">Teacher</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"classEditTeacher\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['teacher']['_id']}\"\n\t\t             (focus)=\"detail['teacher']['_id']?onRefShow('teacher', 'select', detail['teacher']['_id']):onRefSelect('teacher')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['teacher']['value']\" name=\"classEditTeacher\"\n\t\t             #classEditTeacher=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('teacher')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('teacher')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditStartTime\">Start Time</label></div>\n\t        <div class=\"col-8\">\n\n \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"classEditStartTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['startTime']['from']\" name=\"classEditStartTime\"\n\t\t             ngbDatepicker #classEditStartTime=\"ngModel\">\n\t\t      <span>&nbsp; ~ &nbsp;</span>\n\t\t      <input class=\"form-control\" id=\"classEditStartTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['startTime']['to']\" name=\"classEditStartTime\"\n\t\t             ngbDatepicker #classEditStartTime=\"ngModel\">\n\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"onDateSelectionToggle('startTime')\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group --> \n\t\t    <div class=\"date-selection-pop\" *ngIf=\"detail['startTime']['pop']\">\n\t\t\t    <ngb-datepicker #dp [minDate]=\"minDate\" (select)=\"onDateSelection('startTime', $event)\" [displayMonths]=\"2\" [dayTemplate]=\"classEditStartTimeT\">\n\t\t\t\t</ngb-datepicker>\n\t\t\t\t<ng-template #classEditStartTimeT let-classEditStartTimeDate=\"date\" let-classEditStartTimeFocused=\"focused\">\n\t\t\t\t  <span class=\"custom-day\"\n\t\t\t\t        [class.focused]=\"classEditStartTimeFocused\"\n\t\t\t\t        [class.range]=\"isRange('startTime', classEditStartTimeDate)\"\n\t\t\t\t        [class.faded]=\"isHovered('startTime', classEditStartTimeDate) || isInside('startTime', classEditStartTimeDate)\"\n\t\t\t\t        (mouseenter)=\"hoveredDate = classEditStartTimeDate\"\n\t\t\t\t        (mouseleave)=\"hoveredDate = null\">\n\t\t\t\t    {{ classEditStartTimeDate.day }}\n\t\t\t\t  </span>\n\t\t\t\t</ng-template>\n\t\t    </div>      \n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('startTime')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('startTime')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditEndTime\">End Time</label></div>\n\t        <div class=\"col-8\">\n\n \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"classEditEndTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['endTime']['from']\" name=\"classEditEndTime\"\n\t\t             ngbDatepicker #classEditEndTime=\"ngModel\">\n\t\t      <span>&nbsp; ~ &nbsp;</span>\n\t\t      <input class=\"form-control\" id=\"classEditEndTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['endTime']['to']\" name=\"classEditEndTime\"\n\t\t             ngbDatepicker #classEditEndTime=\"ngModel\">\n\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"onDateSelectionToggle('endTime')\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group --> \n\t\t    <div class=\"date-selection-pop\" *ngIf=\"detail['endTime']['pop']\">\n\t\t\t    <ngb-datepicker #dp [minDate]=\"minDate\" (select)=\"onDateSelection('endTime', $event)\" [displayMonths]=\"2\" [dayTemplate]=\"classEditEndTimeT\">\n\t\t\t\t</ngb-datepicker>\n\t\t\t\t<ng-template #classEditEndTimeT let-classEditEndTimeDate=\"date\" let-classEditEndTimeFocused=\"focused\">\n\t\t\t\t  <span class=\"custom-day\"\n\t\t\t\t        [class.focused]=\"classEditEndTimeFocused\"\n\t\t\t\t        [class.range]=\"isRange('endTime', classEditEndTimeDate)\"\n\t\t\t\t        [class.faded]=\"isHovered('endTime', classEditEndTimeDate) || isInside('endTime', classEditEndTimeDate)\"\n\t\t\t\t        (mouseenter)=\"hoveredDate = classEditEndTimeDate\"\n\t\t\t\t        (mouseleave)=\"hoveredDate = null\">\n\t\t\t\t    {{ classEditEndTimeDate.day }}\n\t\t\t\t  </span>\n\t\t\t\t</ng-template>\n\t\t    </div>      \n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('endTime')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('endTime')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditDayOfWeek\">Day of Week</label></div>\n\t        <div class=\"col-8\">\n\n\n\n\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekMon\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekMon\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Mon']\"\n\t\t        \t#classEditDayOfWeekMon=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Mon</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekTue\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekTue\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Tue']\"\n\t\t        \t#classEditDayOfWeekTue=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Tue</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekWed\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekWed\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Wed']\"\n\t\t        \t#classEditDayOfWeekWed=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Wed</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekThu\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekThu\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Thu']\"\n\t\t        \t#classEditDayOfWeekThu=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Thu</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekFri\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekFri\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Fri']\"\n\t\t        \t#classEditDayOfWeekFri=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Fri</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekSat\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekSat\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sat']\"\n\t\t        \t#classEditDayOfWeekSat=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sat</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekSun\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekSun\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sun']\"\n\t\t        \t#classEditDayOfWeekSun=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sun</label>\n\t\t    </div>\n\n\n \n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('dayOfWeek')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('dayOfWeek')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditHot\">Hot</label></div>\n\t        <div class=\"col-8\">\n\n\n\t        <div class=\"form-check\">\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"classEditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditHotYes\" [value]=\"true\" \n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#classEditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Yes</label>\n\t\t      </div>\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"classEditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditHotNo\" [value]=\"false\"\n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#classEditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">No</label>\n\t\t      </div>\n\t\t    </div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('hot')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('hot')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\n\t\t\t\t\t\t  <div class=\"action-buttons\" style=\"margin-top: 10px;\">\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onSearchClear()\">Reset</button>\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\" (click)=\"searchList()\">Search</button>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t        </div>\n\t\t        <div *ngIf=\"!moreSearchOpened\" style=\"text-align: left;\">\n\t\t\t\t\t<span class=\"badge badge-pill badge-info\" *ngFor=\"let value of searchMoreDetail\">\n\t\t\t\t\t    <a (click)=\"toggleMoreSearch()\" class=\"pointer\"> {{value[0]}}: {{value[1]}}</a>\n\t\t\t\t\t    <i class=\"fas fa-times-circle icon-clear-badge\" (click)=\"clearValueFromDetailAndSearchList(value[0])\" title=\"Clear\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t    \n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Title</th>\n\t\t        <th scope=\"col\">Course</th>\n\t\t        <th scope=\"col\">Teacher</th>\n\t\t        <th scope=\"col\">Start Time</th>\n\t\t        <th scope=\"col\">End Time</th>\n\t\t        <th scope=\"col\">Day of Week</th>\n\t\t        <th scope=\"col\">Hot</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['title']}} \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n               \t  \n\t            \t{{detail['course']?detail['course']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n               \t  \n\t            \t{{detail['teacher']?detail['teacher']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['startTime']?detail['startTime']['value']:\"\"}}\n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['endTime']?detail['endTime']['value']:\"\"}}\n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n                    <div class=\"badge badge-pill badge-secondary\" *ngFor=\"let element of enums['dayOfWeek']\">\n                         <div *ngIf=\"detail['dayOfWeek'] && detail['dayOfWeek']['selection'][element]\">{{element}}</div>\n                    </div>\n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['hot']}} \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n<ng-template academics-ref-select></ng-template>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-list/class-list.component.ts":
-/*!********************************************************************!*\
-  !*** ./src/app/academics/class/class-list/class-list.component.ts ***!
-  \********************************************************************/
-/*! exports provided: ClassListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassListComponent", function() { return ClassListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../class.component */ "./src/app/academics/class/class.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var ClassListComponent = /** @class */ (function (_super) {
-    __extends(ClassListComponent, _super);
-    function ClassListComponent(componentFactoryResolver, classService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, classService, injector, router, route, location, _class_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.minDate = { year: (new Date()).getFullYear() - 100, month: 1, day: 1 };
-        _this.enums['dayOfWeek'] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',];
-        _this.stringFields.push('title');
-        _this.referenceFields = ['course', 'teacher',];
-        _this.referenceFieldsMap = { 'course': 'course', 'teacher': 'teacher', };
-        _this.dateFields = ['startTime', 'endTime',];
-        _this.multiSelectionFields = ['dayOfWeek',];
-        // this is to initialize the detail that will be used for search condition selection
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    ClassListComponent.prototype.ngOnInit = function () {
-        this.populateList();
-    };
-    ClassListComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-list',
-            template: __webpack_require__(/*! ./class-list.component.html */ "./src/app/academics/class/class-list/class-list.component.html"),
-            styles: [__webpack_require__(/*! ./class-list.component.css */ "./src/app/academics/class/class-list/class-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassListComponent);
-    return ClassListComponent;
-}(_class_component__WEBPACK_IMPORTED_MODULE_3__["ClassComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-list/class-select.component.html":
-/*!************************************************************************!*\
-  !*** ./src/app/academics/class/class-list/class-select.component.html ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Select {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"classTextSearch\" \n\t\t\t\t\t\t#classTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for title\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\t<div class=\"text-center\">\n                    <span  class=\"pointer\" (click)=\"toggleMoreSearch()\">\n                        <span class=\"refine-search-text\">Refine Search &nbsp;</span>\n                        <span>\n                            <i *ngIf=\"!moreSearchOpened\"  class=\"fas fa-plus-circle\" title=\"More\"></i>\n                            <i *ngIf=\"moreSearchOpened\" class=\"fas fa-minus-circle\"  title=\"Less\"></i>\n                        </span>\n                    </span>\n\t\t\t\t</div>\n\t\t\t    <div class=\"shadow\" *ngIf=\"moreSearchOpened\">\n\t\t\t\t\t<div class=\"card\">\n\t\t\t\t\t\t<div class=\"card-body\">\n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditCourse\">Course</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"classEditCourse\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['course']['_id']}\"\n\t\t             (focus)=\"detail['course']['_id']?onRefShow('course', 'select', detail['course']['_id']):onRefSelect('course')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['course']['value']\" name=\"classEditCourse\"\n\t\t             #classEditCourse=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('course')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('course')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditTeacher\">Teacher</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"classEditTeacher\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['teacher']['_id']}\"\n\t\t             (focus)=\"detail['teacher']['_id']?onRefShow('teacher', 'select', detail['teacher']['_id']):onRefSelect('teacher')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['teacher']['value']\" name=\"classEditTeacher\"\n\t\t             #classEditTeacher=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('teacher')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('teacher')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditStartTime\">Start Time</label></div>\n\t        <div class=\"col-8\">\n\n \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"classEditStartTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['startTime']['from']\" name=\"classEditStartTime\"\n\t\t             ngbDatepicker #classEditStartTime=\"ngModel\">\n\t\t      <span>&nbsp; ~ &nbsp;</span>\n\t\t      <input class=\"form-control\" id=\"classEditStartTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['startTime']['to']\" name=\"classEditStartTime\"\n\t\t             ngbDatepicker #classEditStartTime=\"ngModel\">\n\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"onDateSelectionToggle('startTime')\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group --> \n\t\t    <div class=\"date-selection-pop\" *ngIf=\"detail['startTime']['pop']\">\n\t\t\t    <ngb-datepicker #dp [minDate]=\"minDate\" (select)=\"onDateSelection('startTime', $event)\" [displayMonths]=\"2\" [dayTemplate]=\"classEditStartTimeT\">\n\t\t\t\t</ngb-datepicker>\n\t\t\t\t<ng-template #classEditStartTimeT let-classEditStartTimeDate=\"date\" let-classEditStartTimeFocused=\"focused\">\n\t\t\t\t  <span class=\"custom-day\"\n\t\t\t\t        [class.focused]=\"classEditStartTimeFocused\"\n\t\t\t\t        [class.range]=\"isRange('startTime', classEditStartTimeDate)\"\n\t\t\t\t        [class.faded]=\"isHovered('startTime', classEditStartTimeDate) || isInside('startTime', classEditStartTimeDate)\"\n\t\t\t\t        (mouseenter)=\"hoveredDate = classEditStartTimeDate\"\n\t\t\t\t        (mouseleave)=\"hoveredDate = null\">\n\t\t\t\t    {{ classEditStartTimeDate.day }}\n\t\t\t\t  </span>\n\t\t\t\t</ng-template>\n\t\t    </div>      \n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('startTime')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('startTime')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditEndTime\">End Time</label></div>\n\t        <div class=\"col-8\">\n\n \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"classEditEndTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['endTime']['from']\" name=\"classEditEndTime\"\n\t\t             ngbDatepicker #classEditEndTime=\"ngModel\">\n\t\t      <span>&nbsp; ~ &nbsp;</span>\n\t\t      <input class=\"form-control\" id=\"classEditEndTime\" placeholder=\"{{dateFormat}}\"\n\t\t             [(ngModel)]=\"detail['endTime']['to']\" name=\"classEditEndTime\"\n\t\t             ngbDatepicker #classEditEndTime=\"ngModel\">\n\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"onDateSelectionToggle('endTime')\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group --> \n\t\t    <div class=\"date-selection-pop\" *ngIf=\"detail['endTime']['pop']\">\n\t\t\t    <ngb-datepicker #dp [minDate]=\"minDate\" (select)=\"onDateSelection('endTime', $event)\" [displayMonths]=\"2\" [dayTemplate]=\"classEditEndTimeT\">\n\t\t\t\t</ngb-datepicker>\n\t\t\t\t<ng-template #classEditEndTimeT let-classEditEndTimeDate=\"date\" let-classEditEndTimeFocused=\"focused\">\n\t\t\t\t  <span class=\"custom-day\"\n\t\t\t\t        [class.focused]=\"classEditEndTimeFocused\"\n\t\t\t\t        [class.range]=\"isRange('endTime', classEditEndTimeDate)\"\n\t\t\t\t        [class.faded]=\"isHovered('endTime', classEditEndTimeDate) || isInside('endTime', classEditEndTimeDate)\"\n\t\t\t\t        (mouseenter)=\"hoveredDate = classEditEndTimeDate\"\n\t\t\t\t        (mouseleave)=\"hoveredDate = null\">\n\t\t\t\t    {{ classEditEndTimeDate.day }}\n\t\t\t\t  </span>\n\t\t\t\t</ng-template>\n\t\t    </div>      \n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('endTime')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('endTime')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditDayOfWeek\">Day of Week</label></div>\n\t        <div class=\"col-8\">\n\n\n\n\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekMon\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekMon\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Mon']\"\n\t\t        \t#classEditDayOfWeekMon=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Mon</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekTue\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekTue\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Tue']\"\n\t\t        \t#classEditDayOfWeekTue=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Tue</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekWed\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekWed\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Wed']\"\n\t\t        \t#classEditDayOfWeekWed=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Wed</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekThu\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekThu\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Thu']\"\n\t\t        \t#classEditDayOfWeekThu=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Thu</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekFri\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekFri\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Fri']\"\n\t\t        \t#classEditDayOfWeekFri=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Fri</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekSat\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekSat\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sat']\"\n\t\t        \t#classEditDayOfWeekSat=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sat</label>\n\t\t    </div>\n\n\t        <div class=\"form-check-inline\">\n\t\t        <input type=\"checkbox\" name=\"classEditDayOfWeekSun\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditDayOfWeekSun\"\n\t\t        \t[(ngModel)]=\"detail['dayOfWeek']['selection']['Sun']\"\n\t\t        \t#classEditDayOfWeekSun=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Sun</label>\n\t\t    </div>\n\n\n \n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('dayOfWeek')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('dayOfWeek')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"classEditHot\">Hot</label></div>\n\t        <div class=\"col-8\">\n\n\n\t        <div class=\"form-check\">\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"classEditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditHotYes\" [value]=\"true\" \n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#classEditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">Yes</label>\n\t\t      </div>\n\t          <div class=\"form-check-inline\">\n\t\t        <input type=\"radio\" name=\"classEditHot\" \n\t\t        \tclass=\"form-check-input\"\n\t\t        \tid=\"classEditHotNo\" [value]=\"false\"\n\t\t        \t[(ngModel)]=\"detail['hot']\"\n\t\t        \t#classEditHot=\"ngModel\">\n\t\t      \t<label class=\"form-check-label\">No</label>\n\t\t      </div>\n\t\t    </div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('hot')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('hot')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\n\t\t\t\t\t\t  <div class=\"action-buttons\" style=\"margin-top: 10px;\">\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onSearchClear()\">Reset</button>\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\" (click)=\"searchList()\">Search</button>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t        </div>\n\t\t        <div *ngIf=\"!moreSearchOpened\" style=\"text-align: left;\">\n\t\t\t\t\t<span class=\"badge badge-pill badge-info\" *ngFor=\"let value of searchMoreDetail\">\n\t\t\t\t\t    <a (click)=\"toggleMoreSearch()\" class=\"pointer\"> {{value[0]}}: {{value[1]}}</a>\n\t\t\t\t\t    <i class=\"fas fa-times-circle icon-clear-badge\" (click)=\"clearValueFromDetailAndSearchList(value[0])\" title=\"Clear\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t    \n\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t</div>\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Title</th>\n\t\t        <th scope=\"col\">Course</th>\n\t\t        <th scope=\"col\">Teacher</th>\n\t\t        <th scope=\"col\">Start Time</th>\n\n\t\t        <th></th>      \n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" \n\t        \t[ngClass]=\"{'clicked-row': detail['_id']==clickedId}\" >\n\t            <td scope=\"row\" (click)=\"selectItemSelected(i)\"  class=\"pointer\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['title']}} \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                \n               \t  \n\t            \t{{detail['course']?detail['course']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                \n               \t  \n\t            \t{{detail['teacher']?detail['teacher']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['startTime']?detail['startTime']['value']:\"\"}}\n\n\t            </td>\n\n\t            <td><a routerLink=\".\" class=\"btn\" \n\t                 [ngClass]=\"{'btn-primary': detail['_id']==selectedId, 'btn-outline-primary': detail['_id']!==selectedId}\"\n\t            \t (click)=\"selectViewDetail(i)\">View Details</a>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class-list/class-select.component.ts":
-/*!**********************************************************************!*\
-  !*** ./src/app/academics/class/class-list/class-select.component.ts ***!
-  \**********************************************************************/
-/*! exports provided: ClassSelectComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassSelectComponent", function() { return ClassSelectComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _class_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class-list.component */ "./src/app/academics/class/class-list/class-list.component.ts");
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../class.service */ "./src/app/academics/class/class.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var ClassSelectComponent = /** @class */ (function (_super) {
-    __extends(ClassSelectComponent, _super);
-    function ClassSelectComponent(classService, injector, router, route, location) {
-        var _this = _super.call(this, null, classService, injector, router, route, location) || this;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    ClassSelectComponent.prototype.ngOnInit = function () {
-        this.selectedId = this.inputData;
-        this.populateList();
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], ClassSelectComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], ClassSelectComponent.prototype, "outputData", void 0);
-    ClassSelectComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-class-select',
-            template: __webpack_require__(/*! ./class-select.component.html */ "./src/app/academics/class/class-list/class-select.component.html"),
-            styles: [__webpack_require__(/*! ./class-list.component.css */ "./src/app/academics/class/class-list/class-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_class_service__WEBPACK_IMPORTED_MODULE_4__["ClassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], ClassSelectComponent);
-    return ClassSelectComponent;
-}(_class_list_component__WEBPACK_IMPORTED_MODULE_3__["ClassListComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class.base.service.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/academics/class/class.base.service.ts ***!
-  \*******************************************************/
-/*! exports provided: ClassBaseService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassBaseService", function() { return ClassBaseService; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var servicePath = '/class/';
-var ClassBaseService = /** @class */ (function (_super) {
-    __extends(ClassBaseService, _super);
-    function ClassBaseService(http, serverRootUrl) {
-        var _this = this;
-        var serviceUrl = serverRootUrl + servicePath;
-        _this = _super.call(this, http, serviceUrl) || this;
-        return _this;
-    }
-    return ClassBaseService;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/academics/class/class.component.ts ***!
-  \****************************************************/
-/*! exports provided: ViewType, ClassComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassComponent", function() { return ClassComponent; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
-
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _academics_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../academics.component */ "./src/app/academics/academics.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../course/course-detail/course-detail-sel.component */ "./src/app/academics/course/course-detail/course-detail-sel.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course/course-detail/course-detail-pop.component */ "./src/app/academics/course/course-detail/course-detail-pop.component.ts");
-/* harmony import */ var _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../course/course-list/course-select.component */ "./src/app/academics/course/course-list/course-select.component.ts");
-/* harmony import */ var _teacher_teacher_detail_teacher_detail_sel_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../teacher/teacher-detail/teacher-detail-sel.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail-sel.component.ts");
-/* harmony import */ var _teacher_teacher_detail_teacher_detail_pop_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../teacher/teacher-detail/teacher-detail-pop.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail-pop.component.ts");
-/* harmony import */ var _teacher_teacher_list_teacher_select_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../teacher/teacher-list/teacher-select.component */ "./src/app/academics/teacher/teacher-list/teacher-select.component.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var itemCamelName = 'class';
-
-
-
-
-
-
-
-
-
-
-var ClassComponent = /** @class */ (function (_super) {
-    __extends(ClassComponent, _super);
-    function ClassComponent(componentFactoryResolver, classService, injector, router, route, location, view) {
-        var _this = _super.call(this, classService, injector, router, route, location, view, itemCamelName) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.classService = classService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.view = view;
-        _this.selectComponents = {
-            'course': {
-                'select-type': _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_5__["CourseSelectComponent"],
-                'select-detail-type': _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__["CourseDetailSelComponent"],
-                'pop-detail-type': _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__["CourseDetailPopComponent"],
-                'componentRef': null
-            },
-            'teacher': {
-                'select-type': _teacher_teacher_list_teacher_select_component__WEBPACK_IMPORTED_MODULE_8__["TeacherSelectComponent"],
-                'select-detail-type': _teacher_teacher_detail_teacher_detail_sel_component__WEBPACK_IMPORTED_MODULE_6__["TeacherDetailSelComponent"],
-                'pop-detail-type': _teacher_teacher_detail_teacher_detail_pop_component__WEBPACK_IMPORTED_MODULE_7__["TeacherDetailPopComponent"],
-                'componentRef': null
-            },
-        };
-        _this.dateFormat = 'MM-DD-YYYY';
-        _this.timeFormat = 'hh:mm:ss';
-        _this.indexFields = ['title',];
-        return _this;
-    }
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_academics_component__WEBPACK_IMPORTED_MODULE_2__["AcademicsRefSelectDirective"]),
-        __metadata("design:type", _academics_component__WEBPACK_IMPORTED_MODULE_2__["AcademicsRefSelectDirective"])
-    ], ClassComponent.prototype, "refSelectDirective", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('AcademicsModal'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
-    ], ClassComponent.prototype, "focusEl", void 0);
-    return ClassComponent;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/class/class.service.ts":
-/*!**************************************************!*\
-  !*** ./src/app/academics/class/class.service.ts ***!
-  \**************************************************/
-/*! exports provided: ClassService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassService", function() { return ClassService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _class_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./class.base.service */ "./src/app/academics/class/class.base.service.ts");
-/* harmony import */ var _academics_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../academics.tokens */ "./src/app/academics/academics.tokens.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-var ClassService = /** @class */ (function (_super) {
-    __extends(ClassService, _super);
-    function ClassService(http, academicsServerRootUri) {
-        var _this = _super.call(this, http, academicsServerRootUri) || this;
-        _this.academicsServerRootUri = academicsServerRootUri;
-        return _this;
-    }
-    ClassService.prototype.ngOnDestroy = function () { };
-    ClassService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_academics_tokens__WEBPACK_IMPORTED_MODULE_3__["Academics_SERVER_ROOT_URI"])),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
-    ], ClassService);
-    return ClassService;
-}(_class_base_service__WEBPACK_IMPORTED_MODULE_2__["ClassBaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-detail/course-detail-pop.component.html":
-/*!*********************************************************************************!*\
-  !*** ./src/app/academics/course/course-detail/course-detail-pop.component.html ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">{{ItemCamelName}} Detail</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-detail/course-detail-pop.component.ts":
-/*!*******************************************************************************!*\
-  !*** ./src/app/academics/course/course-detail/course-detail-pop.component.ts ***!
-  \*******************************************************************************/
-/*! exports provided: CourseDetailPopComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseDetailPopComponent", function() { return CourseDetailPopComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _course_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./course-detail.component */ "./src/app/academics/course/course-detail/course-detail.component.ts");
-/* harmony import */ var _course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course.service */ "./src/app/academics/course/course.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var CourseDetailPopComponent = /** @class */ (function (_super) {
-    __extends(CourseDetailPopComponent, _super);
-    function CourseDetailPopComponent(courseService, injector, router, route, location) {
-        var _this = _super.call(this, courseService, injector, router, route, location) || this;
-        _this.courseService = courseService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    CourseDetailPopComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], CourseDetailPopComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], CourseDetailPopComponent.prototype, "outputData", void 0);
-    CourseDetailPopComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-course-detail-pop',
-            template: __webpack_require__(/*! ./course-detail-pop.component.html */ "./src/app/academics/course/course-detail/course-detail-pop.component.html"),
-            styles: [__webpack_require__(/*! ./course-detail.component.css */ "./src/app/academics/course/course-detail/course-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_course_service__WEBPACK_IMPORTED_MODULE_4__["CourseService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], CourseDetailPopComponent);
-    return CourseDetailPopComponent;
-}(_course_detail_component__WEBPACK_IMPORTED_MODULE_3__["CourseDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-detail/course-detail-sel.component.html":
-/*!*********************************************************************************!*\
-  !*** ./src/app/academics/course/course-detail/course-detail-sel.component.html ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Selected {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <a routerLink=\".\" (click)=\"detailSelBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back to list\">&nbsp; {{ItemCamelName}} List</i></a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"detailSelSelected()\">Select</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail</h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-detail/course-detail-sel.component.ts":
-/*!*******************************************************************************!*\
-  !*** ./src/app/academics/course/course-detail/course-detail-sel.component.ts ***!
-  \*******************************************************************************/
-/*! exports provided: CourseDetailSelComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseDetailSelComponent", function() { return CourseDetailSelComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _course_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./course-detail.component */ "./src/app/academics/course/course-detail/course-detail.component.ts");
-/* harmony import */ var _course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course.service */ "./src/app/academics/course/course.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var CourseDetailSelComponent = /** @class */ (function (_super) {
-    __extends(CourseDetailSelComponent, _super);
-    function CourseDetailSelComponent(courseService, injector, router, route, location) {
-        var _this = _super.call(this, courseService, injector, router, route, location) || this;
-        _this.courseService = courseService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    CourseDetailSelComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], CourseDetailSelComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], CourseDetailSelComponent.prototype, "outputData", void 0);
-    CourseDetailSelComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-course-detail-sel',
-            template: __webpack_require__(/*! ./course-detail-sel.component.html */ "./src/app/academics/course/course-detail/course-detail-sel.component.html"),
-            styles: [__webpack_require__(/*! ./course-detail.component.css */ "./src/app/academics/course/course-detail/course-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_course_service__WEBPACK_IMPORTED_MODULE_4__["CourseService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], CourseDetailSelComponent);
-    return CourseDetailSelComponent;
-}(_course_detail_component__WEBPACK_IMPORTED_MODULE_3__["CourseDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-detail/course-detail.component.css":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/course/course-detail/course-detail.component.css ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL2NvdXJzZS9jb3Vyc2UtZGV0YWlsL2NvdXJzZS1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcy9jb3Vyc2UvY291cnNlLWRldGFpbC9jb3Vyc2UtZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-detail/course-detail.component.html":
-/*!*****************************************************************************!*\
-  !*** ./src/app/academics/course/course-detail/course-detail.component.html ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n\t<br/>\n\t\n\t<ul class=\"nav nav-tabs\">\n\t  \n\t    <li class=\"nav-item\">\n\t    <a [routerLink]=\"['./teacher/list']\"\n\t        class=\"nav-link\" routerLinkActive=\"active\">Teacher</a>\n\t  </li>\n\t    <li class=\"nav-item\">\n\t    <a [routerLink]=\"['./class/list']\"\n\t        class=\"nav-link\" routerLinkActive=\"active\">Class</a>\n\t  </li>\n    </ul>\n    <router-outlet></router-outlet>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-detail/course-detail.component.ts":
-/*!***************************************************************************!*\
-  !*** ./src/app/academics/course/course-detail/course-detail.component.ts ***!
-  \***************************************************************************/
-/*! exports provided: CourseDetailComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseDetailComponent", function() { return CourseDetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _course_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../course.component */ "./src/app/academics/course/course.component.ts");
-/* harmony import */ var _course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course.service */ "./src/app/academics/course/course.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var CourseDetailComponent = /** @class */ (function (_super) {
-    __extends(CourseDetailComponent, _super);
-    function CourseDetailComponent(courseService, injector, router, route, location) {
-        var _this = _super.call(this, courseService, injector, router, route, location, _course_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
-        _this.courseService = courseService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.stringFields.push('title');
-        _this.stringFields.push('description');
-        return _this;
-    }
-    CourseDetailComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], CourseDetailComponent.prototype, "id", void 0);
-    CourseDetailComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-course-detail',
-            template: __webpack_require__(/*! ./course-detail.component.html */ "./src/app/academics/course/course-detail/course-detail.component.html"),
-            styles: [__webpack_require__(/*! ./course-detail.component.css */ "./src/app/academics/course/course-detail/course-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_course_service__WEBPACK_IMPORTED_MODULE_4__["CourseService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], CourseDetailComponent);
-    return CourseDetailComponent;
-}(_course_component__WEBPACK_IMPORTED_MODULE_3__["CourseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-edit/course-edit.component.css":
-/*!************************************************************************!*\
-  !*** ./src/app/academics/course/course-edit/course-edit.component.css ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL2NvdXJzZS9jb3Vyc2UtZWRpdC9jb3Vyc2UtZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL2NvdXJzZS9jb3Vyc2UtZWRpdC9jb3Vyc2UtZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-edit/course-edit.component.html":
-/*!*************************************************************************!*\
-  !*** ./src/app/academics/course/course-edit/course-edit.component.html ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} Course</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('title')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTitle\">Title</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditTitle\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['title']\" name=\"EditTitle\"\n\t\t                #EditTitle=\"ngModel\">\n                <div *ngIf=\"detail['title']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('title')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditTitle.valid || EditTitle.pristine || EditTitle.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTitle.errors && EditTitle.errors.required\">\n    \t        Title is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('description')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDescription\">Description</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditDescription\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['description']\" name=\"EditDescription\"\n\t\t                #EditDescription=\"ngModel\">\n                <div *ngIf=\"detail['description']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('description')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditDescription.valid || EditDescription.pristine || EditDescription.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDescription.errors && EditDescription.errors.required\">\n    \t        Description is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('title')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTitle\">Title</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditTitle\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['title']\" name=\"EditTitle\"\n\t\t                #EditTitle=\"ngModel\">\n                <div *ngIf=\"detail['title']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('title')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditTitle.valid || EditTitle.pristine || EditTitle.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTitle.errors && EditTitle.errors.required\">\n    \t        Title is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('description')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDescription\">Description</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditDescription\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['description']\" name=\"EditDescription\"\n\t\t                #EditDescription=\"ngModel\">\n                <div *ngIf=\"detail['description']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('description')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditDescription.valid || EditDescription.pristine || EditDescription.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDescription.errors && EditDescription.errors.required\">\n    \t        Description is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-edit/course-edit.component.ts":
-/*!***********************************************************************!*\
-  !*** ./src/app/academics/course/course-edit/course-edit.component.ts ***!
-  \***********************************************************************/
-/*! exports provided: CourseEditComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseEditComponent", function() { return CourseEditComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _course_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../course.component */ "./src/app/academics/course/course.component.ts");
-/* harmony import */ var _course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course.service */ "./src/app/academics/course/course.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var CourseEditComponent = /** @class */ (function (_super) {
-    __extends(CourseEditComponent, _super);
-    function CourseEditComponent(courseService, injector, router, route, location) {
-        var _this = _super.call(this, courseService, injector, router, route, location, _course_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
-        _this.courseService = courseService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.stringFields.push('title');
-        _this.stringFields.push('description');
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    CourseEditComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id) {
-            this.action = "Edit";
-            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
-        }
-        else {
-            this.action = "Create";
-            if (!this.cid)
-                this.cid = this.route.snapshot.queryParamMap.get('cid');
-            if (this.cid) {
-                this.populateDetailFromCopy(this.cid);
-            }
-            else if (this.initData) {
-                this.action = "Add";
-                this.subEdit = true;
-                var detail = {};
-                for (var prop in this.initData) {
-                    detail[prop] = this.initData[prop];
-                    this.hiddenFields.push(prop);
-                }
-                this.detail = this.formatDetail(detail);
-            }
-            else {
-                var detail = {};
-                this.detail = this.formatDetail(detail);
-            }
-        }
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], CourseEditComponent.prototype, "id", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], CourseEditComponent.prototype, "cid", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], CourseEditComponent.prototype, "initData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], CourseEditComponent.prototype, "done", void 0);
-    CourseEditComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-course-edit',
-            template: __webpack_require__(/*! ./course-edit.component.html */ "./src/app/academics/course/course-edit/course-edit.component.html"),
-            styles: [__webpack_require__(/*! ./course-edit.component.css */ "./src/app/academics/course/course-edit/course-edit.component.css")]
-        }),
-        __metadata("design:paramtypes", [_course_service__WEBPACK_IMPORTED_MODULE_4__["CourseService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], CourseEditComponent);
-    return CourseEditComponent;
-}(_course_component__WEBPACK_IMPORTED_MODULE_3__["CourseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-list/course-list.component.css":
-/*!************************************************************************!*\
-  !*** ./src/app/academics/course/course-list/course-list.component.css ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL2NvdXJzZS9jb3Vyc2UtbGlzdC9jb3Vyc2UtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL2NvdXJzZS9jb3Vyc2UtbGlzdC9jb3Vyc2UtbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-list/course-list.component.html":
-/*!*************************************************************************!*\
-  !*** ./src/app/academics/course/course-list/course-list.component.html ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"courseTextSearch\" \n\t\t\t\t\t\t#courseTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for title, description\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Title</th>\n\t\t        <th scope=\"col\">Description</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['title']}} \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['description']}} \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-list/course-list.component.ts":
-/*!***********************************************************************!*\
-  !*** ./src/app/academics/course/course-list/course-list.component.ts ***!
-  \***********************************************************************/
-/*! exports provided: CourseListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseListComponent", function() { return CourseListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _course_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../course.component */ "./src/app/academics/course/course.component.ts");
-/* harmony import */ var _course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course.service */ "./src/app/academics/course/course.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var CourseListComponent = /** @class */ (function (_super) {
-    __extends(CourseListComponent, _super);
-    function CourseListComponent(courseService, injector, router, route, location) {
-        var _this = _super.call(this, courseService, injector, router, route, location, _course_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
-        _this.courseService = courseService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.stringFields.push('title');
-        _this.stringFields.push('description');
-        // this is to initialize the detail that will be used for search condition selection
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    CourseListComponent.prototype.ngOnInit = function () {
-        this.populateList();
-    };
-    CourseListComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-course-list',
-            template: __webpack_require__(/*! ./course-list.component.html */ "./src/app/academics/course/course-list/course-list.component.html"),
-            styles: [__webpack_require__(/*! ./course-list.component.css */ "./src/app/academics/course/course-list/course-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_course_service__WEBPACK_IMPORTED_MODULE_4__["CourseService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], CourseListComponent);
-    return CourseListComponent;
-}(_course_component__WEBPACK_IMPORTED_MODULE_3__["CourseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-list/course-select.component.html":
-/*!***************************************************************************!*\
-  !*** ./src/app/academics/course/course-list/course-select.component.html ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Select {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"courseTextSearch\" \n\t\t\t\t\t\t#courseTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for title, description\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t</div>\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Title</th>\n\t\t        <th scope=\"col\">Description</th>\n\n\t\t        <th></th>      \n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" \n\t        \t[ngClass]=\"{'clicked-row': detail['_id']==clickedId}\" >\n\t            <td scope=\"row\" (click)=\"selectItemSelected(i)\"  class=\"pointer\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['title']}} \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['description']}} \n\n\t            </td>\n\n\t            <td><a routerLink=\".\" class=\"btn\" \n\t                 [ngClass]=\"{'btn-primary': detail['_id']==selectedId, 'btn-outline-primary': detail['_id']!==selectedId}\"\n\t            \t (click)=\"selectViewDetail(i)\">View Details</a>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course-list/course-select.component.ts":
-/*!*************************************************************************!*\
-  !*** ./src/app/academics/course/course-list/course-select.component.ts ***!
-  \*************************************************************************/
-/*! exports provided: CourseSelectComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseSelectComponent", function() { return CourseSelectComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _course_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./course-list.component */ "./src/app/academics/course/course-list/course-list.component.ts");
-/* harmony import */ var _course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course.service */ "./src/app/academics/course/course.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var CourseSelectComponent = /** @class */ (function (_super) {
-    __extends(CourseSelectComponent, _super);
-    function CourseSelectComponent(courseService, injector, router, route, location) {
-        var _this = _super.call(this, courseService, injector, router, route, location) || this;
-        _this.courseService = courseService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    CourseSelectComponent.prototype.ngOnInit = function () {
-        this.selectedId = this.inputData;
-        this.populateList();
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], CourseSelectComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], CourseSelectComponent.prototype, "outputData", void 0);
-    CourseSelectComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-course-select',
-            template: __webpack_require__(/*! ./course-select.component.html */ "./src/app/academics/course/course-list/course-select.component.html"),
-            styles: [__webpack_require__(/*! ./course-list.component.css */ "./src/app/academics/course/course-list/course-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_course_service__WEBPACK_IMPORTED_MODULE_4__["CourseService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], CourseSelectComponent);
-    return CourseSelectComponent;
-}(_course_list_component__WEBPACK_IMPORTED_MODULE_3__["CourseListComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course.base.service.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/academics/course/course.base.service.ts ***!
-  \*********************************************************/
-/*! exports provided: CourseBaseService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseBaseService", function() { return CourseBaseService; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var servicePath = '/course/';
-var CourseBaseService = /** @class */ (function (_super) {
-    __extends(CourseBaseService, _super);
-    function CourseBaseService(http, serverRootUrl) {
-        var _this = this;
-        var serviceUrl = serverRootUrl + servicePath;
-        _this = _super.call(this, http, serviceUrl) || this;
-        return _this;
-    }
-    return CourseBaseService;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/academics/course/course.component.ts ***!
-  \******************************************************/
-/*! exports provided: ViewType, CourseComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseComponent", function() { return CourseComponent; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
-
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var itemCamelName = 'course';
-
-
-
-var CourseComponent = /** @class */ (function (_super) {
-    __extends(CourseComponent, _super);
-    function CourseComponent(courseService, injector, router, route, location, view) {
-        var _this = _super.call(this, courseService, injector, router, route, location, view, itemCamelName) || this;
-        _this.courseService = courseService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.view = view;
-        _this.indexFields = ['title',];
-        return _this;
-    }
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('AcademicsModal'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
-    ], CourseComponent.prototype, "focusEl", void 0);
-    return CourseComponent;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/course/course.service.ts":
-/*!****************************************************!*\
-  !*** ./src/app/academics/course/course.service.ts ***!
-  \****************************************************/
-/*! exports provided: CourseService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseService", function() { return CourseService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _course_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./course.base.service */ "./src/app/academics/course/course.base.service.ts");
-/* harmony import */ var _academics_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../academics.tokens */ "./src/app/academics/academics.tokens.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-var CourseService = /** @class */ (function (_super) {
-    __extends(CourseService, _super);
-    function CourseService(http, academicsServerRootUri) {
-        var _this = _super.call(this, http, academicsServerRootUri) || this;
-        _this.academicsServerRootUri = academicsServerRootUri;
-        return _this;
-    }
-    CourseService.prototype.ngOnDestroy = function () { };
-    CourseService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_academics_tokens__WEBPACK_IMPORTED_MODULE_3__["Academics_SERVER_ROOT_URI"])),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
-    ], CourseService);
-    return CourseService;
-}(_course_base_service__WEBPACK_IMPORTED_MODULE_2__["CourseBaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-detail/student-detail-pop.component.html":
-/*!************************************************************************************!*\
-  !*** ./src/app/academics/student/student-detail/student-detail-pop.component.html ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">{{ItemCamelName}} Detail</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['first_name']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['last_name']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Date of Birth</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['date_of_birth']?detail['date_of_birth']['value']:\"\"}}\n</div>\n\n\t\t\t<div class=\"col-3\"><label>Grade</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['grade']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-detail/student-detail-pop.component.ts":
-/*!**********************************************************************************!*\
-  !*** ./src/app/academics/student/student-detail/student-detail-pop.component.ts ***!
-  \**********************************************************************************/
-/*! exports provided: StudentDetailPopComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentDetailPopComponent", function() { return StudentDetailPopComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _student_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./student-detail.component */ "./src/app/academics/student/student-detail/student-detail.component.ts");
-/* harmony import */ var _student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../student.service */ "./src/app/academics/student/student.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentDetailPopComponent = /** @class */ (function (_super) {
-    __extends(StudentDetailPopComponent, _super);
-    function StudentDetailPopComponent(studentService, injector, router, route, location) {
-        var _this = _super.call(this, studentService, injector, router, route, location) || this;
-        _this.studentService = studentService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    StudentDetailPopComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], StudentDetailPopComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], StudentDetailPopComponent.prototype, "outputData", void 0);
-    StudentDetailPopComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-student-detail-pop',
-            template: __webpack_require__(/*! ./student-detail-pop.component.html */ "./src/app/academics/student/student-detail/student-detail-pop.component.html"),
-            styles: [__webpack_require__(/*! ./student-detail.component.css */ "./src/app/academics/student/student-detail/student-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentDetailPopComponent);
-    return StudentDetailPopComponent;
-}(_student_detail_component__WEBPACK_IMPORTED_MODULE_3__["StudentDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-detail/student-detail-sel.component.html":
-/*!************************************************************************************!*\
-  !*** ./src/app/academics/student/student-detail/student-detail-sel.component.html ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Selected {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <a routerLink=\".\" (click)=\"detailSelBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back to list\">&nbsp; {{ItemCamelName}} List</i></a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"detailSelSelected()\">Select</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail</h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['first_name']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['last_name']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Date of Birth</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['date_of_birth']?detail['date_of_birth']['value']:\"\"}}\n</div>\n\n\t\t\t<div class=\"col-3\"><label>Grade</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['grade']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-detail/student-detail-sel.component.ts":
-/*!**********************************************************************************!*\
-  !*** ./src/app/academics/student/student-detail/student-detail-sel.component.ts ***!
-  \**********************************************************************************/
-/*! exports provided: StudentDetailSelComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentDetailSelComponent", function() { return StudentDetailSelComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _student_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./student-detail.component */ "./src/app/academics/student/student-detail/student-detail.component.ts");
-/* harmony import */ var _student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../student.service */ "./src/app/academics/student/student.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentDetailSelComponent = /** @class */ (function (_super) {
-    __extends(StudentDetailSelComponent, _super);
-    function StudentDetailSelComponent(studentService, injector, router, route, location) {
-        var _this = _super.call(this, studentService, injector, router, route, location) || this;
-        _this.studentService = studentService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    StudentDetailSelComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], StudentDetailSelComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], StudentDetailSelComponent.prototype, "outputData", void 0);
-    StudentDetailSelComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-student-detail-sel',
-            template: __webpack_require__(/*! ./student-detail-sel.component.html */ "./src/app/academics/student/student-detail/student-detail-sel.component.html"),
-            styles: [__webpack_require__(/*! ./student-detail.component.css */ "./src/app/academics/student/student-detail/student-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentDetailSelComponent);
-    return StudentDetailSelComponent;
-}(_student_detail_component__WEBPACK_IMPORTED_MODULE_3__["StudentDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-detail/student-detail.component.css":
-/*!*******************************************************************************!*\
-  !*** ./src/app/academics/student/student-detail/student-detail.component.css ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnQvc3R1ZGVudC1kZXRhaWwvc3R1ZGVudC1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcy9zdHVkZW50L3N0dWRlbnQtZGV0YWlsL3N0dWRlbnQtZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-detail/student-detail.component.html":
-/*!********************************************************************************!*\
-  !*** ./src/app/academics/student/student-detail/student-detail.component.html ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['first_name']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['last_name']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Date of Birth</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['date_of_birth']?detail['date_of_birth']['value']:\"\"}}\n</div>\n\n\t\t\t<div class=\"col-3\"><label>Grade</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['grade']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n\t<br/>\n\t\n\t<ul class=\"nav nav-tabs\">\n\t  \n\t    <li class=\"nav-item\">\n\t    <a [routerLink]=\"['./studentclass/list']\"\n\t        class=\"nav-link\" routerLinkActive=\"active\">StudentClass</a>\n\t  </li>\n    </ul>\n    <router-outlet></router-outlet>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-detail/student-detail.component.ts":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/student/student-detail/student-detail.component.ts ***!
-  \******************************************************************************/
-/*! exports provided: StudentDetailComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentDetailComponent", function() { return StudentDetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _student_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../student.component */ "./src/app/academics/student/student.component.ts");
-/* harmony import */ var _student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../student.service */ "./src/app/academics/student/student.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentDetailComponent = /** @class */ (function (_super) {
-    __extends(StudentDetailComponent, _super);
-    function StudentDetailComponent(studentService, injector, router, route, location) {
-        var _this = _super.call(this, studentService, injector, router, route, location, _student_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
-        _this.studentService = studentService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.stringFields.push('first_name');
-        _this.stringFields.push('last_name');
-        _this.stringFields.push('email');
-        _this.dateFields = ['date_of_birth',];
-        return _this;
-    }
-    StudentDetailComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], StudentDetailComponent.prototype, "id", void 0);
-    StudentDetailComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-student-detail',
-            template: __webpack_require__(/*! ./student-detail.component.html */ "./src/app/academics/student/student-detail/student-detail.component.html"),
-            styles: [__webpack_require__(/*! ./student-detail.component.css */ "./src/app/academics/student/student-detail/student-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentDetailComponent);
-    return StudentDetailComponent;
-}(_student_component__WEBPACK_IMPORTED_MODULE_3__["StudentComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-edit/student-edit.component.css":
-/*!***************************************************************************!*\
-  !*** ./src/app/academics/student/student-edit/student-edit.component.css ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnQvc3R1ZGVudC1lZGl0L3N0dWRlbnQtZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnQvc3R1ZGVudC1lZGl0L3N0dWRlbnQtZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-edit/student-edit.component.html":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/student/student-edit/student-edit.component.html ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} Student</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('first_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditFirst_name\">First Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditFirst_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['first_name']\" name=\"EditFirst_name\"\n\t\t                #EditFirst_name=\"ngModel\">\n                <div *ngIf=\"detail['first_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('first_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditFirst_name.valid || EditFirst_name.pristine || EditFirst_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditFirst_name.errors && EditFirst_name.errors.required\">\n    \t        First_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('last_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLast_name\">Last Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditLast_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['last_name']\" name=\"EditLast_name\"\n\t\t                #EditLast_name=\"ngModel\">\n                <div *ngIf=\"detail['last_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('last_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditLast_name.valid || EditLast_name.pristine || EditLast_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLast_name.errors && EditLast_name.errors.required\">\n    \t        Last_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('date_of_birth')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDate_of_birth\">Date of Birth </label> <span> ({{dateFormat}})</span>\n\t        \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"EditDate_of_birth\" placeholder=\"{{dateFormat}}\"\n\t                 \n\t\t        \t  \n\t\t             [(ngModel)]=\"detail['date_of_birth']['date']\" name=\"EditDate_of_birth\"\n\t\t             ngbDatepicker #EditDate_of_birthDate=\"ngbDatepicker\" #EditDate_of_birth=\"ngModel\">\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"EditDate_of_birthDate.toggle()\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group -->         \n\t        <div [hidden]=\"EditDate_of_birth.valid || EditDate_of_birth.pristine || (EditDate_of_birth.errors && EditDate_of_birth.errors.ngbDate)\"\n\t             class=\"alert alert-danger\">\n\n \n\t        </div>\n\t        <div [hidden]=\"EditDate_of_birth.valid || EditDate_of_birth.untouched || !(EditDate_of_birth.errors && EditDate_of_birth.errors.ngbDate)\"\n     \t\t\tclass=\"alert alert-danger\">\n\t          <div *ngIf=\"EditDate_of_birth.errors && EditDate_of_birth.errors.ngbDate\">\n    \t        Date_of_birth must be in {{dateFormat}} format.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('email')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEmail\">Email</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditEmail\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['email']\" name=\"EditEmail\"\n\t\t                #EditEmail=\"ngModel\">\n                <div *ngIf=\"detail['email']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('email')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditEmail.valid || EditEmail.pristine || EditEmail.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEmail.errors && EditEmail.errors.required\">\n    \t        Email is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('grade')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditGrade\">Grade</label>\n\t        \n\t        <input type=\"number\" class=\"form-control\" id=\"EditGrade\" \n\t                \n\t                \n\t                required\n\t\t        \t \n\t                [(ngModel)]=\"detail['grade']\" name=\"EditGrade\"\n\t                #EditGrade=\"ngModel\">\n\t        <div [hidden]=\"EditGrade.valid || EditGrade.pristine || EditGrade.errors.minnumber\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditGrade.errors && EditGrade.errors.required\">\n    \t        Grade is required.\n  \t          </div>\n \n\n\t        </div>\n\n\t      </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('first_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditFirst_name\">First Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditFirst_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['first_name']\" name=\"EditFirst_name\"\n\t\t                #EditFirst_name=\"ngModel\">\n                <div *ngIf=\"detail['first_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('first_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditFirst_name.valid || EditFirst_name.pristine || EditFirst_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditFirst_name.errors && EditFirst_name.errors.required\">\n    \t        First_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('last_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLast_name\">Last Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditLast_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['last_name']\" name=\"EditLast_name\"\n\t\t                #EditLast_name=\"ngModel\">\n                <div *ngIf=\"detail['last_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('last_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditLast_name.valid || EditLast_name.pristine || EditLast_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLast_name.errors && EditLast_name.errors.required\">\n    \t        Last_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('date_of_birth')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDate_of_birth\">Date of Birth </label> <span> ({{dateFormat}})</span>\n\t        \n\t        <div class=\"input-group\">\n\t\t      <input class=\"form-control\" id=\"EditDate_of_birth\" placeholder=\"{{dateFormat}}\"\n\t                 \n\t\t        \t  \n\t\t             [(ngModel)]=\"detail['date_of_birth']['date']\" name=\"EditDate_of_birth\"\n\t\t             ngbDatepicker #EditDate_of_birthDate=\"ngbDatepicker\" #EditDate_of_birth=\"ngModel\">\n\t\t      <div class=\"input-group-append\">\n\t\t        <button class=\"btn btn-outline-secondary\" (click)=\"EditDate_of_birthDate.toggle()\" type=\"button\">\n\t\t          <i class=\"fas fa-calendar-alt\"></i>\n\t\t        </button>\n\t\t      </div>\n\t\t    </div><!-- input group -->         \n\t        <div [hidden]=\"EditDate_of_birth.valid || EditDate_of_birth.pristine || (EditDate_of_birth.errors && EditDate_of_birth.errors.ngbDate)\"\n\t             class=\"alert alert-danger\">\n\n \n\t        </div>\n\t        <div [hidden]=\"EditDate_of_birth.valid || EditDate_of_birth.untouched || !(EditDate_of_birth.errors && EditDate_of_birth.errors.ngbDate)\"\n     \t\t\tclass=\"alert alert-danger\">\n\t          <div *ngIf=\"EditDate_of_birth.errors && EditDate_of_birth.errors.ngbDate\">\n    \t        Date_of_birth must be in {{dateFormat}} format.\n  \t          </div>\n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('email')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEmail\">Email</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditEmail\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['email']\" name=\"EditEmail\"\n\t\t                #EditEmail=\"ngModel\">\n                <div *ngIf=\"detail['email']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('email')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditEmail.valid || EditEmail.pristine || EditEmail.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEmail.errors && EditEmail.errors.required\">\n    \t        Email is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('grade')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditGrade\">Grade</label>\n\t        \n\t        <input type=\"number\" class=\"form-control\" id=\"EditGrade\" \n\t                \n\t                \n\t                required\n\t\t        \t \n\t                [(ngModel)]=\"detail['grade']\" name=\"EditGrade\"\n\t                #EditGrade=\"ngModel\">\n\t        <div [hidden]=\"EditGrade.valid || EditGrade.pristine || EditGrade.errors.minnumber\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditGrade.errors && EditGrade.errors.required\">\n    \t        Grade is required.\n  \t          </div>\n \n\n\t        </div>\n\n\t      </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-edit/student-edit.component.ts":
-/*!**************************************************************************!*\
-  !*** ./src/app/academics/student/student-edit/student-edit.component.ts ***!
-  \**************************************************************************/
-/*! exports provided: StudentEditComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentEditComponent", function() { return StudentEditComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _student_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../student.component */ "./src/app/academics/student/student.component.ts");
-/* harmony import */ var _student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../student.service */ "./src/app/academics/student/student.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentEditComponent = /** @class */ (function (_super) {
-    __extends(StudentEditComponent, _super);
-    function StudentEditComponent(studentService, injector, router, route, location) {
-        var _this = _super.call(this, studentService, injector, router, route, location, _student_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
-        _this.studentService = studentService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.stringFields.push('first_name');
-        _this.stringFields.push('last_name');
-        _this.stringFields.push('email');
-        _this.dateFields = ['date_of_birth',];
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    StudentEditComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id) {
-            this.action = "Edit";
-            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
-        }
-        else {
-            this.action = "Create";
-            if (!this.cid)
-                this.cid = this.route.snapshot.queryParamMap.get('cid');
-            if (this.cid) {
-                this.populateDetailFromCopy(this.cid);
-            }
-            else if (this.initData) {
-                this.action = "Add";
-                this.subEdit = true;
-                var detail = {};
-                for (var prop in this.initData) {
-                    detail[prop] = this.initData[prop];
-                    this.hiddenFields.push(prop);
-                }
-                this.detail = this.formatDetail(detail);
-            }
-            else {
-                var detail = {};
-                this.detail = this.formatDetail(detail);
-            }
-        }
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], StudentEditComponent.prototype, "id", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], StudentEditComponent.prototype, "cid", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], StudentEditComponent.prototype, "initData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], StudentEditComponent.prototype, "done", void 0);
-    StudentEditComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-student-edit',
-            template: __webpack_require__(/*! ./student-edit.component.html */ "./src/app/academics/student/student-edit/student-edit.component.html"),
-            styles: [__webpack_require__(/*! ./student-edit.component.css */ "./src/app/academics/student/student-edit/student-edit.component.css")]
-        }),
-        __metadata("design:paramtypes", [_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentEditComponent);
-    return StudentEditComponent;
-}(_student_component__WEBPACK_IMPORTED_MODULE_3__["StudentComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-list/student-list.component.css":
-/*!***************************************************************************!*\
-  !*** ./src/app/academics/student/student-list/student-list.component.css ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnQvc3R1ZGVudC1saXN0L3N0dWRlbnQtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnQvc3R1ZGVudC1saXN0L3N0dWRlbnQtbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-list/student-list.component.html":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/student/student-list/student-list.component.html ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"studentTextSearch\" \n\t\t\t\t\t\t#studentTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for first_name, last_name, email\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">First Name</th>\n\t\t        <th scope=\"col\">Last Name</th>\n\t\t        <th scope=\"col\">Email</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['first_name']}} \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['last_name']}} \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['email']}} \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-list/student-list.component.ts":
-/*!**************************************************************************!*\
-  !*** ./src/app/academics/student/student-list/student-list.component.ts ***!
-  \**************************************************************************/
-/*! exports provided: StudentListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentListComponent", function() { return StudentListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _student_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../student.component */ "./src/app/academics/student/student.component.ts");
-/* harmony import */ var _student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../student.service */ "./src/app/academics/student/student.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentListComponent = /** @class */ (function (_super) {
-    __extends(StudentListComponent, _super);
-    function StudentListComponent(studentService, injector, router, route, location) {
-        var _this = _super.call(this, studentService, injector, router, route, location, _student_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
-        _this.studentService = studentService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.minDate = { year: (new Date()).getFullYear() - 100, month: 1, day: 1 };
-        _this.stringFields.push('first_name');
-        _this.stringFields.push('last_name');
-        _this.stringFields.push('email');
-        // this is to initialize the detail that will be used for search condition selection
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    StudentListComponent.prototype.ngOnInit = function () {
-        this.populateList();
-    };
-    StudentListComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-student-list',
-            template: __webpack_require__(/*! ./student-list.component.html */ "./src/app/academics/student/student-list/student-list.component.html"),
-            styles: [__webpack_require__(/*! ./student-list.component.css */ "./src/app/academics/student/student-list/student-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentListComponent);
-    return StudentListComponent;
-}(_student_component__WEBPACK_IMPORTED_MODULE_3__["StudentComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-list/student-select.component.html":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/student/student-list/student-select.component.html ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Select {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"studentTextSearch\" \n\t\t\t\t\t\t#studentTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for first_name, last_name, email\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t</div>\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">First Name</th>\n\t\t        <th scope=\"col\">Last Name</th>\n\t\t        <th scope=\"col\">Email</th>\n\n\t\t        <th></th>      \n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" \n\t        \t[ngClass]=\"{'clicked-row': detail['_id']==clickedId}\" >\n\t            <td scope=\"row\" (click)=\"selectItemSelected(i)\"  class=\"pointer\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['first_name']}} \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['last_name']}} \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['email']}} \n\n\t            </td>\n\n\t            <td><a routerLink=\".\" class=\"btn\" \n\t                 [ngClass]=\"{'btn-primary': detail['_id']==selectedId, 'btn-outline-primary': detail['_id']!==selectedId}\"\n\t            \t (click)=\"selectViewDetail(i)\">View Details</a>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student-list/student-select.component.ts":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/student/student-list/student-select.component.ts ***!
-  \****************************************************************************/
-/*! exports provided: StudentSelectComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentSelectComponent", function() { return StudentSelectComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _student_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./student-list.component */ "./src/app/academics/student/student-list/student-list.component.ts");
-/* harmony import */ var _student_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../student.service */ "./src/app/academics/student/student.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentSelectComponent = /** @class */ (function (_super) {
-    __extends(StudentSelectComponent, _super);
-    function StudentSelectComponent(studentService, injector, router, route, location) {
-        var _this = _super.call(this, studentService, injector, router, route, location) || this;
-        _this.studentService = studentService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    StudentSelectComponent.prototype.ngOnInit = function () {
-        this.selectedId = this.inputData;
-        this.populateList();
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], StudentSelectComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], StudentSelectComponent.prototype, "outputData", void 0);
-    StudentSelectComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-student-select',
-            template: __webpack_require__(/*! ./student-select.component.html */ "./src/app/academics/student/student-list/student-select.component.html"),
-            styles: [__webpack_require__(/*! ./student-list.component.css */ "./src/app/academics/student/student-list/student-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_student_service__WEBPACK_IMPORTED_MODULE_4__["StudentService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentSelectComponent);
-    return StudentSelectComponent;
-}(_student_list_component__WEBPACK_IMPORTED_MODULE_3__["StudentListComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student.base.service.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/academics/student/student.base.service.ts ***!
-  \***********************************************************/
-/*! exports provided: StudentBaseService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentBaseService", function() { return StudentBaseService; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var servicePath = '/student/';
-var StudentBaseService = /** @class */ (function (_super) {
-    __extends(StudentBaseService, _super);
-    function StudentBaseService(http, serverRootUrl) {
-        var _this = this;
-        var serviceUrl = serverRootUrl + servicePath;
-        _this = _super.call(this, http, serviceUrl) || this;
-        return _this;
-    }
-    return StudentBaseService;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/academics/student/student.component.ts ***!
-  \********************************************************/
-/*! exports provided: ViewType, StudentComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentComponent", function() { return StudentComponent; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
-
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var itemCamelName = 'student';
-
-
-
-var StudentComponent = /** @class */ (function (_super) {
-    __extends(StudentComponent, _super);
-    function StudentComponent(studentService, injector, router, route, location, view) {
-        var _this = _super.call(this, studentService, injector, router, route, location, view, itemCamelName) || this;
-        _this.studentService = studentService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.view = view;
-        _this.dateFormat = 'MM-DD-YYYY';
-        _this.timeFormat = 'hh:mm:ss';
-        _this.indexFields = ['email',];
-        return _this;
-    }
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('AcademicsModal'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
-    ], StudentComponent.prototype, "focusEl", void 0);
-    return StudentComponent;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/student/student.service.ts":
-/*!******************************************************!*\
-  !*** ./src/app/academics/student/student.service.ts ***!
-  \******************************************************/
-/*! exports provided: StudentService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentService", function() { return StudentService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _student_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./student.base.service */ "./src/app/academics/student/student.base.service.ts");
-/* harmony import */ var _academics_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../academics.tokens */ "./src/app/academics/academics.tokens.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-var StudentService = /** @class */ (function (_super) {
-    __extends(StudentService, _super);
-    function StudentService(http, academicsServerRootUri) {
-        var _this = _super.call(this, http, academicsServerRootUri) || this;
-        _this.academicsServerRootUri = academicsServerRootUri;
-        return _this;
-    }
-    StudentService.prototype.ngOnDestroy = function () { };
-    StudentService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_academics_tokens__WEBPACK_IMPORTED_MODULE_3__["Academics_SERVER_ROOT_URI"])),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
-    ], StudentService);
-    return StudentService;
-}(_student_base_service__WEBPACK_IMPORTED_MODULE_2__["StudentBaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail-sub.component.html":
-/*!***************************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-detail/studentclass-detail-sub.component.html ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n<div *ngIf=\"detail\">\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail-sub.component.ts":
-/*!*************************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-detail/studentclass-detail-sub.component.ts ***!
-  \*************************************************************************************************/
-/*! exports provided: StudentclassDetailSubComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassDetailSubComponent", function() { return StudentclassDetailSubComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _studentclass_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./studentclass-detail.component */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.ts");
-/* harmony import */ var _studentclass_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../studentclass.service */ "./src/app/academics/studentclass/studentclass.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentclassDetailSubComponent = /** @class */ (function (_super) {
-    __extends(StudentclassDetailSubComponent, _super);
-    function StudentclassDetailSubComponent(studentclassService, injector, router, route, location) {
-        var _this = _super.call(this, null, studentclassService, injector, router, route, location) || this;
-        _this.studentclassService = studentclassService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        return _this;
-    }
-    StudentclassDetailSubComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail sub view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], StudentclassDetailSubComponent.prototype, "inputData", void 0);
-    StudentclassDetailSubComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-studentclass-detail-sub',
-            template: __webpack_require__(/*! ./studentclass-detail-sub.component.html */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail-sub.component.html"),
-            styles: [__webpack_require__(/*! ./studentclass-detail.component.css */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_studentclass_service__WEBPACK_IMPORTED_MODULE_4__["StudentclassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentclassDetailSubComponent);
-    return StudentclassDetailSubComponent;
-}(_studentclass_detail_component__WEBPACK_IMPORTED_MODULE_3__["StudentclassDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.css":
-/*!**********************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.css ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnRjbGFzcy9zdHVkZW50Y2xhc3MtZGV0YWlsL3N0dWRlbnRjbGFzcy1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcy9zdHVkZW50Y2xhc3Mvc3R1ZGVudGNsYXNzLWRldGFpbC9zdHVkZW50Y2xhc3MtZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.html":
-/*!***********************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.html ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Student</label></div>\n\t\t\t<div class=\"col-9\">                \n               \t  \n\t            \t{{detail['student']?detail['student']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Class</label></div>\n\t\t\t<div class=\"col-9\">                \n               \t  \n\t            \t{{detail['class']?detail['class']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n    <router-outlet></router-outlet>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.ts":
-/*!*********************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.ts ***!
-  \*********************************************************************************************/
-/*! exports provided: StudentclassDetailComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassDetailComponent", function() { return StudentclassDetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _studentclass_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../studentclass.component */ "./src/app/academics/studentclass/studentclass.component.ts");
-/* harmony import */ var _studentclass_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../studentclass.service */ "./src/app/academics/studentclass/studentclass.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var StudentclassDetailComponent = /** @class */ (function (_super) {
-    __extends(StudentclassDetailComponent, _super);
-    function StudentclassDetailComponent(componentFactoryResolver, studentclassService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, studentclassService, injector, router, route, location, _studentclass_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.studentclassService = studentclassService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.referenceFields = ['student', 'class',];
-        _this.referenceFieldsMap = { 'student': 'student', 'class': 'class', };
-        return _this;
-    }
-    StudentclassDetailComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], StudentclassDetailComponent.prototype, "id", void 0);
-    StudentclassDetailComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-studentclass-detail',
-            template: __webpack_require__(/*! ./studentclass-detail.component.html */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.html"),
-            styles: [__webpack_require__(/*! ./studentclass-detail.component.css */ "./src/app/academics/studentclass/studentclass-detail/studentclass-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _studentclass_service__WEBPACK_IMPORTED_MODULE_4__["StudentclassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentclassDetailComponent);
-    return StudentclassDetailComponent;
-}(_studentclass_component__WEBPACK_IMPORTED_MODULE_3__["StudentclassComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.css":
-/*!******************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.css ***!
-  \******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnRjbGFzcy9zdHVkZW50Y2xhc3MtZWRpdC9zdHVkZW50Y2xhc3MtZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnRjbGFzcy9zdHVkZW50Y2xhc3MtZWRpdC9zdHVkZW50Y2xhc3MtZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.html":
-/*!*******************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.html ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} StudentClass</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('student')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditStudent\">Student </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('student')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditStudent\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['student']['_id']}\"\n\t\t             (focus)=\"onRefSelect('student')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['student']['value']\" name=\"EditStudent\"\n\t\t             #EditStudent=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['student']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('student')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditStudent.valid || EditStudent.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditStudent.errors && EditStudent.errors.required && !(detail['student']?.date)\">\n    \t        Student is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('class')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditClass\">Class </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('class')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditClass\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['class']['_id']}\"\n\t\t             (focus)=\"onRefSelect('class')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['class']['value']\" name=\"EditClass\"\n\t\t             #EditClass=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['class']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('class')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditClass.valid || EditClass.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditClass.errors && EditClass.errors.required && !(detail['class']?.date)\">\n    \t        Class is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('student')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditStudent\">Student </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('student')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditStudent\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['student']['_id']}\"\n\t\t             (focus)=\"onRefSelect('student')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['student']['value']\" name=\"EditStudent\"\n\t\t             #EditStudent=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['student']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('student')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditStudent.valid || EditStudent.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditStudent.errors && EditStudent.errors.required && !(detail['student']?.date)\">\n    \t        Student is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('class')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditClass\">Class </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('class')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditClass\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['class']['_id']}\"\n\t\t             (focus)=\"onRefSelect('class')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['class']['value']\" name=\"EditClass\"\n\t\t             #EditClass=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['class']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('class')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditClass.valid || EditClass.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditClass.errors && EditClass.errors.required && !(detail['class']?.date)\">\n    \t        Class is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n<ng-template academics-ref-select></ng-template>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.ts":
-/*!*****************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.ts ***!
-  \*****************************************************************************************/
-/*! exports provided: StudentclassEditComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassEditComponent", function() { return StudentclassEditComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _studentclass_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../studentclass.component */ "./src/app/academics/studentclass/studentclass.component.ts");
-/* harmony import */ var _studentclass_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../studentclass.service */ "./src/app/academics/studentclass/studentclass.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var StudentclassEditComponent = /** @class */ (function (_super) {
-    __extends(StudentclassEditComponent, _super);
-    function StudentclassEditComponent(componentFactoryResolver, studentclassService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, studentclassService, injector, router, route, location, _studentclass_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.studentclassService = studentclassService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.referenceFields = ['student', 'class',];
-        _this.referenceFieldsMap = { 'student': 'student', 'class': 'class', };
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    StudentclassEditComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id) {
-            this.action = "Edit";
-            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
-        }
-        else {
-            this.action = "Create";
-            if (!this.cid)
-                this.cid = this.route.snapshot.queryParamMap.get('cid');
-            if (this.cid) {
-                this.populateDetailFromCopy(this.cid);
-            }
-            else if (this.initData) {
-                this.action = "Add";
-                this.subEdit = true;
-                var detail = {};
-                for (var prop in this.initData) {
-                    detail[prop] = this.initData[prop];
-                    this.hiddenFields.push(prop);
-                }
-                this.detail = this.formatDetail(detail);
-            }
-            else {
-                var detail = {};
-                this.detail = this.formatDetail(detail);
-            }
-        }
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], StudentclassEditComponent.prototype, "id", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], StudentclassEditComponent.prototype, "cid", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], StudentclassEditComponent.prototype, "initData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], StudentclassEditComponent.prototype, "done", void 0);
-    StudentclassEditComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-studentclass-edit',
-            template: __webpack_require__(/*! ./studentclass-edit.component.html */ "./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.html"),
-            styles: [__webpack_require__(/*! ./studentclass-edit.component.css */ "./src/app/academics/studentclass/studentclass-edit/studentclass-edit.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _studentclass_service__WEBPACK_IMPORTED_MODULE_4__["StudentclassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentclassEditComponent);
-    return StudentclassEditComponent;
-}(_studentclass_component__WEBPACK_IMPORTED_MODULE_3__["StudentclassComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-list/studentclass-list-sub.component.html":
-/*!***********************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-list/studentclass-list-sub.component.html ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n      <div class=\"add-area\">\n        <a href=\"javascript:void(0)\" (click)=\"onAdd()\"><i class=\"fas fa-plus-square\" title=\"Add\"></i></a>\n        <div *ngIf=\"isAdding\">\n            <app-studentclass-edit [initData]=\"parentData\" (done)=\"onAddDone($event)\"></app-studentclass-edit>\n        </div>\n    </div>\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table\">\n\t    <thead>\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th *ngIf=\"referenceFieldsMap['student'] != parentItem\"  scope=\"col\">\n\t\t        \tStudent\n\t\t        </th>\n\t\t        <th *ngIf=\"referenceFieldsMap['class'] != parentItem\"  scope=\"col\">\n\t\t        \tClass\n\t\t        </th>\t\t        \n                <th scope=\"col\" style=\"width:2rem;\"></th>\n\n\t\t        <th scope=\"col\" style=\"width:2rem;\"></th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t      <ng-template ngFor let-detail [ngForOf]=\"list\" let-i=\"index\">\n\t        <tr [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\"> <!-- *ngFor=\"let detail of list;  let i = index\" -->\n\t            <td scope=\"row\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td *ngIf=\"referenceFieldsMap['student'] != parentItem\"  >\n\t            \t                \n               \t  \n\t            \t{{detail['student']?detail['student']['value']:\"\"}}\n\t              \n\n                </td>\n\t            <td *ngIf=\"referenceFieldsMap['class'] != parentItem\"  >\n\t            \t                \n               \t  \n\t            \t{{detail['class']?detail['class']['value']:\"\"}}\n\t              \n\n                </td>\n\t            <td>\n\n                </td>\n\n\t            <td>\n\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\n                </td>\n\t        </tr>\n\n\t        <tr *ngIf=\"checkedItem[i]\" >\n\t        \t<td colspan=\"2\"><app-studentclass-detail-sub [inputData]=\"detail['_id']\"></app-studentclass-detail-sub></td>\n\t        </tr>\n\t      </ng-template>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-list/studentclass-list-sub.component.ts":
-/*!*********************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-list/studentclass-list-sub.component.ts ***!
-  \*********************************************************************************************/
-/*! exports provided: StudentclassListSubComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassListSubComponent", function() { return StudentclassListSubComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _studentclass_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./studentclass-list.component */ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.ts");
-/* harmony import */ var _studentclass_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../studentclass.service */ "./src/app/academics/studentclass/studentclass.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var StudentclassListSubComponent = /** @class */ (function (_super) {
-    __extends(StudentclassListSubComponent, _super);
-    function StudentclassListSubComponent(studentclassService, injector, router, route, location) {
-        var _this = _super.call(this, null, studentclassService, injector, router, route, location) || this;
-        _this.studentclassService = studentclassService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.parentData = {};
-        return _this;
-    }
-    StudentclassListSubComponent.prototype.ngOnInit = function () {
-        var ref = this.getParentRouteRefField();
-        var id = this.getParentRouteItemId();
-        this.detail = {};
-        if (this.arrayFields.some(function (x) { return x[0] == ref; })) {
-            this.parentData[ref] = { 'selection': [{ '_id': id }] };
-            this.detail[ref] = { 'selection': [{ '_id': id }] }; //search on array list
-        }
-        else {
-            this.parentData[ref] = { '_id': id };
-            this.detail[ref] = { '_id': id }; //make this as the search context
-        }
-        this.processSearchContext();
-        this.populateList();
-    };
-    StudentclassListSubComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-studentclass-list-sub',
-            template: __webpack_require__(/*! ./studentclass-list-sub.component.html */ "./src/app/academics/studentclass/studentclass-list/studentclass-list-sub.component.html"),
-            styles: [__webpack_require__(/*! ./studentclass-list.component.css */ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_studentclass_service__WEBPACK_IMPORTED_MODULE_4__["StudentclassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentclassListSubComponent);
-    return StudentclassListSubComponent;
-}(_studentclass_list_component__WEBPACK_IMPORTED_MODULE_3__["StudentclassListComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.css":
-/*!******************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-list/studentclass-list.component.css ***!
-  \******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnRjbGFzcy9zdHVkZW50Y2xhc3MtbGlzdC9zdHVkZW50Y2xhc3MtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL3N0dWRlbnRjbGFzcy9zdHVkZW50Y2xhc3MtbGlzdC9zdHVkZW50Y2xhc3MtbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.html":
-/*!*******************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-list/studentclass-list.component.html ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\n\t\t\t\t<div class=\"text-center\">\n                    <span  class=\"pointer\" (click)=\"toggleMoreSearch()\">\n                        <span class=\"refine-search-text\">Refine Search &nbsp;</span>\n                        <span>\n                            <i *ngIf=\"!moreSearchOpened\"  class=\"fas fa-plus-circle\" title=\"More\"></i>\n                            <i *ngIf=\"moreSearchOpened\" class=\"fas fa-minus-circle\"  title=\"Less\"></i>\n                        </span>\n                    </span>\n\t\t\t\t</div>\n\t\t\t    <div class=\"shadow\" *ngIf=\"moreSearchOpened\">\n\t\t\t\t\t<div class=\"card\">\n\t\t\t\t\t\t<div class=\"card-body\">\n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"studentclassEditStudent\">Student</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"studentclassEditStudent\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['student']['_id']}\"\n\t\t             (focus)=\"detail['student']['_id']?onRefShow('student', 'select', detail['student']['_id']):onRefSelect('student')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['student']['value']\" name=\"studentclassEditStudent\"\n\t\t             #studentclassEditStudent=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('student')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('student')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"studentclassEditClass\">Class</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"studentclassEditClass\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['class']['_id']}\"\n\t\t             (focus)=\"detail['class']['_id']?onRefShow('class', 'select', detail['class']['_id']):onRefSelect('class')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['class']['value']\" name=\"studentclassEditClass\"\n\t\t             #studentclassEditClass=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('class')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('class')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\n\t\t\t\t\t\t  <div class=\"action-buttons\" style=\"margin-top: 10px;\">\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onSearchClear()\">Reset</button>\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\" (click)=\"searchList()\">Search</button>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t        </div>\n\t\t        <div *ngIf=\"!moreSearchOpened\" style=\"text-align: left;\">\n\t\t\t\t\t<span class=\"badge badge-pill badge-info\" *ngFor=\"let value of searchMoreDetail\">\n\t\t\t\t\t    <a (click)=\"toggleMoreSearch()\" class=\"pointer\"> {{value[0]}}: {{value[1]}}</a>\n\t\t\t\t\t    <i class=\"fas fa-times-circle icon-clear-badge\" (click)=\"clearValueFromDetailAndSearchList(value[0])\" title=\"Clear\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t    \n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Student</th>\n\t\t        <th scope=\"col\">Class</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n               \t  \n\t            \t{{detail['student']?detail['student']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n               \t  \n\t            \t{{detail['class']?detail['class']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n<ng-template academics-ref-select></ng-template>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.ts":
-/*!*****************************************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass-list/studentclass-list.component.ts ***!
-  \*****************************************************************************************/
-/*! exports provided: StudentclassListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassListComponent", function() { return StudentclassListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _studentclass_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../studentclass.component */ "./src/app/academics/studentclass/studentclass.component.ts");
-/* harmony import */ var _studentclass_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../studentclass.service */ "./src/app/academics/studentclass/studentclass.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var StudentclassListComponent = /** @class */ (function (_super) {
-    __extends(StudentclassListComponent, _super);
-    function StudentclassListComponent(componentFactoryResolver, studentclassService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, studentclassService, injector, router, route, location, _studentclass_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.studentclassService = studentclassService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.referenceFields = ['student', 'class',];
-        _this.referenceFieldsMap = { 'student': 'student', 'class': 'class', };
-        // this is to initialize the detail that will be used for search condition selection
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    StudentclassListComponent.prototype.ngOnInit = function () {
-        this.populateList();
-    };
-    StudentclassListComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-studentclass-list',
-            template: __webpack_require__(/*! ./studentclass-list.component.html */ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.html"),
-            styles: [__webpack_require__(/*! ./studentclass-list.component.css */ "./src/app/academics/studentclass/studentclass-list/studentclass-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _studentclass_service__WEBPACK_IMPORTED_MODULE_4__["StudentclassService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], StudentclassListComponent);
-    return StudentclassListComponent;
-}(_studentclass_component__WEBPACK_IMPORTED_MODULE_3__["StudentclassComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass.base.service.ts":
-/*!*********************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass.base.service.ts ***!
-  \*********************************************************************/
-/*! exports provided: StudentclassBaseService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassBaseService", function() { return StudentclassBaseService; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var servicePath = '/studentclass/';
-var StudentclassBaseService = /** @class */ (function (_super) {
-    __extends(StudentclassBaseService, _super);
-    function StudentclassBaseService(http, serverRootUrl) {
-        var _this = this;
-        var serviceUrl = serverRootUrl + servicePath;
-        _this = _super.call(this, http, serviceUrl) || this;
-        return _this;
-    }
-    return StudentclassBaseService;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass.component.ts":
-/*!******************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass.component.ts ***!
-  \******************************************************************/
-/*! exports provided: ViewType, StudentclassComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassComponent", function() { return StudentclassComponent; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
-
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _academics_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../academics.component */ "./src/app/academics/academics.component.ts");
-/* harmony import */ var _student_student_detail_student_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../student/student-detail/student-detail-sel.component */ "./src/app/academics/student/student-detail/student-detail-sel.component.ts");
-/* harmony import */ var _student_student_detail_student_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../student/student-detail/student-detail-pop.component */ "./src/app/academics/student/student-detail/student-detail-pop.component.ts");
-/* harmony import */ var _student_student_list_student_select_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../student/student-list/student-select.component */ "./src/app/academics/student/student-list/student-select.component.ts");
-/* harmony import */ var _class_class_detail_class_detail_sel_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../class/class-detail/class-detail-sel.component */ "./src/app/academics/class/class-detail/class-detail-sel.component.ts");
-/* harmony import */ var _class_class_detail_class_detail_pop_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../class/class-detail/class-detail-pop.component */ "./src/app/academics/class/class-detail/class-detail-pop.component.ts");
-/* harmony import */ var _class_class_list_class_select_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../class/class-list/class-select.component */ "./src/app/academics/class/class-list/class-select.component.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var itemCamelName = 'studentClass';
-
-
-
-
-
-
-
-
-
-var StudentclassComponent = /** @class */ (function (_super) {
-    __extends(StudentclassComponent, _super);
-    function StudentclassComponent(componentFactoryResolver, studentclassService, injector, router, route, location, view) {
-        var _this = _super.call(this, studentclassService, injector, router, route, location, view, itemCamelName) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.studentclassService = studentclassService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.view = view;
-        _this.selectComponents = {
-            'student': {
-                'select-type': _student_student_list_student_select_component__WEBPACK_IMPORTED_MODULE_5__["StudentSelectComponent"],
-                'select-detail-type': _student_student_detail_student_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__["StudentDetailSelComponent"],
-                'pop-detail-type': _student_student_detail_student_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__["StudentDetailPopComponent"],
-                'componentRef': null
-            },
-            'class': {
-                'select-type': _class_class_list_class_select_component__WEBPACK_IMPORTED_MODULE_8__["ClassSelectComponent"],
-                'select-detail-type': _class_class_detail_class_detail_sel_component__WEBPACK_IMPORTED_MODULE_6__["ClassDetailSelComponent"],
-                'pop-detail-type': _class_class_detail_class_detail_pop_component__WEBPACK_IMPORTED_MODULE_7__["ClassDetailPopComponent"],
-                'componentRef': null
-            },
-        };
-        _this.indexFields = ['student',];
-        return _this;
-    }
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_academics_component__WEBPACK_IMPORTED_MODULE_2__["AcademicsRefSelectDirective"]),
-        __metadata("design:type", _academics_component__WEBPACK_IMPORTED_MODULE_2__["AcademicsRefSelectDirective"])
-    ], StudentclassComponent.prototype, "refSelectDirective", void 0);
-    return StudentclassComponent;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/studentclass/studentclass.service.ts":
-/*!****************************************************************!*\
-  !*** ./src/app/academics/studentclass/studentclass.service.ts ***!
-  \****************************************************************/
-/*! exports provided: StudentclassService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentclassService", function() { return StudentclassService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _studentclass_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./studentclass.base.service */ "./src/app/academics/studentclass/studentclass.base.service.ts");
-/* harmony import */ var _academics_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../academics.tokens */ "./src/app/academics/academics.tokens.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-var StudentclassService = /** @class */ (function (_super) {
-    __extends(StudentclassService, _super);
-    function StudentclassService(http, academicsServerRootUri) {
-        var _this = _super.call(this, http, academicsServerRootUri) || this;
-        _this.academicsServerRootUri = academicsServerRootUri;
-        return _this;
-    }
-    StudentclassService.prototype.ngOnDestroy = function () { };
-    StudentclassService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_academics_tokens__WEBPACK_IMPORTED_MODULE_3__["Academics_SERVER_ROOT_URI"])),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
-    ], StudentclassService);
-    return StudentclassService;
-}(_studentclass_base_service__WEBPACK_IMPORTED_MODULE_2__["StudentclassBaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail-pop.component.html":
-/*!************************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail-pop.component.html ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">{{ItemCamelName}} Detail</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['firstName']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['lastName']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Phone Number</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['phoneNumber']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Courses</label></div>\n\t\t\t<div class=\"col-3\">                \n               \t  \n\t            \t{{detail['courses']?detail['courses']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Introduction</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['introduction']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail-pop.component.ts":
-/*!**********************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail-pop.component.ts ***!
-  \**********************************************************************************/
-/*! exports provided: TeacherDetailPopComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherDetailPopComponent", function() { return TeacherDetailPopComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./teacher-detail.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var TeacherDetailPopComponent = /** @class */ (function (_super) {
-    __extends(TeacherDetailPopComponent, _super);
-    function TeacherDetailPopComponent(teacherService, injector, router, route, location) {
-        var _this = _super.call(this, null, teacherService, injector, router, route, location) || this;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    TeacherDetailPopComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], TeacherDetailPopComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], TeacherDetailPopComponent.prototype, "outputData", void 0);
-    TeacherDetailPopComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-detail-pop',
-            template: __webpack_require__(/*! ./teacher-detail-pop.component.html */ "./src/app/academics/teacher/teacher-detail/teacher-detail-pop.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-detail.component.css */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherDetailPopComponent);
-    return TeacherDetailPopComponent;
-}(_teacher_detail_component__WEBPACK_IMPORTED_MODULE_3__["TeacherDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail-sel.component.html":
-/*!************************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail-sel.component.html ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Selected {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <a routerLink=\".\" (click)=\"detailSelBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back to list\">&nbsp; {{ItemCamelName}} List</i></a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"detailSelSelected()\">Select</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail</h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['firstName']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['lastName']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Phone Number</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['phoneNumber']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Courses</label></div>\n\t\t\t<div class=\"col-3\">                \n               \t  \n\t            \t{{detail['courses']?detail['courses']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Introduction</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['introduction']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail-sel.component.ts":
-/*!**********************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail-sel.component.ts ***!
-  \**********************************************************************************/
-/*! exports provided: TeacherDetailSelComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherDetailSelComponent", function() { return TeacherDetailSelComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./teacher-detail.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var TeacherDetailSelComponent = /** @class */ (function (_super) {
-    __extends(TeacherDetailSelComponent, _super);
-    function TeacherDetailSelComponent(teacherService, injector, router, route, location) {
-        var _this = _super.call(this, null, teacherService, injector, router, route, location) || this;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    TeacherDetailSelComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], TeacherDetailSelComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], TeacherDetailSelComponent.prototype, "outputData", void 0);
-    TeacherDetailSelComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-detail-sel',
-            template: __webpack_require__(/*! ./teacher-detail-sel.component.html */ "./src/app/academics/teacher/teacher-detail/teacher-detail-sel.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-detail.component.css */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherDetailSelComponent);
-    return TeacherDetailSelComponent;
-}(_teacher_detail_component__WEBPACK_IMPORTED_MODULE_3__["TeacherDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail-sub.component.html":
-/*!************************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail-sub.component.html ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n<div *ngIf=\"detail\">\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Phone Number</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['phoneNumber']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail-sub.component.ts":
-/*!**********************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail-sub.component.ts ***!
-  \**********************************************************************************/
-/*! exports provided: TeacherDetailSubComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherDetailSubComponent", function() { return TeacherDetailSubComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./teacher-detail.component */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var TeacherDetailSubComponent = /** @class */ (function (_super) {
-    __extends(TeacherDetailSubComponent, _super);
-    function TeacherDetailSubComponent(teacherService, injector, router, route, location) {
-        var _this = _super.call(this, null, teacherService, injector, router, route, location) || this;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        return _this;
-    }
-    TeacherDetailSubComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.inputData;
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail sub view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], TeacherDetailSubComponent.prototype, "inputData", void 0);
-    TeacherDetailSubComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-detail-sub',
-            template: __webpack_require__(/*! ./teacher-detail-sub.component.html */ "./src/app/academics/teacher/teacher-detail/teacher-detail-sub.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-detail.component.css */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherDetailSubComponent);
-    return TeacherDetailSubComponent;
-}(_teacher_detail_component__WEBPACK_IMPORTED_MODULE_3__["TeacherDetailComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.css":
-/*!*******************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail.component.css ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3RlYWNoZXIvdGVhY2hlci1kZXRhaWwvdGVhY2hlci1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcy90ZWFjaGVyL3RlYWNoZXItZGV0YWlsL3RlYWNoZXItZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.html":
-/*!********************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail.component.html ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['firstName']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['lastName']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Phone Number</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['phoneNumber']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Courses</label></div>\n\t\t\t<div class=\"col-3\">                \n               \t  \n\t            \t{{detail['courses']?detail['courses']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Introduction</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['introduction']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n\t<br/>\n\t\n\t<ul class=\"nav nav-tabs\">\n\t  \n\t    <li class=\"nav-item\">\n\t    <a [routerLink]=\"['./class/list']\"\n\t        class=\"nav-link\" routerLinkActive=\"active\">Class</a>\n\t  </li>\n    </ul>\n    <router-outlet></router-outlet>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.ts":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-detail/teacher-detail.component.ts ***!
-  \******************************************************************************/
-/*! exports provided: TeacherDetailComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherDetailComponent", function() { return TeacherDetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../teacher.component */ "./src/app/academics/teacher/teacher.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var TeacherDetailComponent = /** @class */ (function (_super) {
-    __extends(TeacherDetailComponent, _super);
-    function TeacherDetailComponent(componentFactoryResolver, teacherService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, teacherService, injector, router, route, location, _teacher_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.stringFields.push('firstName');
-        _this.stringFields.push('lastName');
-        _this.stringFields.push('email');
-        _this.stringFields.push('phoneNumber');
-        _this.stringFields.push('introduction');
-        _this.referenceFields = ['courses',];
-        _this.referenceFieldsMap = { 'courses': 'course', };
-        return _this;
-    }
-    TeacherDetailComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id)
-            this.populateDetail(this.id);
-        else
-            console.error("Routing error for detail view... no id...");
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], TeacherDetailComponent.prototype, "id", void 0);
-    TeacherDetailComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-detail',
-            template: __webpack_require__(/*! ./teacher-detail.component.html */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-detail.component.css */ "./src/app/academics/teacher/teacher-detail/teacher-detail.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherDetailComponent);
-    return TeacherDetailComponent;
-}(_teacher_component__WEBPACK_IMPORTED_MODULE_3__["TeacherComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-edit/teacher-edit.component.css":
-/*!***************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-edit/teacher-edit.component.css ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3RlYWNoZXIvdGVhY2hlci1lZGl0L3RlYWNoZXItZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL3RlYWNoZXIvdGVhY2hlci1lZGl0L3RlYWNoZXItZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-edit/teacher-edit.component.html":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-edit/teacher-edit.component.html ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} Teacher</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('firstName')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditFirstName\">First Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditFirstName\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['firstName']\" name=\"EditFirstName\"\n\t\t                #EditFirstName=\"ngModel\">\n                <div *ngIf=\"detail['firstName']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('firstName')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditFirstName.valid || EditFirstName.pristine || EditFirstName.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditFirstName.errors && EditFirstName.errors.required\">\n    \t        FirstName is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('lastName')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLastName\">Last Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditLastName\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['lastName']\" name=\"EditLastName\"\n\t\t                #EditLastName=\"ngModel\">\n                <div *ngIf=\"detail['lastName']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('lastName')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditLastName.valid || EditLastName.pristine || EditLastName.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLastName.errors && EditLastName.errors.required\">\n    \t        LastName is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('courses')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditCourses\">Courses </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('courses')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditCourses\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['courses']['_id']}\"\n\t\t             (focus)=\"onRefSelect('courses')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['courses']['value']\" name=\"EditCourses\"\n\t\t             #EditCourses=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['courses']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('courses')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditCourses.valid || EditCourses.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditCourses.errors && EditCourses.errors.required && !(detail['courses']?.date)\">\n    \t        Courses is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('introduction')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditIntroduction\">Introduction</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditIntroduction\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['introduction']\" name=\"EditIntroduction\"\n\t\t                #EditIntroduction=\"ngModel\">\n                <div *ngIf=\"detail['introduction']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('introduction')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditIntroduction.valid || EditIntroduction.pristine || EditIntroduction.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditIntroduction.errors && EditIntroduction.errors.required\">\n    \t        Introduction is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('email')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEmail\">Email</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditEmail\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['email']\" name=\"EditEmail\"\n\t\t                #EditEmail=\"ngModel\">\n                <div *ngIf=\"detail['email']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('email')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditEmail.valid || EditEmail.pristine || EditEmail.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEmail.errors && EditEmail.errors.required\">\n    \t        Email is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('phoneNumber')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditPhoneNumber\">Phone Number</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditPhoneNumber\" \n\t\t                \n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['phoneNumber']\" name=\"EditPhoneNumber\"\n\t\t                #EditPhoneNumber=\"ngModel\">\n                <div *ngIf=\"detail['phoneNumber']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('phoneNumber')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditPhoneNumber.valid || EditPhoneNumber.pristine || EditPhoneNumber.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('firstName')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditFirstName\">First Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditFirstName\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['firstName']\" name=\"EditFirstName\"\n\t\t                #EditFirstName=\"ngModel\">\n                <div *ngIf=\"detail['firstName']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('firstName')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditFirstName.valid || EditFirstName.pristine || EditFirstName.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditFirstName.errors && EditFirstName.errors.required\">\n    \t        FirstName is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('lastName')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLastName\">Last Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditLastName\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['lastName']\" name=\"EditLastName\"\n\t\t                #EditLastName=\"ngModel\">\n                <div *ngIf=\"detail['lastName']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('lastName')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditLastName.valid || EditLastName.pristine || EditLastName.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLastName.errors && EditLastName.errors.required\">\n    \t        LastName is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('courses')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditCourses\">Courses </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('courses')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditCourses\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['courses']['_id']}\"\n\t\t             (focus)=\"onRefSelect('courses')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['courses']['value']\" name=\"EditCourses\"\n\t\t             #EditCourses=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['courses']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('courses')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditCourses.valid || EditCourses.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditCourses.errors && EditCourses.errors.required && !(detail['courses']?.date)\">\n    \t        Courses is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('introduction')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditIntroduction\">Introduction</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditIntroduction\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['introduction']\" name=\"EditIntroduction\"\n\t\t                #EditIntroduction=\"ngModel\">\n                <div *ngIf=\"detail['introduction']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('introduction')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditIntroduction.valid || EditIntroduction.pristine || EditIntroduction.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditIntroduction.errors && EditIntroduction.errors.required\">\n    \t        Introduction is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('email')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEmail\">Email</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditEmail\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['email']\" name=\"EditEmail\"\n\t\t                #EditEmail=\"ngModel\">\n                <div *ngIf=\"detail['email']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('email')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditEmail.valid || EditEmail.pristine || EditEmail.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEmail.errors && EditEmail.errors.required\">\n    \t        Email is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('phoneNumber')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditPhoneNumber\">Phone Number</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditPhoneNumber\" \n\t\t                \n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['phoneNumber']\" name=\"EditPhoneNumber\"\n\t\t                #EditPhoneNumber=\"ngModel\">\n                <div *ngIf=\"detail['phoneNumber']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('phoneNumber')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditPhoneNumber.valid || EditPhoneNumber.pristine || EditPhoneNumber.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n<ng-template academics-ref-select></ng-template>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-edit/teacher-edit.component.ts":
-/*!**************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-edit/teacher-edit.component.ts ***!
-  \**************************************************************************/
-/*! exports provided: TeacherEditComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherEditComponent", function() { return TeacherEditComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../teacher.component */ "./src/app/academics/teacher/teacher.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var TeacherEditComponent = /** @class */ (function (_super) {
-    __extends(TeacherEditComponent, _super);
-    function TeacherEditComponent(componentFactoryResolver, teacherService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, teacherService, injector, router, route, location, _teacher_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.stringFields.push('firstName');
-        _this.stringFields.push('lastName');
-        _this.stringFields.push('introduction');
-        _this.stringFields.push('email');
-        _this.stringFields.push('phoneNumber');
-        _this.referenceFields = ['courses',];
-        _this.referenceFieldsMap = { 'courses': 'course', };
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    TeacherEditComponent.prototype.ngOnInit = function () {
-        if (!this.id)
-            this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id) {
-            this.action = "Edit";
-            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
-        }
-        else {
-            this.action = "Create";
-            if (!this.cid)
-                this.cid = this.route.snapshot.queryParamMap.get('cid');
-            if (this.cid) {
-                this.populateDetailFromCopy(this.cid);
-            }
-            else if (this.initData) {
-                this.action = "Add";
-                this.subEdit = true;
-                var detail = {};
-                for (var prop in this.initData) {
-                    detail[prop] = this.initData[prop];
-                    this.hiddenFields.push(prop);
-                }
-                this.detail = this.formatDetail(detail);
-            }
-            else {
-                var detail = {};
-                this.detail = this.formatDetail(detail);
-            }
-        }
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], TeacherEditComponent.prototype, "id", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", String)
-    ], TeacherEditComponent.prototype, "cid", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], TeacherEditComponent.prototype, "initData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], TeacherEditComponent.prototype, "done", void 0);
-    TeacherEditComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-edit',
-            template: __webpack_require__(/*! ./teacher-edit.component.html */ "./src/app/academics/teacher/teacher-edit/teacher-edit.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-edit.component.css */ "./src/app/academics/teacher/teacher-edit/teacher-edit.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherEditComponent);
-    return TeacherEditComponent;
-}(_teacher_component__WEBPACK_IMPORTED_MODULE_3__["TeacherComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-list/teacher-list-sub.component.html":
-/*!********************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-list/teacher-list-sub.component.html ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n      \n\t<div class=\"container search\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table\">\n\t    <thead>\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">\n\t\t        \tFirst Name\n\t\t        </th>\n\t\t        <th scope=\"col\">\n\t\t        \tLast Name\n\t\t        </th>\n\t\t        <th *ngIf=\"referenceFieldsMap['courses'] != parentItem\"  scope=\"col\">\n\t\t        \tCourses\n\t\t        </th>\n\t\t        <th scope=\"col\">\n\t\t        \tIntroduction\n\t\t        </th>\t\t        \n                <th scope=\"col\" style=\"width:2rem;\"></th>\n\n\t\t        <th scope=\"col\" style=\"width:2rem;\"></th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t      <ng-template ngFor let-detail [ngForOf]=\"list\" let-i=\"index\">\n\t        <tr [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\"> <!-- *ngFor=\"let detail of list;  let i = index\" -->\n\t            <td scope=\"row\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td >\n\t            \t                  {{detail['firstName']}} \n\n                </td>\n\t            <td >\n\t            \t                  {{detail['lastName']}} \n\n                </td>\n\t            <td *ngIf=\"referenceFieldsMap['courses'] != parentItem\"  >\n\t            \t                \n               \t  \n\t            \t{{detail['courses']?detail['courses']['value']:\"\"}}\n\t              \n\n                </td>\n\t            <td >\n\t            \t                  {{detail['introduction']}} \n\n                </td>\n\t            <td>\n\n                    \t\n\t\t\t        <span class=\"pointer\" (click)=\"toggleCheckedItem(i)\">\n\t\t\t            <i *ngIf=\"!checkedItem[i]\" class=\"fas fa-caret-down\" title=\"More\"></i>\n\t\t\t            <i *ngIf=\"checkedItem[i]\" class=\"fas fa-caret-up\" title=\"Less\"></i>\n\t\t\t        </span>\n                </td>\n\n\t            <td>\n\n\t            \t<a routerLink=\".\" (click)=\"onDetailLinkClicked(detail['_id'])\"><i class=\"fas fa-external-link-square-alt\" title=\"View Details\"></i></a>\n\n                </td>\n\t        </tr>\n\n\t        <tr *ngIf=\"checkedItem[i]\" >\n\t        \t<td colspan=\"4\"><app-teacher-detail-sub [inputData]=\"detail['_id']\"></app-teacher-detail-sub></td>\n\t        </tr>\n\t      </ng-template>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-list/teacher-list-sub.component.ts":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-list/teacher-list-sub.component.ts ***!
-  \******************************************************************************/
-/*! exports provided: TeacherListSubComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherListSubComponent", function() { return TeacherListSubComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./teacher-list.component */ "./src/app/academics/teacher/teacher-list/teacher-list.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var TeacherListSubComponent = /** @class */ (function (_super) {
-    __extends(TeacherListSubComponent, _super);
-    function TeacherListSubComponent(teacherService, injector, router, route, location) {
-        var _this = _super.call(this, null, teacherService, injector, router, route, location) || this;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.parentData = {};
-        return _this;
-    }
-    TeacherListSubComponent.prototype.ngOnInit = function () {
-        var ref = this.getParentRouteRefField();
-        var id = this.getParentRouteItemId();
-        this.detail = {};
-        if (this.arrayFields.some(function (x) { return x[0] == ref; })) {
-            this.parentData[ref] = { 'selection': [{ '_id': id }] };
-            this.detail[ref] = { 'selection': [{ '_id': id }] }; //search on array list
-        }
-        else {
-            this.parentData[ref] = { '_id': id };
-            this.detail[ref] = { '_id': id }; //make this as the search context
-        }
-        this.processSearchContext();
-        this.populateList();
-    };
-    TeacherListSubComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-list-sub',
-            template: __webpack_require__(/*! ./teacher-list-sub.component.html */ "./src/app/academics/teacher/teacher-list/teacher-list-sub.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-list.component.css */ "./src/app/academics/teacher/teacher-list/teacher-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherListSubComponent);
-    return TeacherListSubComponent;
-}(_teacher_list_component__WEBPACK_IMPORTED_MODULE_3__["TeacherListComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-list/teacher-list.component.css":
-/*!***************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-list/teacher-list.component.css ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNhZGVtaWNzL3RlYWNoZXIvdGVhY2hlci1saXN0L3RlYWNoZXItbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvYWNhZGVtaWNzL3RlYWNoZXIvdGVhY2hlci1saXN0L3RlYWNoZXItbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-list/teacher-list.component.html":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-list/teacher-list.component.html ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"teacherTextSearch\" \n\t\t\t\t\t\t#teacherTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for firstName, lastName, introduction\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\t<div class=\"text-center\">\n                    <span  class=\"pointer\" (click)=\"toggleMoreSearch()\">\n                        <span class=\"refine-search-text\">Refine Search &nbsp;</span>\n                        <span>\n                            <i *ngIf=\"!moreSearchOpened\"  class=\"fas fa-plus-circle\" title=\"More\"></i>\n                            <i *ngIf=\"moreSearchOpened\" class=\"fas fa-minus-circle\"  title=\"Less\"></i>\n                        </span>\n                    </span>\n\t\t\t\t</div>\n\t\t\t    <div class=\"shadow\" *ngIf=\"moreSearchOpened\">\n\t\t\t\t\t<div class=\"card\">\n\t\t\t\t\t\t<div class=\"card-body\">\n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"teacherEditCourses\">Courses</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"teacherEditCourses\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['courses']['_id']}\"\n\t\t             (focus)=\"detail['courses']['_id']?onRefShow('courses', 'select', detail['courses']['_id']):onRefSelect('courses')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['courses']['value']\" name=\"teacherEditCourses\"\n\t\t             #teacherEditCourses=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('courses')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('courses')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\n\t\t\t\t\t\t  <div class=\"action-buttons\" style=\"margin-top: 10px;\">\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onSearchClear()\">Reset</button>\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\" (click)=\"searchList()\">Search</button>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t        </div>\n\t\t        <div *ngIf=\"!moreSearchOpened\" style=\"text-align: left;\">\n\t\t\t\t\t<span class=\"badge badge-pill badge-info\" *ngFor=\"let value of searchMoreDetail\">\n\t\t\t\t\t    <a (click)=\"toggleMoreSearch()\" class=\"pointer\"> {{value[0]}}: {{value[1]}}</a>\n\t\t\t\t\t    <i class=\"fas fa-times-circle icon-clear-badge\" (click)=\"clearValueFromDetailAndSearchList(value[0])\" title=\"Clear\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t    \n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">First Name</th>\n\t\t        <th scope=\"col\">Last Name</th>\n\t\t        <th scope=\"col\">Courses</th>\n\t\t        <th scope=\"col\">Introduction</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['firstName']}} \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['lastName']}} \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n               \t  \n\t            \t{{detail['courses']?detail['courses']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['introduction']}} \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n<ng-template academics-ref-select></ng-template>\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-list/teacher-list.component.ts":
-/*!**************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-list/teacher-list.component.ts ***!
-  \**************************************************************************/
-/*! exports provided: TeacherListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherListComponent", function() { return TeacherListComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../teacher.component */ "./src/app/academics/teacher/teacher.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var TeacherListComponent = /** @class */ (function (_super) {
-    __extends(TeacherListComponent, _super);
-    function TeacherListComponent(componentFactoryResolver, teacherService, injector, router, route, location) {
-        var _this = _super.call(this, componentFactoryResolver, teacherService, injector, router, route, location, _teacher_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.stringFields.push('firstName');
-        _this.stringFields.push('lastName');
-        _this.stringFields.push('introduction');
-        _this.referenceFields = ['courses',];
-        _this.referenceFieldsMap = { 'courses': 'course', };
-        // this is to initialize the detail that will be used for search condition selection
-        var detail = {};
-        _this.detail = _this.formatDetail(detail);
-        return _this;
-    }
-    TeacherListComponent.prototype.ngOnInit = function () {
-        this.populateList();
-    };
-    TeacherListComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-list',
-            template: __webpack_require__(/*! ./teacher-list.component.html */ "./src/app/academics/teacher/teacher-list/teacher-list.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-list.component.css */ "./src/app/academics/teacher/teacher-list/teacher-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
-            _teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherListComponent);
-    return TeacherListComponent;
-}(_teacher_component__WEBPACK_IMPORTED_MODULE_3__["TeacherComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-list/teacher-select.component.html":
-/*!******************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-list/teacher-select.component.html ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #AcademicsModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Select {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"teacherTextSearch\" \n\t\t\t\t\t\t#teacherTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for firstName, lastName, introduction\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\t<div class=\"text-center\">\n                    <span  class=\"pointer\" (click)=\"toggleMoreSearch()\">\n                        <span class=\"refine-search-text\">Refine Search &nbsp;</span>\n                        <span>\n                            <i *ngIf=\"!moreSearchOpened\"  class=\"fas fa-plus-circle\" title=\"More\"></i>\n                            <i *ngIf=\"moreSearchOpened\" class=\"fas fa-minus-circle\"  title=\"Less\"></i>\n                        </span>\n                    </span>\n\t\t\t\t</div>\n\t\t\t    <div class=\"shadow\" *ngIf=\"moreSearchOpened\">\n\t\t\t\t\t<div class=\"card\">\n\t\t\t\t\t\t<div class=\"card-body\">\n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"teacherEditCourses\">Courses</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"teacherEditCourses\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['courses']['_id']}\"\n\t\t             (focus)=\"detail['courses']['_id']?onRefShow('courses', 'select', detail['courses']['_id']):onRefSelect('courses')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['courses']['value']\" name=\"teacherEditCourses\"\n\t\t             #teacherEditCourses=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('courses')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('courses')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\n\t\t\t\t\t\t  <div class=\"action-buttons\" style=\"margin-top: 10px;\">\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onSearchClear()\">Reset</button>\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\" (click)=\"searchList()\">Search</button>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t        </div>\n\t\t        <div *ngIf=\"!moreSearchOpened\" style=\"text-align: left;\">\n\t\t\t\t\t<span class=\"badge badge-pill badge-info\" *ngFor=\"let value of searchMoreDetail\">\n\t\t\t\t\t    <a (click)=\"toggleMoreSearch()\" class=\"pointer\"> {{value[0]}}: {{value[1]}}</a>\n\t\t\t\t\t    <i class=\"fas fa-times-circle icon-clear-badge\" (click)=\"clearValueFromDetailAndSearchList(value[0])\" title=\"Clear\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t    \n\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t</div>\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">First Name</th>\n\t\t        <th scope=\"col\">Last Name</th>\n\t\t        <th scope=\"col\">Courses</th>\n\t\t        <th scope=\"col\">Introduction</th>\n\n\t\t        <th></th>      \n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" \n\t        \t[ngClass]=\"{'clicked-row': detail['_id']==clickedId}\" >\n\t            <td scope=\"row\" (click)=\"selectItemSelected(i)\"  class=\"pointer\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['firstName']}} \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['lastName']}} \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                \n               \t  \n\t            \t{{detail['courses']?detail['courses']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['introduction']}} \n\n\t            </td>\n\n\t            <td><a routerLink=\".\" class=\"btn\" \n\t                 [ngClass]=\"{'btn-primary': detail['_id']==selectedId, 'btn-outline-primary': detail['_id']!==selectedId}\"\n\t            \t (click)=\"selectViewDetail(i)\">View Details</a>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n\n"
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher-list/teacher-select.component.ts":
-/*!****************************************************************************!*\
-  !*** ./src/app/academics/teacher/teacher-list/teacher-select.component.ts ***!
-  \****************************************************************************/
-/*! exports provided: TeacherSelectComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherSelectComponent", function() { return TeacherSelectComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _teacher_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./teacher-list.component */ "./src/app/academics/teacher/teacher-list/teacher-list.component.ts");
-/* harmony import */ var _teacher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../teacher.service */ "./src/app/academics/teacher/teacher.service.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var TeacherSelectComponent = /** @class */ (function (_super) {
-    __extends(TeacherSelectComponent, _super);
-    function TeacherSelectComponent(teacherService, injector, router, route, location) {
-        var _this = _super.call(this, null, teacherService, injector, router, route, location) || this;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        _this.majorUi = false;
-        return _this;
-    }
-    TeacherSelectComponent.prototype.ngOnInit = function () {
-        this.selectedId = this.inputData;
-        this.populateList();
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], TeacherSelectComponent.prototype, "inputData", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], TeacherSelectComponent.prototype, "outputData", void 0);
-    TeacherSelectComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-teacher-select',
-            template: __webpack_require__(/*! ./teacher-select.component.html */ "./src/app/academics/teacher/teacher-list/teacher-select.component.html"),
-            styles: [__webpack_require__(/*! ./teacher-list.component.css */ "./src/app/academics/teacher/teacher-list/teacher-list.component.css")]
-        }),
-        __metadata("design:paramtypes", [_teacher_service__WEBPACK_IMPORTED_MODULE_4__["TeacherService"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
-    ], TeacherSelectComponent);
-    return TeacherSelectComponent;
-}(_teacher_list_component__WEBPACK_IMPORTED_MODULE_3__["TeacherListComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher.base.service.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/academics/teacher/teacher.base.service.ts ***!
-  \***********************************************************/
-/*! exports provided: TeacherBaseService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherBaseService", function() { return TeacherBaseService; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var servicePath = '/teacher/';
-var TeacherBaseService = /** @class */ (function (_super) {
-    __extends(TeacherBaseService, _super);
-    function TeacherBaseService(http, serverRootUrl) {
-        var _this = this;
-        var serviceUrl = serverRootUrl + servicePath;
-        _this = _super.call(this, http, serviceUrl) || this;
-        return _this;
-    }
-    return TeacherBaseService;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/academics/teacher/teacher.component.ts ***!
-  \********************************************************/
-/*! exports provided: ViewType, TeacherComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherComponent", function() { return TeacherComponent; });
-/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
-
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _academics_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../academics.component */ "./src/app/academics/academics.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../course/course-detail/course-detail-sel.component */ "./src/app/academics/course/course-detail/course-detail-sel.component.ts");
-/* harmony import */ var _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../course/course-detail/course-detail-pop.component */ "./src/app/academics/course/course-detail/course-detail-pop.component.ts");
-/* harmony import */ var _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../course/course-list/course-select.component */ "./src/app/academics/course/course-list/course-select.component.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var itemCamelName = 'teacher';
-
-
-
-
-
-
-
-var TeacherComponent = /** @class */ (function (_super) {
-    __extends(TeacherComponent, _super);
-    function TeacherComponent(componentFactoryResolver, teacherService, injector, router, route, location, view) {
-        var _this = _super.call(this, teacherService, injector, router, route, location, view, itemCamelName) || this;
-        _this.componentFactoryResolver = componentFactoryResolver;
-        _this.teacherService = teacherService;
-        _this.injector = injector;
-        _this.router = router;
-        _this.route = route;
-        _this.location = location;
-        _this.view = view;
-        _this.selectComponents = {
-            'courses': {
-                'select-type': _course_course_list_course_select_component__WEBPACK_IMPORTED_MODULE_5__["CourseSelectComponent"],
-                'select-detail-type': _course_course_detail_course_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__["CourseDetailSelComponent"],
-                'pop-detail-type': _course_course_detail_course_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__["CourseDetailPopComponent"],
-                'componentRef': null
-            },
-        };
-        _this.indexFields = ['lastName',];
-        return _this;
-    }
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_academics_component__WEBPACK_IMPORTED_MODULE_2__["AcademicsRefSelectDirective"]),
-        __metadata("design:type", _academics_component__WEBPACK_IMPORTED_MODULE_2__["AcademicsRefSelectDirective"])
-    ], TeacherComponent.prototype, "refSelectDirective", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('AcademicsModal'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
-    ], TeacherComponent.prototype, "focusEl", void 0);
-    return TeacherComponent;
-}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
-
-
-
-/***/ }),
-
-/***/ "./src/app/academics/teacher/teacher.service.ts":
-/*!******************************************************!*\
-  !*** ./src/app/academics/teacher/teacher.service.ts ***!
-  \******************************************************/
-/*! exports provided: TeacherService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherService", function() { return TeacherService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _teacher_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./teacher.base.service */ "./src/app/academics/teacher/teacher.base.service.ts");
-/* harmony import */ var _academics_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../academics.tokens */ "./src/app/academics/academics.tokens.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-var TeacherService = /** @class */ (function (_super) {
-    __extends(TeacherService, _super);
-    function TeacherService(http, academicsServerRootUri) {
-        var _this = _super.call(this, http, academicsServerRootUri) || this;
-        _this.academicsServerRootUri = academicsServerRootUri;
-        return _this;
-    }
-    TeacherService.prototype.ngOnDestroy = function () { };
-    TeacherService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_academics_tokens__WEBPACK_IMPORTED_MODULE_3__["Academics_SERVER_ROOT_URI"])),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
-    ], TeacherService);
-    return TeacherService;
-}(_teacher_base_service__WEBPACK_IMPORTED_MODULE_2__["TeacherBaseService"]));
-
-
-
-/***/ }),
-
 /***/ "./src/app/access.conf.ts":
 /*!********************************!*\
   !*** ./src/app/access.conf.ts ***!
@@ -8263,10 +3004,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.module */ "./src/app/home/home.module.ts");
 /* harmony import */ var _users_users_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./users/users.module */ "./src/app/users/users.module.ts");
 /* harmony import */ var _roles_roles_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./roles/roles.module */ "./src/app/roles/roles.module.ts");
-/* harmony import */ var _academics_academics_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./academics/academics.module */ "./src/app/academics/academics.module.ts");
-/* harmony import */ var _publicinfo_publicinfo_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./publicinfo/publicinfo.module */ "./src/app/publicinfo/publicinfo.module.ts");
-/* harmony import */ var _access_access_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./access/access.module */ "./src/app/access/access.module.ts");
-/* harmony import */ var _files_files_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./files/files.module */ "./src/app/files/files.module.ts");
+/* harmony import */ var _publicinfo_publicinfo_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./publicinfo/publicinfo.module */ "./src/app/publicinfo/publicinfo.module.ts");
+/* harmony import */ var _access_access_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./access/access.module */ "./src/app/access/access.module.ts");
+/* harmony import */ var _files_files_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./files/files.module */ "./src/app/files/files.module.ts");
+/* harmony import */ var _lifehacks_lifehacks_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lifehacks/lifehacks.module */ "./src/app/lifehacks/lifehacks.module.ts");
 /* harmony import */ var mdds_angular_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! mdds-angular-auth */ "./node_modules/mdds-angular-auth/fesm5/mdds-angular-auth.js");
 /* harmony import */ var _auth_conf__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./auth.conf */ "./src/app/auth.conf.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -8300,14 +3041,14 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-                _academics_academics_module__WEBPACK_IMPORTED_MODULE_7__["AcademicsModule"],
                 mdds_angular_auth__WEBPACK_IMPORTED_MODULE_11__["AuthenticationModule"],
                 _home_home_module__WEBPACK_IMPORTED_MODULE_4__["HomeModule"],
                 _users_users_module__WEBPACK_IMPORTED_MODULE_5__["UsersModule"],
                 _roles_roles_module__WEBPACK_IMPORTED_MODULE_6__["RolesModule"],
-                _publicinfo_publicinfo_module__WEBPACK_IMPORTED_MODULE_8__["PublicinfoModule"],
-                _access_access_module__WEBPACK_IMPORTED_MODULE_9__["AccessModule"],
-                _files_files_module__WEBPACK_IMPORTED_MODULE_10__["FilesModule"],
+                _publicinfo_publicinfo_module__WEBPACK_IMPORTED_MODULE_7__["PublicinfoModule"],
+                _access_access_module__WEBPACK_IMPORTED_MODULE_8__["AccessModule"],
+                _files_files_module__WEBPACK_IMPORTED_MODULE_9__["FilesModule"],
+                _lifehacks_lifehacks_module__WEBPACK_IMPORTED_MODULE_10__["LifehacksModule"],
             ],
             providers: [
                 { provide: mdds_angular_auth__WEBPACK_IMPORTED_MODULE_11__["AUTHTICATION_LOGIN_PAGE_URI"], useValue: _auth_conf__WEBPACK_IMPORTED_MODULE_12__["authentication_login_page_uri"] },
@@ -9386,7 +4127,7 @@ module.exports = ".card-link {\n\tposition: absolute;\n\ttop: 0; left: 0;\n\thei
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row mt-5\">\n\t  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/publicinfo\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Public Info</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Public information visible to all visitors.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n\n  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/academics\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Academics</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Teachers, Students, Courses, Classes</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n  </div>\n  \n  <div class=\"row mt-5\">\n  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/users\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Users</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">User accounts and password.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/access\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Public Access</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Public access control to system resources.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/roles\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Administrators</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Administrator accounts, roles, and permissions.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"row mt-5\">\n\t  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/publicinfo\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Public Info</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Public information visible to all visitors.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n    <div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/lifehacks\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Lifehacks</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Hacks, Lifer</p>\n\t\t  </div>\n\t\t</div>\n    </div>\n  </div>\n  \n  <div class=\"row mt-5\">\n  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/users\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Users</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">User accounts and password.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/access\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Public Access</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Public access control to system resources.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n  \t<div class=\"col-md-4\">\n\t\t<div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 18rem;\">\n\t\t  <a routerLink=\"/roles\" class=\"card-link\"></a>\n\t\t  <div class=\"card-header\">Administrators</div>\n\t\t  <div class=\"card-body\" style=\"height: 6rem;\">\n\t\t    <p class=\"card-text\">Administrator accounts, roles, and permissions.</p>\n\t\t  </div>\n\t\t</div>\n    </div>\t\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -9476,6 +4217,2826 @@ var HomeModule = /** @class */ (function () {
     ], HomeModule);
     return HomeModule;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks.conf.ts":
+/*!***********************************!*\
+  !*** ./src/app/lifehacks.conf.ts ***!
+  \***********************************/
+/*! exports provided: LifehacksRoutes, lifehacks_server_root_uri */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LifehacksRoutes", function() { return LifehacksRoutes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lifehacks_server_root_uri", function() { return lifehacks_server_root_uri; });
+/* harmony import */ var _lifehacks_lifehacks_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lifehacks/lifehacks.component */ "./src/app/lifehacks/lifehacks.component.ts");
+/* harmony import */ var _lifehacks_lifehacks_routing_path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lifehacks/lifehacks-routing.path */ "./src/app/lifehacks/lifehacks-routing.path.ts");
+
+//Import routing paths
+
+var LifehacksRoutes = [
+    { path: 'lifehacks',
+        component: _lifehacks_lifehacks_component__WEBPACK_IMPORTED_MODULE_0__["LifehacksComponent"],
+        children: [
+            { path: '', redirectTo: 'hack', pathMatch: 'full' },
+            { path: "hack",
+                children: _lifehacks_lifehacks_routing_path__WEBPACK_IMPORTED_MODULE_1__["hackRoutingPath"],
+                data: { "mraLevel": 1, "item": "hack" }
+            },
+            { path: "liferhack",
+                children: _lifehacks_lifehacks_routing_path__WEBPACK_IMPORTED_MODULE_1__["liferhackRoutingPath"],
+                data: { "mraLevel": 1, "item": "liferhack" }
+            },
+            { path: "lifer",
+                children: _lifehacks_lifehacks_routing_path__WEBPACK_IMPORTED_MODULE_1__["liferRoutingPath"],
+                data: { "mraLevel": 1, "item": "lifer" }
+            },
+        ]
+    }
+];
+var lifehacks_server_root_uri = "/api/lifehacks";
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-detail/hack-detail-pop.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-detail/hack-detail-pop.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #LifehacksModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">{{ItemCamelName}} Detail</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-detail/hack-detail-pop.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-detail/hack-detail-pop.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: HackDetailPopComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackDetailPopComponent", function() { return HackDetailPopComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hack_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hack-detail.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.ts");
+/* harmony import */ var _hack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HackDetailPopComponent = /** @class */ (function (_super) {
+    __extends(HackDetailPopComponent, _super);
+    function HackDetailPopComponent(hackService, injector, router, route, location) {
+        var _this = _super.call(this, hackService, injector, router, route, location) || this;
+        _this.hackService = hackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.majorUi = false;
+        return _this;
+    }
+    HackDetailPopComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.inputData;
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], HackDetailPopComponent.prototype, "inputData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], HackDetailPopComponent.prototype, "outputData", void 0);
+    HackDetailPopComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hack-detail-pop',
+            template: __webpack_require__(/*! ./hack-detail-pop.component.html */ "./src/app/lifehacks/hack/hack-detail/hack-detail-pop.component.html"),
+            styles: [__webpack_require__(/*! ./hack-detail.component.css */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_hack_service__WEBPACK_IMPORTED_MODULE_4__["HackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], HackDetailPopComponent);
+    return HackDetailPopComponent;
+}(_hack_detail_component__WEBPACK_IMPORTED_MODULE_3__["HackDetailComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-detail/hack-detail-sel.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-detail/hack-detail-sel.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #LifehacksModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Selected {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <a routerLink=\".\" (click)=\"detailSelBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back to list\">&nbsp; {{ItemCamelName}} List</i></a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"detailSelSelected()\">Select</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail</h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-detail/hack-detail-sel.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-detail/hack-detail-sel.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: HackDetailSelComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackDetailSelComponent", function() { return HackDetailSelComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hack_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hack-detail.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.ts");
+/* harmony import */ var _hack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HackDetailSelComponent = /** @class */ (function (_super) {
+    __extends(HackDetailSelComponent, _super);
+    function HackDetailSelComponent(hackService, injector, router, route, location) {
+        var _this = _super.call(this, hackService, injector, router, route, location) || this;
+        _this.hackService = hackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.majorUi = false;
+        return _this;
+    }
+    HackDetailSelComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.inputData;
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], HackDetailSelComponent.prototype, "inputData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], HackDetailSelComponent.prototype, "outputData", void 0);
+    HackDetailSelComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hack-detail-sel',
+            template: __webpack_require__(/*! ./hack-detail-sel.component.html */ "./src/app/lifehacks/hack/hack-detail/hack-detail-sel.component.html"),
+            styles: [__webpack_require__(/*! ./hack-detail.component.css */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_hack_service__WEBPACK_IMPORTED_MODULE_4__["HackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], HackDetailSelComponent);
+    return HackDetailSelComponent;
+}(_hack_detail_component__WEBPACK_IMPORTED_MODULE_3__["HackDetailComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-detail/hack-detail.component.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2hhY2svaGFjay1kZXRhaWwvaGFjay1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2xpZmVoYWNrcy9oYWNrL2hhY2stZGV0YWlsL2hhY2stZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-detail/hack-detail.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Title</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['title']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Description</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['description']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n\t<br/>\n\t\n\t<ul class=\"nav nav-tabs\">\n\t  \n\t    <li class=\"nav-item\">\n\t    <a [routerLink]=\"['./liferhack/list']\"\n\t        class=\"nav-link\" routerLinkActive=\"active\">LiferHack</a>\n\t  </li>\n    </ul>\n    <router-outlet></router-outlet>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-detail/hack-detail.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: HackDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackDetailComponent", function() { return HackDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hack_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hack.component */ "./src/app/lifehacks/hack/hack.component.ts");
+/* harmony import */ var _hack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HackDetailComponent = /** @class */ (function (_super) {
+    __extends(HackDetailComponent, _super);
+    function HackDetailComponent(hackService, injector, router, route, location) {
+        var _this = _super.call(this, hackService, injector, router, route, location, _hack_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
+        _this.hackService = hackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.stringFields.push('title');
+        _this.stringFields.push('description');
+        return _this;
+    }
+    HackDetailComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.route.snapshot.paramMap.get('id');
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], HackDetailComponent.prototype, "id", void 0);
+    HackDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hack-detail',
+            template: __webpack_require__(/*! ./hack-detail.component.html */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.html"),
+            styles: [__webpack_require__(/*! ./hack-detail.component.css */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_hack_service__WEBPACK_IMPORTED_MODULE_4__["HackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], HackDetailComponent);
+    return HackDetailComponent;
+}(_hack_component__WEBPACK_IMPORTED_MODULE_3__["HackComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-edit/hack-edit.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-edit/hack-edit.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2hhY2svaGFjay1lZGl0L2hhY2stZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvbGlmZWhhY2tzL2hhY2svaGFjay1lZGl0L2hhY2stZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-edit/hack-edit.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-edit/hack-edit.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} Hack</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('title')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTitle\">Title</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditTitle\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['title']\" name=\"EditTitle\"\n\t\t                #EditTitle=\"ngModel\">\n                <div *ngIf=\"detail['title']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('title')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditTitle.valid || EditTitle.pristine || EditTitle.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTitle.errors && EditTitle.errors.required\">\n    \t        Title is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('description')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDescription\">Description</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditDescription\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['description']\" name=\"EditDescription\"\n\t\t                #EditDescription=\"ngModel\">\n                <div *ngIf=\"detail['description']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('description')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditDescription.valid || EditDescription.pristine || EditDescription.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDescription.errors && EditDescription.errors.required\">\n    \t        Description is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('title')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditTitle\">Title</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditTitle\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['title']\" name=\"EditTitle\"\n\t\t                #EditTitle=\"ngModel\">\n                <div *ngIf=\"detail['title']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('title')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditTitle.valid || EditTitle.pristine || EditTitle.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditTitle.errors && EditTitle.errors.required\">\n    \t        Title is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('description')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditDescription\">Description</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditDescription\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['description']\" name=\"EditDescription\"\n\t\t                #EditDescription=\"ngModel\">\n                <div *ngIf=\"detail['description']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('description')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditDescription.valid || EditDescription.pristine || EditDescription.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditDescription.errors && EditDescription.errors.required\">\n    \t        Description is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-edit/hack-edit.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-edit/hack-edit.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: HackEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackEditComponent", function() { return HackEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hack_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hack.component */ "./src/app/lifehacks/hack/hack.component.ts");
+/* harmony import */ var _hack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HackEditComponent = /** @class */ (function (_super) {
+    __extends(HackEditComponent, _super);
+    function HackEditComponent(hackService, injector, router, route, location) {
+        var _this = _super.call(this, hackService, injector, router, route, location, _hack_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
+        _this.hackService = hackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.stringFields.push('title');
+        _this.stringFields.push('description');
+        var detail = {};
+        _this.detail = _this.formatDetail(detail);
+        return _this;
+    }
+    HackEditComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.route.snapshot.paramMap.get('id');
+        if (this.id) {
+            this.action = "Edit";
+            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
+        }
+        else {
+            this.action = "Create";
+            if (!this.cid)
+                this.cid = this.route.snapshot.queryParamMap.get('cid');
+            if (this.cid) {
+                this.populateDetailFromCopy(this.cid);
+            }
+            else if (this.initData) {
+                this.action = "Add";
+                this.subEdit = true;
+                var detail = {};
+                for (var prop in this.initData) {
+                    detail[prop] = this.initData[prop];
+                    this.hiddenFields.push(prop);
+                }
+                this.detail = this.formatDetail(detail);
+            }
+            else {
+                var detail = {};
+                this.detail = this.formatDetail(detail);
+            }
+        }
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], HackEditComponent.prototype, "id", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], HackEditComponent.prototype, "cid", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], HackEditComponent.prototype, "initData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], HackEditComponent.prototype, "done", void 0);
+    HackEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hack-edit',
+            template: __webpack_require__(/*! ./hack-edit.component.html */ "./src/app/lifehacks/hack/hack-edit/hack-edit.component.html"),
+            styles: [__webpack_require__(/*! ./hack-edit.component.css */ "./src/app/lifehacks/hack/hack-edit/hack-edit.component.css")]
+        }),
+        __metadata("design:paramtypes", [_hack_service__WEBPACK_IMPORTED_MODULE_4__["HackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], HackEditComponent);
+    return HackEditComponent;
+}(_hack_component__WEBPACK_IMPORTED_MODULE_3__["HackComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-list/hack-list.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-list/hack-list.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2hhY2svaGFjay1saXN0L2hhY2stbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvbGlmZWhhY2tzL2hhY2svaGFjay1saXN0L2hhY2stbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-list/hack-list.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-list/hack-list.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"hackTextSearch\" \n\t\t\t\t\t\t#hackTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for title\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Title</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['title']}} \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-list/hack-list.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-list/hack-list.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: HackListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackListComponent", function() { return HackListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hack_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hack.component */ "./src/app/lifehacks/hack/hack.component.ts");
+/* harmony import */ var _hack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HackListComponent = /** @class */ (function (_super) {
+    __extends(HackListComponent, _super);
+    function HackListComponent(hackService, injector, router, route, location) {
+        var _this = _super.call(this, hackService, injector, router, route, location, _hack_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
+        _this.hackService = hackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.stringFields.push('title');
+        // this is to initialize the detail that will be used for search condition selection
+        var detail = {};
+        _this.detail = _this.formatDetail(detail);
+        return _this;
+    }
+    HackListComponent.prototype.ngOnInit = function () {
+        this.populateList();
+    };
+    HackListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hack-list',
+            template: __webpack_require__(/*! ./hack-list.component.html */ "./src/app/lifehacks/hack/hack-list/hack-list.component.html"),
+            styles: [__webpack_require__(/*! ./hack-list.component.css */ "./src/app/lifehacks/hack/hack-list/hack-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_hack_service__WEBPACK_IMPORTED_MODULE_4__["HackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], HackListComponent);
+    return HackListComponent;
+}(_hack_component__WEBPACK_IMPORTED_MODULE_3__["HackComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-list/hack-select.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-list/hack-select.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #LifehacksModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Select {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"hackTextSearch\" \n\t\t\t\t\t\t#hackTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for title\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t</div>\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Title</th>\n\n\t\t        <th></th>      \n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" \n\t        \t[ngClass]=\"{'clicked-row': detail['_id']==clickedId}\" >\n\t            <td scope=\"row\" (click)=\"selectItemSelected(i)\"  class=\"pointer\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['title']}} \n\n\t            </td>\n\n\t            <td><a routerLink=\".\" class=\"btn\" \n\t                 [ngClass]=\"{'btn-primary': detail['_id']==selectedId, 'btn-outline-primary': detail['_id']!==selectedId}\"\n\t            \t (click)=\"selectViewDetail(i)\">View Details</a>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack-list/hack-select.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack-list/hack-select.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: HackSelectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackSelectComponent", function() { return HackSelectComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hack_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hack-list.component */ "./src/app/lifehacks/hack/hack-list/hack-list.component.ts");
+/* harmony import */ var _hack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HackSelectComponent = /** @class */ (function (_super) {
+    __extends(HackSelectComponent, _super);
+    function HackSelectComponent(hackService, injector, router, route, location) {
+        var _this = _super.call(this, hackService, injector, router, route, location) || this;
+        _this.hackService = hackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.majorUi = false;
+        return _this;
+    }
+    HackSelectComponent.prototype.ngOnInit = function () {
+        this.selectedId = this.inputData;
+        this.populateList();
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], HackSelectComponent.prototype, "inputData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], HackSelectComponent.prototype, "outputData", void 0);
+    HackSelectComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hack-select',
+            template: __webpack_require__(/*! ./hack-select.component.html */ "./src/app/lifehacks/hack/hack-list/hack-select.component.html"),
+            styles: [__webpack_require__(/*! ./hack-list.component.css */ "./src/app/lifehacks/hack/hack-list/hack-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_hack_service__WEBPACK_IMPORTED_MODULE_4__["HackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], HackSelectComponent);
+    return HackSelectComponent;
+}(_hack_list_component__WEBPACK_IMPORTED_MODULE_3__["HackListComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack.base.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack.base.service.ts ***!
+  \*****************************************************/
+/*! exports provided: HackBaseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackBaseService", function() { return HackBaseService; });
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var servicePath = '/hack/';
+var HackBaseService = /** @class */ (function (_super) {
+    __extends(HackBaseService, _super);
+    function HackBaseService(http, serverRootUrl) {
+        var _this = this;
+        var serviceUrl = serverRootUrl + servicePath;
+        _this = _super.call(this, http, serviceUrl) || this;
+        return _this;
+    }
+    return HackBaseService;
+}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack.component.ts ***!
+  \**************************************************/
+/*! exports provided: ViewType, HackComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackComponent", function() { return HackComponent; });
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
+
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var itemCamelName = 'hack';
+
+
+
+var HackComponent = /** @class */ (function (_super) {
+    __extends(HackComponent, _super);
+    function HackComponent(hackService, injector, router, route, location, view) {
+        var _this = _super.call(this, hackService, injector, router, route, location, view, itemCamelName) || this;
+        _this.hackService = hackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.view = view;
+        _this.indexFields = ['title',];
+        return _this;
+    }
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('LifehacksModal'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
+    ], HackComponent.prototype, "focusEl", void 0);
+    return HackComponent;
+}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/hack/hack.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/lifehacks/hack/hack.service.ts ***!
+  \************************************************/
+/*! exports provided: HackService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HackService", function() { return HackService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _hack_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hack.base.service */ "./src/app/lifehacks/hack/hack.base.service.ts");
+/* harmony import */ var _lifehacks_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifehacks.tokens */ "./src/app/lifehacks/lifehacks.tokens.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var HackService = /** @class */ (function (_super) {
+    __extends(HackService, _super);
+    function HackService(http, lifehacksServerRootUri) {
+        var _this = _super.call(this, http, lifehacksServerRootUri) || this;
+        _this.lifehacksServerRootUri = lifehacksServerRootUri;
+        return _this;
+    }
+    HackService.prototype.ngOnDestroy = function () { };
+    HackService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_lifehacks_tokens__WEBPACK_IMPORTED_MODULE_3__["Lifehacks_SERVER_ROOT_URI"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+    ], HackService);
+    return HackService;
+}(_hack_base_service__WEBPACK_IMPORTED_MODULE_2__["HackBaseService"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifehacks-routing.module.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/lifehacks/lifehacks-routing.module.ts ***!
+  \*******************************************************/
+/*! exports provided: LifehacksRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LifehacksRoutingModule", function() { return LifehacksRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+/* harmony import */ var _lifehacks_conf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifehacks.conf */ "./src/app/lifehacks.conf.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var LifehacksRoutingModule = /** @class */ (function () {
+    function LifehacksRoutingModule() {
+    }
+    LifehacksRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(_lifehacks_conf__WEBPACK_IMPORTED_MODULE_3__["LifehacksRoutes"])],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
+            providers: [
+                { provide: _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouteReuseStrategy"], useClass: mean_rest_angular__WEBPACK_IMPORTED_MODULE_2__["MraRouteReuseStrategy"] },
+            ],
+        })
+    ], LifehacksRoutingModule);
+    return LifehacksRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifehacks-routing.path.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/lifehacks/lifehacks-routing.path.ts ***!
+  \*****************************************************/
+/*! exports provided: hackRoutingPath, liferhackRoutingPath, liferRoutingPath */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hackRoutingPath", function() { return hackRoutingPath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "liferhackRoutingPath", function() { return liferhackRoutingPath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "liferRoutingPath", function() { return liferRoutingPath; });
+/* harmony import */ var _hack_hack_list_hack_list_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hack/hack-list/hack-list.component */ "./src/app/lifehacks/hack/hack-list/hack-list.component.ts");
+/* harmony import */ var _hack_hack_detail_hack_detail_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hack/hack-detail/hack-detail.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.ts");
+/* harmony import */ var _hack_hack_edit_hack_edit_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hack/hack-edit/hack-edit.component */ "./src/app/lifehacks/hack/hack-edit/hack-edit.component.ts");
+/* harmony import */ var _liferhack_liferhack_list_liferhack_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./liferhack/liferhack-list/liferhack-list.component */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.ts");
+/* harmony import */ var _liferhack_liferhack_detail_liferhack_detail_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./liferhack/liferhack-detail/liferhack-detail.component */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.ts");
+/* harmony import */ var _liferhack_liferhack_edit_liferhack_edit_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./liferhack/liferhack-edit/liferhack-edit.component */ "./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.ts");
+/* harmony import */ var _liferhack_liferhack_list_liferhack_list_sub_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./liferhack/liferhack-list/liferhack-list-sub.component */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list-sub.component.ts");
+/* harmony import */ var _lifer_lifer_list_lifer_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lifer/lifer-list/lifer-list.component */ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.ts");
+/* harmony import */ var _lifer_lifer_detail_lifer_detail_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lifer/lifer-detail/lifer-detail.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.ts");
+/* harmony import */ var _lifer_lifer_edit_lifer_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lifer/lifer-edit/lifer-edit.component */ "./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.ts");
+// Import components for each schema
+
+
+
+
+
+
+
+
+
+
+var liferhackSubPath = [
+    { path: 'list', component: _liferhack_liferhack_list_liferhack_list_sub_component__WEBPACK_IMPORTED_MODULE_6__["LiferhackListSubComponent"] }
+];
+var hackDetailPath = [
+    { path: 'liferhack', children: liferhackSubPath,
+        data: { 'mraLevel': 2, 'item': 'liferhack' } },
+];
+var liferDetailPath = [
+    { path: 'liferhack', children: liferhackSubPath,
+        data: { 'mraLevel': 2, 'item': 'liferhack' } },
+];
+var hackRoutingPath = [
+    { path: 'list', component: _hack_hack_list_hack_list_component__WEBPACK_IMPORTED_MODULE_0__["HackListComponent"] },
+    { path: 'detail/:id', component: _hack_hack_detail_hack_detail_component__WEBPACK_IMPORTED_MODULE_1__["HackDetailComponent"], children: hackDetailPath },
+    { path: 'edit/:id', component: _hack_hack_edit_hack_edit_component__WEBPACK_IMPORTED_MODULE_2__["HackEditComponent"] },
+    { path: 'new', component: _hack_hack_edit_hack_edit_component__WEBPACK_IMPORTED_MODULE_2__["HackEditComponent"] },
+    { path: '**', redirectTo: 'list', pathMatch: 'full' }
+];
+var liferhackRoutingPath = [
+    { path: 'list', component: _liferhack_liferhack_list_liferhack_list_component__WEBPACK_IMPORTED_MODULE_3__["LiferhackListComponent"] },
+    { path: 'detail/:id', component: _liferhack_liferhack_detail_liferhack_detail_component__WEBPACK_IMPORTED_MODULE_4__["LiferhackDetailComponent"] },
+    { path: 'edit/:id', component: _liferhack_liferhack_edit_liferhack_edit_component__WEBPACK_IMPORTED_MODULE_5__["LiferhackEditComponent"] },
+    { path: 'new', component: _liferhack_liferhack_edit_liferhack_edit_component__WEBPACK_IMPORTED_MODULE_5__["LiferhackEditComponent"] },
+    { path: '**', redirectTo: 'list', pathMatch: 'full' }
+];
+var liferRoutingPath = [
+    { path: 'list', component: _lifer_lifer_list_lifer_list_component__WEBPACK_IMPORTED_MODULE_7__["LiferListComponent"] },
+    { path: 'detail/:id', component: _lifer_lifer_detail_lifer_detail_component__WEBPACK_IMPORTED_MODULE_8__["LiferDetailComponent"], children: liferDetailPath },
+    { path: 'edit/:id', component: _lifer_lifer_edit_lifer_edit_component__WEBPACK_IMPORTED_MODULE_9__["LiferEditComponent"] },
+    { path: 'new', component: _lifer_lifer_edit_lifer_edit_component__WEBPACK_IMPORTED_MODULE_9__["LiferEditComponent"] },
+    { path: '**', redirectTo: 'list', pathMatch: 'full' }
+];
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifehacks.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/lifehacks/lifehacks.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpZmVoYWNrcy9saWZlaGFja3MuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifehacks.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/lifehacks/lifehacks.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col\">\n\t\t<div class=\"card\">\n\t\t  <div class=\"card-header\">\n\t\t\t  <nav class=\"nav nav-pills\">\n\n\t\t\t    <a class=\"nav-item nav-link\" routerLink=\"./hack\" \n\t\t\t    \trouterLinkActive=\"active\">Hack</a>\n\n\t\t\t    <a class=\"nav-item nav-link\" routerLink=\"./lifer\" \n\t\t\t    \trouterLinkActive=\"active\">Lifer</a>\n\n\t\t\t  </nav>\n\t\t  </div>\n\t\t  <div class=\"card-body\">\n\t\t\t<router-outlet></router-outlet>\n\t\t  </div>\n\t\t</div>\n\t</div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifehacks.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/lifehacks/lifehacks.component.ts ***!
+  \**************************************************/
+/*! exports provided: LifehacksRefSelectDirective, LifehacksComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LifehacksRefSelectDirective", function() { return LifehacksRefSelectDirective; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LifehacksComponent", function() { return LifehacksComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LifehacksRefSelectDirective = /** @class */ (function () {
+    function LifehacksRefSelectDirective(viewContainerRef) {
+        this.viewContainerRef = viewContainerRef;
+    }
+    LifehacksRefSelectDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[lifehacks-ref-select]',
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"]])
+    ], LifehacksRefSelectDirective);
+    return LifehacksRefSelectDirective;
+}());
+
+var LifehacksComponent = /** @class */ (function () {
+    function LifehacksComponent() {
+    }
+    LifehacksComponent.prototype.ngOnInit = function () {
+    };
+    LifehacksComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lifehacks',
+            template: __webpack_require__(/*! ./lifehacks.component.html */ "./src/app/lifehacks/lifehacks.component.html"),
+            styles: [__webpack_require__(/*! ./lifehacks.component.css */ "./src/app/lifehacks/lifehacks.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LifehacksComponent);
+    return LifehacksComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifehacks.module.ts":
+/*!***********************************************!*\
+  !*** ./src/app/lifehacks/lifehacks.module.ts ***!
+  \***********************************************/
+/*! exports provided: LifehacksModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LifehacksModule", function() { return LifehacksModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+/* harmony import */ var _lifehacks_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lifehacks-routing.module */ "./src/app/lifehacks/lifehacks-routing.module.ts");
+/* harmony import */ var _lifehacks_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lifehacks.component */ "./src/app/lifehacks/lifehacks.component.ts");
+/* harmony import */ var _lifehacks_tokens__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lifehacks.tokens */ "./src/app/lifehacks/lifehacks.tokens.ts");
+/* harmony import */ var _lifehacks_conf__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../lifehacks.conf */ "./src/app/lifehacks.conf.ts");
+/* harmony import */ var _hack_hack_list_hack_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./hack/hack-list/hack-list.component */ "./src/app/lifehacks/hack/hack-list/hack-list.component.ts");
+/* harmony import */ var _hack_hack_detail_hack_detail_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./hack/hack-detail/hack-detail.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail.component.ts");
+/* harmony import */ var _hack_hack_edit_hack_edit_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./hack/hack-edit/hack-edit.component */ "./src/app/lifehacks/hack/hack-edit/hack-edit.component.ts");
+/* harmony import */ var _hack_hack_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./hack/hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+/* harmony import */ var _liferhack_liferhack_list_liferhack_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./liferhack/liferhack-list/liferhack-list.component */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.ts");
+/* harmony import */ var _liferhack_liferhack_detail_liferhack_detail_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./liferhack/liferhack-detail/liferhack-detail.component */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.ts");
+/* harmony import */ var _liferhack_liferhack_edit_liferhack_edit_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./liferhack/liferhack-edit/liferhack-edit.component */ "./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.ts");
+/* harmony import */ var _liferhack_liferhack_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./liferhack/liferhack.service */ "./src/app/lifehacks/liferhack/liferhack.service.ts");
+/* harmony import */ var _lifer_lifer_list_lifer_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./lifer/lifer-list/lifer-list.component */ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.ts");
+/* harmony import */ var _lifer_lifer_detail_lifer_detail_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./lifer/lifer-detail/lifer-detail.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.ts");
+/* harmony import */ var _lifer_lifer_edit_lifer_edit_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./lifer/lifer-edit/lifer-edit.component */ "./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.ts");
+/* harmony import */ var _lifer_lifer_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./lifer/lifer.service */ "./src/app/lifehacks/lifer/lifer.service.ts");
+/* harmony import */ var _lifer_lifer_list_lifer_select_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./lifer/lifer-list/lifer-select.component */ "./src/app/lifehacks/lifer/lifer-list/lifer-select.component.ts");
+/* harmony import */ var _lifer_lifer_detail_lifer_detail_pop_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./lifer/lifer-detail/lifer-detail-pop.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-pop.component.ts");
+/* harmony import */ var _lifer_lifer_detail_lifer_detail_sel_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./lifer/lifer-detail/lifer-detail-sel.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-sel.component.ts");
+/* harmony import */ var _hack_hack_list_hack_select_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./hack/hack-list/hack-select.component */ "./src/app/lifehacks/hack/hack-list/hack-select.component.ts");
+/* harmony import */ var _hack_hack_detail_hack_detail_pop_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./hack/hack-detail/hack-detail-pop.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail-pop.component.ts");
+/* harmony import */ var _hack_hack_detail_hack_detail_sel_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./hack/hack-detail/hack-detail-sel.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail-sel.component.ts");
+/* harmony import */ var _liferhack_liferhack_list_liferhack_list_sub_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./liferhack/liferhack-list/liferhack-list-sub.component */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list-sub.component.ts");
+/* harmony import */ var _liferhack_liferhack_detail_liferhack_detail_sub_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./liferhack/liferhack-detail/liferhack-detail-sub.component */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail-sub.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+// Import components for each schema
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var LifehacksModule = /** @class */ (function () {
+    function LifehacksModule() {
+    }
+    LifehacksModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                mean_rest_angular__WEBPACK_IMPORTED_MODULE_4__["MraModule"],
+                _lifehacks_routing_module__WEBPACK_IMPORTED_MODULE_5__["LifehacksRoutingModule"]
+            ],
+            declarations: [
+                _lifehacks_component__WEBPACK_IMPORTED_MODULE_6__["LifehacksComponent"],
+                _lifehacks_component__WEBPACK_IMPORTED_MODULE_6__["LifehacksRefSelectDirective"],
+                _hack_hack_list_hack_list_component__WEBPACK_IMPORTED_MODULE_9__["HackListComponent"],
+                _hack_hack_detail_hack_detail_component__WEBPACK_IMPORTED_MODULE_10__["HackDetailComponent"],
+                _hack_hack_edit_hack_edit_component__WEBPACK_IMPORTED_MODULE_11__["HackEditComponent"],
+                _liferhack_liferhack_list_liferhack_list_component__WEBPACK_IMPORTED_MODULE_13__["LiferhackListComponent"],
+                _liferhack_liferhack_detail_liferhack_detail_component__WEBPACK_IMPORTED_MODULE_14__["LiferhackDetailComponent"],
+                _liferhack_liferhack_edit_liferhack_edit_component__WEBPACK_IMPORTED_MODULE_15__["LiferhackEditComponent"],
+                _lifer_lifer_list_lifer_list_component__WEBPACK_IMPORTED_MODULE_17__["LiferListComponent"],
+                _lifer_lifer_detail_lifer_detail_component__WEBPACK_IMPORTED_MODULE_18__["LiferDetailComponent"],
+                _lifer_lifer_edit_lifer_edit_component__WEBPACK_IMPORTED_MODULE_19__["LiferEditComponent"],
+                _lifer_lifer_list_lifer_select_component__WEBPACK_IMPORTED_MODULE_21__["LiferSelectComponent"],
+                _lifer_lifer_detail_lifer_detail_pop_component__WEBPACK_IMPORTED_MODULE_22__["LiferDetailPopComponent"],
+                _lifer_lifer_detail_lifer_detail_sel_component__WEBPACK_IMPORTED_MODULE_23__["LiferDetailSelComponent"],
+                _hack_hack_list_hack_select_component__WEBPACK_IMPORTED_MODULE_24__["HackSelectComponent"],
+                _hack_hack_detail_hack_detail_pop_component__WEBPACK_IMPORTED_MODULE_25__["HackDetailPopComponent"],
+                _hack_hack_detail_hack_detail_sel_component__WEBPACK_IMPORTED_MODULE_26__["HackDetailSelComponent"],
+                _liferhack_liferhack_list_liferhack_list_sub_component__WEBPACK_IMPORTED_MODULE_27__["LiferhackListSubComponent"],
+                _liferhack_liferhack_detail_liferhack_detail_sub_component__WEBPACK_IMPORTED_MODULE_28__["LiferhackDetailSubComponent"],
+            ],
+            exports: [
+                _lifehacks_component__WEBPACK_IMPORTED_MODULE_6__["LifehacksComponent"],
+                _hack_hack_list_hack_list_component__WEBPACK_IMPORTED_MODULE_9__["HackListComponent"],
+                _hack_hack_detail_hack_detail_component__WEBPACK_IMPORTED_MODULE_10__["HackDetailComponent"],
+                _hack_hack_edit_hack_edit_component__WEBPACK_IMPORTED_MODULE_11__["HackEditComponent"],
+                _liferhack_liferhack_list_liferhack_list_component__WEBPACK_IMPORTED_MODULE_13__["LiferhackListComponent"],
+                _liferhack_liferhack_detail_liferhack_detail_component__WEBPACK_IMPORTED_MODULE_14__["LiferhackDetailComponent"],
+                _liferhack_liferhack_edit_liferhack_edit_component__WEBPACK_IMPORTED_MODULE_15__["LiferhackEditComponent"],
+                _lifer_lifer_list_lifer_list_component__WEBPACK_IMPORTED_MODULE_17__["LiferListComponent"],
+                _lifer_lifer_detail_lifer_detail_component__WEBPACK_IMPORTED_MODULE_18__["LiferDetailComponent"],
+                _lifer_lifer_edit_lifer_edit_component__WEBPACK_IMPORTED_MODULE_19__["LiferEditComponent"],
+                _lifer_lifer_list_lifer_select_component__WEBPACK_IMPORTED_MODULE_21__["LiferSelectComponent"],
+                _lifer_lifer_detail_lifer_detail_pop_component__WEBPACK_IMPORTED_MODULE_22__["LiferDetailPopComponent"],
+                _lifer_lifer_detail_lifer_detail_sel_component__WEBPACK_IMPORTED_MODULE_23__["LiferDetailSelComponent"],
+                _hack_hack_list_hack_select_component__WEBPACK_IMPORTED_MODULE_24__["HackSelectComponent"],
+                _hack_hack_detail_hack_detail_pop_component__WEBPACK_IMPORTED_MODULE_25__["HackDetailPopComponent"],
+                _hack_hack_detail_hack_detail_sel_component__WEBPACK_IMPORTED_MODULE_26__["HackDetailSelComponent"],
+                _liferhack_liferhack_list_liferhack_list_sub_component__WEBPACK_IMPORTED_MODULE_27__["LiferhackListSubComponent"],
+                _liferhack_liferhack_detail_liferhack_detail_sub_component__WEBPACK_IMPORTED_MODULE_28__["LiferhackDetailSubComponent"],
+            ],
+            providers: [
+                { provide: _lifehacks_tokens__WEBPACK_IMPORTED_MODULE_7__["Lifehacks_SERVER_ROOT_URI"], useValue: _lifehacks_conf__WEBPACK_IMPORTED_MODULE_8__["lifehacks_server_root_uri"] },
+                _hack_hack_service__WEBPACK_IMPORTED_MODULE_12__["HackService"],
+                _liferhack_liferhack_service__WEBPACK_IMPORTED_MODULE_16__["LiferhackService"],
+                _lifer_lifer_service__WEBPACK_IMPORTED_MODULE_20__["LiferService"],
+            ],
+            entryComponents: [
+                _lifer_lifer_list_lifer_select_component__WEBPACK_IMPORTED_MODULE_21__["LiferSelectComponent"],
+                _lifer_lifer_detail_lifer_detail_pop_component__WEBPACK_IMPORTED_MODULE_22__["LiferDetailPopComponent"],
+                _lifer_lifer_detail_lifer_detail_sel_component__WEBPACK_IMPORTED_MODULE_23__["LiferDetailSelComponent"],
+                _hack_hack_list_hack_select_component__WEBPACK_IMPORTED_MODULE_24__["HackSelectComponent"],
+                _hack_hack_detail_hack_detail_pop_component__WEBPACK_IMPORTED_MODULE_25__["HackDetailPopComponent"],
+                _hack_hack_detail_hack_detail_sel_component__WEBPACK_IMPORTED_MODULE_26__["HackDetailSelComponent"],
+            ]
+        })
+    ], LifehacksModule);
+    return LifehacksModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifehacks.tokens.ts":
+/*!***********************************************!*\
+  !*** ./src/app/lifehacks/lifehacks.tokens.ts ***!
+  \***********************************************/
+/*! exports provided: Lifehacks_SERVER_ROOT_URI */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Lifehacks_SERVER_ROOT_URI", function() { return Lifehacks_SERVER_ROOT_URI; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+var Lifehacks_SERVER_ROOT_URI = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('Lifehacks_SERVER_ROOT_URI');
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-pop.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-detail/lifer-detail-pop.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #LifehacksModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">{{ItemCamelName}} Detail</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['first_name']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['last_name']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-pop.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-detail/lifer-detail-pop.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: LiferDetailPopComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferDetailPopComponent", function() { return LiferDetailPopComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _lifer_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lifer-detail.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.ts");
+/* harmony import */ var _lifer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lifer.service */ "./src/app/lifehacks/lifer/lifer.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferDetailPopComponent = /** @class */ (function (_super) {
+    __extends(LiferDetailPopComponent, _super);
+    function LiferDetailPopComponent(liferService, injector, router, route, location) {
+        var _this = _super.call(this, liferService, injector, router, route, location) || this;
+        _this.liferService = liferService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.majorUi = false;
+        return _this;
+    }
+    LiferDetailPopComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.inputData;
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], LiferDetailPopComponent.prototype, "inputData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], LiferDetailPopComponent.prototype, "outputData", void 0);
+    LiferDetailPopComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lifer-detail-pop',
+            template: __webpack_require__(/*! ./lifer-detail-pop.component.html */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-pop.component.html"),
+            styles: [__webpack_require__(/*! ./lifer-detail.component.css */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_lifer_service__WEBPACK_IMPORTED_MODULE_4__["LiferService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferDetailPopComponent);
+    return LiferDetailPopComponent;
+}(_lifer_detail_component__WEBPACK_IMPORTED_MODULE_3__["LiferDetailComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-sel.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-detail/lifer-detail-sel.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #LifehacksModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Selected {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\n\n<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <a routerLink=\".\" (click)=\"detailSelBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back to list\">&nbsp; {{ItemCamelName}} List</i></a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"detailSelSelected()\">Select</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail</h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['first_name']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['last_name']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n\n\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-sel.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-detail/lifer-detail-sel.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: LiferDetailSelComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferDetailSelComponent", function() { return LiferDetailSelComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _lifer_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lifer-detail.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.ts");
+/* harmony import */ var _lifer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lifer.service */ "./src/app/lifehacks/lifer/lifer.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferDetailSelComponent = /** @class */ (function (_super) {
+    __extends(LiferDetailSelComponent, _super);
+    function LiferDetailSelComponent(liferService, injector, router, route, location) {
+        var _this = _super.call(this, liferService, injector, router, route, location) || this;
+        _this.liferService = liferService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.majorUi = false;
+        return _this;
+    }
+    LiferDetailSelComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.inputData;
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], LiferDetailSelComponent.prototype, "inputData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], LiferDetailSelComponent.prototype, "outputData", void 0);
+    LiferDetailSelComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lifer-detail-sel',
+            template: __webpack_require__(/*! ./lifer-detail-sel.component.html */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-sel.component.html"),
+            styles: [__webpack_require__(/*! ./lifer-detail.component.css */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_lifer_service__WEBPACK_IMPORTED_MODULE_4__["LiferService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferDetailSelComponent);
+    return LiferDetailSelComponent;
+}(_lifer_detail_component__WEBPACK_IMPORTED_MODULE_3__["LiferDetailComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyL2xpZmVyLWRldGFpbC9saWZlci1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2xpZmVoYWNrcy9saWZlci9saWZlci1kZXRhaWwvbGlmZXItZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>First Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['first_name']}} \n</div>\n\n\t\t\t<div class=\"col-3\"><label>Last Name</label></div>\n\t\t\t<div class=\"col-3\">                  {{detail['last_name']}} \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Email</label></div>\n\t\t\t<div class=\"col-9\">                  {{detail['email']}} \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n\t<br/>\n\t\n\t<ul class=\"nav nav-tabs\">\n\t  \n\t    <li class=\"nav-item\">\n\t    <a [routerLink]=\"['./liferhack/list']\"\n\t        class=\"nav-link\" routerLinkActive=\"active\">LiferHack</a>\n\t  </li>\n    </ul>\n    <router-outlet></router-outlet>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.ts ***!
+  \************************************************************************/
+/*! exports provided: LiferDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferDetailComponent", function() { return LiferDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _lifer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifer.component */ "./src/app/lifehacks/lifer/lifer.component.ts");
+/* harmony import */ var _lifer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lifer.service */ "./src/app/lifehacks/lifer/lifer.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferDetailComponent = /** @class */ (function (_super) {
+    __extends(LiferDetailComponent, _super);
+    function LiferDetailComponent(liferService, injector, router, route, location) {
+        var _this = _super.call(this, liferService, injector, router, route, location, _lifer_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
+        _this.liferService = liferService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.stringFields.push('first_name');
+        _this.stringFields.push('last_name');
+        _this.stringFields.push('email');
+        return _this;
+    }
+    LiferDetailComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.route.snapshot.paramMap.get('id');
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], LiferDetailComponent.prototype, "id", void 0);
+    LiferDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lifer-detail',
+            template: __webpack_require__(/*! ./lifer-detail.component.html */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.html"),
+            styles: [__webpack_require__(/*! ./lifer-detail.component.css */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_lifer_service__WEBPACK_IMPORTED_MODULE_4__["LiferService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferDetailComponent);
+    return LiferDetailComponent;
+}(_lifer_component__WEBPACK_IMPORTED_MODULE_3__["LiferComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyL2xpZmVyLWVkaXQvbGlmZXItZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyL2xpZmVyLWVkaXQvbGlmZXItZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} Lifer</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('first_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditFirst_name\">First Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditFirst_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['first_name']\" name=\"EditFirst_name\"\n\t\t                #EditFirst_name=\"ngModel\">\n                <div *ngIf=\"detail['first_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('first_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditFirst_name.valid || EditFirst_name.pristine || EditFirst_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditFirst_name.errors && EditFirst_name.errors.required\">\n    \t        First_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('last_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLast_name\">Last Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditLast_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['last_name']\" name=\"EditLast_name\"\n\t\t                #EditLast_name=\"ngModel\">\n                <div *ngIf=\"detail['last_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('last_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditLast_name.valid || EditLast_name.pristine || EditLast_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLast_name.errors && EditLast_name.errors.required\">\n    \t        Last_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('email')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEmail\">Email</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditEmail\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['email']\" name=\"EditEmail\"\n\t\t                #EditEmail=\"ngModel\">\n                <div *ngIf=\"detail['email']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('email')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditEmail.valid || EditEmail.pristine || EditEmail.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEmail.errors && EditEmail.errors.required\">\n    \t        Email is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('first_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditFirst_name\">First Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditFirst_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['first_name']\" name=\"EditFirst_name\"\n\t\t                #EditFirst_name=\"ngModel\">\n                <div *ngIf=\"detail['first_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('first_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditFirst_name.valid || EditFirst_name.pristine || EditFirst_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditFirst_name.errors && EditFirst_name.errors.required\">\n    \t        First_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('last_name')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLast_name\">Last Name</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditLast_name\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['last_name']\" name=\"EditLast_name\"\n\t\t                #EditLast_name=\"ngModel\">\n                <div *ngIf=\"detail['last_name']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('last_name')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditLast_name.valid || EditLast_name.pristine || EditLast_name.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLast_name.errors && EditLast_name.errors.required\">\n    \t        Last_name is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('email')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditEmail\">Email</label>\n\t        \n\n        \t<div class=\"input-group\">\n\t\t        <input type=\"text\" class=\"form-control rounded\" id=\"EditEmail\" \n\t\t                required\n\t\t                \n\t\t                \n\t\t\t        \t \n\t\t                [(ngModel)]=\"detail['email']\" name=\"EditEmail\"\n\t\t                #EditEmail=\"ngModel\">\n                <div *ngIf=\"detail['email']\" \n\t\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('email')\">\n\t\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t        </div>\n\n\t        <div [hidden]=\"EditEmail.valid || EditEmail.pristine || EditEmail.errors.minlength\"\n     \t\t\tclass=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditEmail.errors && EditEmail.errors.required\">\n    \t        Email is required.\n  \t          </div>\n \n\n\t        </div>\n        \n\t      </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.ts ***!
+  \********************************************************************/
+/*! exports provided: LiferEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferEditComponent", function() { return LiferEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _lifer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifer.component */ "./src/app/lifehacks/lifer/lifer.component.ts");
+/* harmony import */ var _lifer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lifer.service */ "./src/app/lifehacks/lifer/lifer.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferEditComponent = /** @class */ (function (_super) {
+    __extends(LiferEditComponent, _super);
+    function LiferEditComponent(liferService, injector, router, route, location) {
+        var _this = _super.call(this, liferService, injector, router, route, location, _lifer_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
+        _this.liferService = liferService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.stringFields.push('first_name');
+        _this.stringFields.push('last_name');
+        _this.stringFields.push('email');
+        var detail = {};
+        _this.detail = _this.formatDetail(detail);
+        return _this;
+    }
+    LiferEditComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.route.snapshot.paramMap.get('id');
+        if (this.id) {
+            this.action = "Edit";
+            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
+        }
+        else {
+            this.action = "Create";
+            if (!this.cid)
+                this.cid = this.route.snapshot.queryParamMap.get('cid');
+            if (this.cid) {
+                this.populateDetailFromCopy(this.cid);
+            }
+            else if (this.initData) {
+                this.action = "Add";
+                this.subEdit = true;
+                var detail = {};
+                for (var prop in this.initData) {
+                    detail[prop] = this.initData[prop];
+                    this.hiddenFields.push(prop);
+                }
+                this.detail = this.formatDetail(detail);
+            }
+            else {
+                var detail = {};
+                this.detail = this.formatDetail(detail);
+            }
+        }
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], LiferEditComponent.prototype, "id", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], LiferEditComponent.prototype, "cid", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], LiferEditComponent.prototype, "initData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], LiferEditComponent.prototype, "done", void 0);
+    LiferEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lifer-edit',
+            template: __webpack_require__(/*! ./lifer-edit.component.html */ "./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.html"),
+            styles: [__webpack_require__(/*! ./lifer-edit.component.css */ "./src/app/lifehacks/lifer/lifer-edit/lifer-edit.component.css")]
+        }),
+        __metadata("design:paramtypes", [_lifer_service__WEBPACK_IMPORTED_MODULE_4__["LiferService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferEditComponent);
+    return LiferEditComponent;
+}(_lifer_component__WEBPACK_IMPORTED_MODULE_3__["LiferComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-list/lifer-list.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyL2xpZmVyLWxpc3QvbGlmZXItbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyL2xpZmVyLWxpc3QvbGlmZXItbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-list/lifer-list.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"liferTextSearch\" \n\t\t\t\t\t\t#liferTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for first_name, last_name\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">First Name</th>\n\t\t        <th scope=\"col\">Last Name</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['first_name']}} \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                  {{detail['last_name']}} \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-list/lifer-list.component.ts ***!
+  \********************************************************************/
+/*! exports provided: LiferListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferListComponent", function() { return LiferListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _lifer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifer.component */ "./src/app/lifehacks/lifer/lifer.component.ts");
+/* harmony import */ var _lifer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lifer.service */ "./src/app/lifehacks/lifer/lifer.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferListComponent = /** @class */ (function (_super) {
+    __extends(LiferListComponent, _super);
+    function LiferListComponent(liferService, injector, router, route, location) {
+        var _this = _super.call(this, liferService, injector, router, route, location, _lifer_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
+        _this.liferService = liferService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.stringFields.push('first_name');
+        _this.stringFields.push('last_name');
+        // this is to initialize the detail that will be used for search condition selection
+        var detail = {};
+        _this.detail = _this.formatDetail(detail);
+        return _this;
+    }
+    LiferListComponent.prototype.ngOnInit = function () {
+        this.populateList();
+    };
+    LiferListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lifer-list',
+            template: __webpack_require__(/*! ./lifer-list.component.html */ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.html"),
+            styles: [__webpack_require__(/*! ./lifer-list.component.css */ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_lifer_service__WEBPACK_IMPORTED_MODULE_4__["LiferService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferListComponent);
+    return LiferListComponent;
+}(_lifer_component__WEBPACK_IMPORTED_MODULE_3__["LiferComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-list/lifer-select.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-list/lifer-select.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"select-model show\" (keyup.esc)=\"uiOnEscapeKey()\" tabindex=\"0\" #LifehacksModal>\n  <div class=\"select-model-content\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Select {{ItemCamelName}}</h5>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"uiCloseModal()\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n\n<!--  model body starts -->\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\t\t\t    <div class=\"input-group\">\n\t              <input type=\"search\" class=\"form-control border border-secondary\" id=\"liferTextSearch\" \n\t\t\t\t\t\t#liferTextSearch [(ngModel)]=\"searchText\"\n\t\t\t\t\t\t(keyup.enter)=\"$event.target.blur();searchList();false\"\n\t\t\t\t\t    placeholder=\"Search for first_name, last_name\"> \n\t\t\t\t  <div *ngIf=\"searchText\" class=\"input-group-append icon-clear-inside\">\n\t\t\t\t\t<span >\n\t\t\t\t\t    <i class=\"fas fa-times-circle\" (click)=\"onSearchTextClear()\" title=\"Clear\"></i>\n\t\t\t\t    </span>\n\t\t\t\t  </div>\n\t\t\t\t  <div class=\"input-group-append\">\n\t\t\t\t    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"searchList()\"><i class=\"fas fa-search\"></i></button>\n\t\t\t\t  </div>\n\t\t\t\t</div>\n\t\t\t\n\n\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t</div>\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">First Name</th>\n\t\t        <th scope=\"col\">Last Name</th>\n\n\t\t        <th></th>      \n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" \n\t        \t[ngClass]=\"{'clicked-row': detail['_id']==clickedId}\" >\n\t            <td scope=\"row\" (click)=\"selectItemSelected(i)\"  class=\"pointer\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['first_name']}} \n\n\t            </td>\n\t            <td (click)=\"selectItemSelected(i)\"  class=\"pointer\">                  {{detail['last_name']}} \n\n\t            </td>\n\n\t            <td><a routerLink=\".\" class=\"btn\" \n\t                 [ngClass]=\"{'btn-primary': detail['_id']==selectedId, 'btn-outline-primary': detail['_id']!==selectedId}\"\n\t            \t (click)=\"selectViewDetail(i)\">View Details</a>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\n<!--  model body ends -->\n\n      </div>\n      <div class=\"modal-footer\">\n      </div>\n    </div>\n  </div>\n</div> \n\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer-list/lifer-select.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer-list/lifer-select.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: LiferSelectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferSelectComponent", function() { return LiferSelectComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _lifer_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lifer-list.component */ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.ts");
+/* harmony import */ var _lifer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lifer.service */ "./src/app/lifehacks/lifer/lifer.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferSelectComponent = /** @class */ (function (_super) {
+    __extends(LiferSelectComponent, _super);
+    function LiferSelectComponent(liferService, injector, router, route, location) {
+        var _this = _super.call(this, liferService, injector, router, route, location) || this;
+        _this.liferService = liferService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.majorUi = false;
+        return _this;
+    }
+    LiferSelectComponent.prototype.ngOnInit = function () {
+        this.selectedId = this.inputData;
+        this.populateList();
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], LiferSelectComponent.prototype, "inputData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], LiferSelectComponent.prototype, "outputData", void 0);
+    LiferSelectComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-lifer-select',
+            template: __webpack_require__(/*! ./lifer-select.component.html */ "./src/app/lifehacks/lifer/lifer-list/lifer-select.component.html"),
+            styles: [__webpack_require__(/*! ./lifer-list.component.css */ "./src/app/lifehacks/lifer/lifer-list/lifer-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_lifer_service__WEBPACK_IMPORTED_MODULE_4__["LiferService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferSelectComponent);
+    return LiferSelectComponent;
+}(_lifer_list_component__WEBPACK_IMPORTED_MODULE_3__["LiferListComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer.base.service.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer.base.service.ts ***!
+  \*******************************************************/
+/*! exports provided: LiferBaseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferBaseService", function() { return LiferBaseService; });
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var servicePath = '/lifer/';
+var LiferBaseService = /** @class */ (function (_super) {
+    __extends(LiferBaseService, _super);
+    function LiferBaseService(http, serverRootUrl) {
+        var _this = this;
+        var serviceUrl = serverRootUrl + servicePath;
+        _this = _super.call(this, http, serviceUrl) || this;
+        return _this;
+    }
+    return LiferBaseService;
+}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer.component.ts ***!
+  \****************************************************/
+/*! exports provided: ViewType, LiferComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferComponent", function() { return LiferComponent; });
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
+
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var itemCamelName = 'lifer';
+
+
+
+var LiferComponent = /** @class */ (function (_super) {
+    __extends(LiferComponent, _super);
+    function LiferComponent(liferService, injector, router, route, location, view) {
+        var _this = _super.call(this, liferService, injector, router, route, location, view, itemCamelName) || this;
+        _this.liferService = liferService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.view = view;
+        _this.indexFields = ['email',];
+        return _this;
+    }
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('LifehacksModal'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
+    ], LiferComponent.prototype, "focusEl", void 0);
+    return LiferComponent;
+}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/lifer/lifer.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/lifehacks/lifer/lifer.service.ts ***!
+  \**************************************************/
+/*! exports provided: LiferService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferService", function() { return LiferService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _lifer_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lifer.base.service */ "./src/app/lifehacks/lifer/lifer.base.service.ts");
+/* harmony import */ var _lifehacks_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifehacks.tokens */ "./src/app/lifehacks/lifehacks.tokens.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var LiferService = /** @class */ (function (_super) {
+    __extends(LiferService, _super);
+    function LiferService(http, lifehacksServerRootUri) {
+        var _this = _super.call(this, http, lifehacksServerRootUri) || this;
+        _this.lifehacksServerRootUri = lifehacksServerRootUri;
+        return _this;
+    }
+    LiferService.prototype.ngOnDestroy = function () { };
+    LiferService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_lifehacks_tokens__WEBPACK_IMPORTED_MODULE_3__["Lifehacks_SERVER_ROOT_URI"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+    ], LiferService);
+    return LiferService;
+}(_lifer_base_service__WEBPACK_IMPORTED_MODULE_2__["LiferBaseService"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail-sub.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail-sub.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div *ngIf=\"detail\">\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t\t<div class=\"card-text\">\n      \n\t\t</div>\n\t  </div>\n\t</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail-sub.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail-sub.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: LiferhackDetailSubComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackDetailSubComponent", function() { return LiferhackDetailSubComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _liferhack_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./liferhack-detail.component */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.ts");
+/* harmony import */ var _liferhack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../liferhack.service */ "./src/app/lifehacks/liferhack/liferhack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferhackDetailSubComponent = /** @class */ (function (_super) {
+    __extends(LiferhackDetailSubComponent, _super);
+    function LiferhackDetailSubComponent(liferhackService, injector, router, route, location) {
+        var _this = _super.call(this, null, liferhackService, injector, router, route, location) || this;
+        _this.liferhackService = liferhackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        return _this;
+    }
+    LiferhackDetailSubComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.inputData;
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail sub view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], LiferhackDetailSubComponent.prototype, "inputData", void 0);
+    LiferhackDetailSubComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-liferhack-detail-sub',
+            template: __webpack_require__(/*! ./liferhack-detail-sub.component.html */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail-sub.component.html"),
+            styles: [__webpack_require__(/*! ./liferhack-detail.component.css */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_liferhack_service__WEBPACK_IMPORTED_MODULE_4__["LiferhackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferhackDetailSubComponent);
+    return LiferhackDetailSubComponent;
+}(_liferhack_detail_component__WEBPACK_IMPORTED_MODULE_3__["LiferhackDetailComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.css":
+/*!*************************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.css ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".detail {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.action-buttons .fa-angle-double-left, .fa-list {\n\tfloat: left;\n\tdisplay: inline-block;\n\t/*margin-left: 2.5rem;*/\n\tmargin-top:  0.75rem\n}\n\n.action-buttons span {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 0rem;\n\tmargin-top:  0.5rem\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.card span {\n\tmargin-left: 1rem;\n}\n*/\n\n.referred-by-links {\n\ttext-align: left;\n}\n\n.referred-by-links a {\n\tmargin-left: 1rem;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyaGFjay9saWZlcmhhY2stZGV0YWlsL2xpZmVyaGFjay1kZXRhaWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLFVBQVU7Q0FDVixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsaUJBQWlCO0FBQ2xCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQix1QkFBdUI7Q0FDdkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxxQkFBcUI7Q0FDckIsaUJBQWlCO0NBQ2pCO0FBQ0Q7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBQ0E7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFDQTs7OztDQUlDOztBQUNEO0NBQ0MsZ0JBQWdCO0FBQ2pCOztBQUNBO0NBQ0MsaUJBQWlCO0FBQ2xCOztBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxNQUFNO0lBQ04sV0FBVztJQUNYLFlBQVk7SUFDWixjQUFjO0lBQ2QsNEJBQTRCO0lBQzVCLGlDQUFpQztBQUNyQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFVBQVU7SUFDVixzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLHFFQUFxRTtBQUN6RTs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0Usb0NBQW9DO0VBQ3BDLDBCQUEwQjtBQUM1QiIsImZpbGUiOiJzcmMvYXBwL2xpZmVoYWNrcy9saWZlcmhhY2svbGlmZXJoYWNrLWRldGFpbC9saWZlcmhhY2stZGV0YWlsLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGV0YWlsIHtcblx0d2lkdGg6IDc1JTtcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5mYS1hbmdsZS1kb3VibGUtbGVmdCwgLmZhLWxpc3Qge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHQvKm1hcmdpbi1sZWZ0OiAyLjVyZW07Ki9cblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zIHNwYW4ge1xuXHRmbG9hdDogbGVmdDtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMHJlbTtcblx0bWFyZ2luLXRvcDogIDAuNXJlbVxufVxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jYXJkIGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuLypcbi5jYXJkIHNwYW4ge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiovXG4ucmVmZXJyZWQtYnktbGlua3Mge1xuXHR0ZXh0LWFsaWduOiBsZWZ0O1xufVxuLnJlZmVycmVkLWJ5LWxpbmtzIGEge1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuLnNlbGVjdC1tb2RlbCB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxuICAgIHBvc2l0aW9uOiBmaXhlZDsgXG4gICAgei1pbmRleDogMTAwMDsgXG4gICAgcGFkZGluZy10b3A6IDEwMHB4OyBcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7IFxuICAgIG92ZXJmbG93OiBhdXRvOyBcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwwLDApO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwwLDAsMC40KTtcbn1cblxuLnNlbGVjdC1tb2RlbC5zaG93IHtcbiAgICBkaXNwbGF5OiBibG9jazsgXG59XG5cbi5zZWxlY3QtbW9kZWwtY29udGVudCB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsb2F0OnJpZ2h0O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZWZlZmU7XG4gICAgLyptYXJnaW46IGF1dG87Ki9cbiAgICBtYXJnaW4tcmlnaHQ6IDUwcHg7XG4gICAgcGFkZGluZzogMDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjODg4O1xuICAgIHdpZHRoOiA2MCU7XG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLDAsMCwwLjIpLDAgNnB4IDIwcHggMCByZ2JhKDAsMCwwLDAuMTkpO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmJhZGdlLWNsaWNrIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuZGl2LmJhZGdlLWNsaWNrOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzQ5NTA1NyAhaW1wb3J0YW50O1xuICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.html":
+/*!**************************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"detail\" *ngIf=\"detail\">\n\t<div class=\"action-buttons\">\n        <!--<a href=\"javascript:void(0)\" (click)=\"goBack()\"><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a>-->\n        <a [routerLink]=\"['../../list' ]\"><i class=\"fas fa-list\" title=\"List\"></i><!--  span>&nbsp;&nbsp;{{ItemCamelName}} List</span--></a>\n\t\t<a [routerLink]=\"['../../edit', detail['_id'] ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Edit</a>\n\t\t<a [routerLink]=\"['../../new']\" [queryParams]=\"{cid: detail['_id']}\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">New</a>\n\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDelete(detail['_id'], null)\">Delete</a>\n\t</div>\n\t\n\t<div class=\"card text-left\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\">{{ItemCamelName}} Detail\n\t    \t<a class=\"float-right\" style=\"font-size: 1rem;\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t    </h4>    \n\t\t<div class=\"card-text\">\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Lifer</label></div>\n\t\t\t<div class=\"col-9\">                \n               \t  \n\t            \t{{detail['lifer']?detail['lifer']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n\n          <div class=\"row\">\n      \n\t\t\t<div class=\"col-3\"><label>Hack</label></div>\n\t\t\t<div class=\"col-9\">                \n               \t  \n\t            \t{{detail['hack']?detail['hack']['value']:\"\"}}\n\t              \n</div>\n\n          </div>\n      \n\t\t</div>\n\t  </div>\n\t</div>\n\n    <router-outlet></router-outlet>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: LiferhackDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackDetailComponent", function() { return LiferhackDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _liferhack_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../liferhack.component */ "./src/app/lifehacks/liferhack/liferhack.component.ts");
+/* harmony import */ var _liferhack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../liferhack.service */ "./src/app/lifehacks/liferhack/liferhack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var LiferhackDetailComponent = /** @class */ (function (_super) {
+    __extends(LiferhackDetailComponent, _super);
+    function LiferhackDetailComponent(componentFactoryResolver, liferhackService, injector, router, route, location) {
+        var _this = _super.call(this, componentFactoryResolver, liferhackService, injector, router, route, location, _liferhack_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].DETAIL) || this;
+        _this.componentFactoryResolver = componentFactoryResolver;
+        _this.liferhackService = liferhackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.referenceFields = ['lifer', 'hack',];
+        _this.referenceFieldsMap = { 'lifer': 'lifer', 'hack': 'hack', };
+        return _this;
+    }
+    LiferhackDetailComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.route.snapshot.paramMap.get('id');
+        if (this.id)
+            this.populateDetail(this.id);
+        else
+            console.error("Routing error for detail view... no id...");
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], LiferhackDetailComponent.prototype, "id", void 0);
+    LiferhackDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-liferhack-detail',
+            template: __webpack_require__(/*! ./liferhack-detail.component.html */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.html"),
+            styles: [__webpack_require__(/*! ./liferhack-detail.component.css */ "./src/app/lifehacks/liferhack/liferhack-detail/liferhack-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
+            _liferhack_service__WEBPACK_IMPORTED_MODULE_4__["LiferhackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferhackDetailComponent);
+    return LiferhackDetailComponent;
+}(_liferhack_component__WEBPACK_IMPORTED_MODULE_3__["LiferhackComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".edit {\n\twidth: 75%;\n\tmargin: 0 auto;\n}\n\nfieldset > .form-control, .input-group, .form-check, .alert {\n\twidth: 90%\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.action-buttons .fa-angle-double-left {\n\tfloat: left;\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n\tmargin-top:  0.75rem\n}\n\n.action-buttons-center {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: center;\n\tmargin-bottom: 1.25rem;\n}\n\n.action-buttons-center .btn {\n\tdisplay: inline-block;\n\tmargin-left: 2.5rem;\n}\n\n.card-title {\n\ttext-align: center;\n}\n\n.card span {\n\tmargin-left: 1rem;\n}\n\n.form-group > label {\n    font-weight: bold;\n\tfont-size: 1rem;\n}\n\n/*\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n/*\n.ng-valid:not(form) {\n  border-left: 5px solid #42A948; /* green *\n}\n*/\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n.input-group-append .btn-outline-secondary {\n\tborder: 1px solid #ced4da;\n    border-radius: .25rem;\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.icon-search, .icon-clear {\n  z-index: 1;\n  pointer-events: auto;\n  cursor: pointer;\n  \n  margin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.input-group > span {\nmargin-left: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.75rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-inside-sm {\n    z-index: 3;\n    cursor: pointer;\n    position: absolute;\n    margin: auto;\n    bottom: 0;\n    top: 0;\n    right: 1.5rem;\n    height: 1.5rem;\n}\n\n.icon-clear-badge {\n\tcursor: pointer;\n\tmargin-left: 1rem;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyaGFjay9saWZlcmhhY2stZWRpdC9saWZlcmhhY2stZWRpdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsVUFBVTtDQUNWLGNBQWM7QUFDZjs7QUFFQTtDQUNDO0FBQ0Q7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtDQUNqQixzQkFBc0I7QUFDdkI7O0FBQ0E7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUNBO0NBQ0MsV0FBVztDQUNYLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxXQUFXO0NBQ1gsa0JBQWtCO0NBQ2xCLHNCQUFzQjtBQUN2Qjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7QUFDcEI7O0FBR0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUI7Q0FDcEIsZUFBZTtBQUNoQjs7QUFFQTs7OztDQUlDOztBQUNEOzs7O0NBSUM7O0FBRUQ7RUFDRSw4QkFBOEIsRUFBRSxRQUFRO0FBQzFDOztBQUVBO0NBQ0MseUJBQXlCO0lBQ3RCLHFCQUFxQjtJQUNyQix5QkFBeUI7SUFDekIsNEJBQTRCO0FBQ2hDOztBQUVBO0VBQ0UseUJBQXlCLEVBQUUscUJBQXFCO0VBQ2hELHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsZUFBZTs7RUFFZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0FBQ0EsbUJBQW1CO0FBQ25COztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixtQ0FBbUM7SUFDbkMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLFNBQVM7SUFDVCxNQUFNO0lBQ04sYUFBYTtJQUNiLGNBQWM7QUFDbEI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyaGFjay9saWZlcmhhY2stZWRpdC9saWZlcmhhY2stZWRpdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQge1xuXHR3aWR0aDogNzUlO1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuZmllbGRzZXQgPiAuZm9ybS1jb250cm9sLCAuaW5wdXQtZ3JvdXAsIC5mb3JtLWNoZWNrLCAuYWxlcnQge1xuXHR3aWR0aDogOTAlXG59XG5cbi5hY3Rpb24tYnV0dG9ucyB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IHJpZ2h0O1xuXHRtYXJnaW4tYm90dG9tOiAxLjI1cmVtO1xufVxuLmFjdGlvbi1idXR0b25zIC5idG4ge1xuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG5cdG1hcmdpbi1sZWZ0OiAyLjVyZW07XG59XG4uYWN0aW9uLWJ1dHRvbnMgLmZhLWFuZ2xlLWRvdWJsZS1sZWZ0IHtcblx0ZmxvYXQ6IGxlZnQ7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcblx0bWFyZ2luLXRvcDogIDAuNzVyZW1cbn1cblxuLmFjdGlvbi1idXR0b25zLWNlbnRlciB7XG5cdHdpZHRoOiAxMDAlO1xuXHRmbG9hdDpyaWdodDsgXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bWFyZ2luLWJvdHRvbTogMS4yNXJlbTtcbn1cbi5hY3Rpb24tYnV0dG9ucy1jZW50ZXIgLmJ0biB7XG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0bWFyZ2luLWxlZnQ6IDIuNXJlbTtcbn1cblxuXG4uY2FyZC10aXRsZSB7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmNhcmQgc3BhbiB7XG5cdG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4uZm9ybS1ncm91cCA+IGxhYmVsIHtcbiAgICBmb250LXdlaWdodDogYm9sZDtcblx0Zm9udC1zaXplOiAxcmVtO1xufVxuXG4vKlxuLm5nLXZhbGlkW3JlcXVpcmVkXSwgLm5nLXZhbGlkLnJlcXVpcmVkICB7XG4gIGJvcmRlci1sZWZ0OiA1cHggc29saWQgIzQyQTk0ODsgLyogZ3JlZW4gKlxufVxuKi9cbi8qXG4ubmctdmFsaWQ6bm90KGZvcm0pIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjNDJBOTQ4OyAvKiBncmVlbiAqXG59XG4qL1xuXG4ubmctaW52YWxpZDpub3QoZm9ybSkgIHtcbiAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjYTk0NDQyOyAvKiByZWQgKi9cbn1cblxuLmlucHV0LWdyb3VwLWFwcGVuZCAuYnRuLW91dGxpbmUtc2Vjb25kYXJ5IHtcblx0Ym9yZGVyOiAxcHggc29saWQgI2NlZDRkYTtcbiAgICBib3JkZXItcmFkaXVzOiAuMjVyZW07XG4gICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcbiAgICBib3JkZXItYm90dG9tLWxlZnQtcmFkaXVzOiAwO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4uaWNvbi1zZWFyY2gsIC5pY29uLWNsZWFyIHtcbiAgei1pbmRleDogMTtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgXG4gIG1hcmdpbi1sZWZ0OiAxcmVtO1xufVxuXG4ucG9pbnRlciB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmlucHV0LWdyb3VwID4gc3BhbiB7XG5tYXJnaW4tbGVmdDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjc1cmVtIDAuNXJlbSAwcmVtIDAuNXJlbTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1sZWZ0OiAtMnJlbTsgICAvKiB0ZXh0IDEgKyBsZWZ0IDAuNSArIHJpZ2h0IDAuNSA9IDIgcmVtKi9cbiAgICBib3JkZXI6IDA7XG59XG5cbi5pY29uLWNsZWFyLWluc2lkZS1zbSB7XG4gICAgei1pbmRleDogMztcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgICBib3R0b206IDA7XG4gICAgdG9wOiAwO1xuICAgIHJpZ2h0OiAxLjVyZW07XG4gICAgaGVpZ2h0OiAxLjVyZW07XG59XG5cbi5pY29uLWNsZWFyLWJhZGdlIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"edit\" *ngIf=\"detail\">\n\t<div *ngIf=\"!subEdit\" class=\"action-buttons\">\n        <!-- <a href=\"javascript:void(0)\" (click)=\"goBack()\" ><i class=\"fas fa-angle-double-left\" title=\"Back\"></i></a> -->\n\t</div>\n\t\n\t<div class=\"card\" style=\"text-align: left;\">\n\t  <div class=\"card-body\">\n\t    <h4 class=\"card-title\" *ngIf=\"!subEdit\">{{action}} LiferHack</h4>    \n\t    <form (ngSubmit)=\"onSubmit()\" #editForm=\"ngForm\">\n\t    \n\t     <div *ngIf=\"action == 'Edit'\">\n<div *ngIf=\"!hiddenFields.includes('lifer')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLifer\">Lifer </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('lifer')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditLifer\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['lifer']['_id']}\"\n\t\t             (focus)=\"onRefSelect('lifer')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['lifer']['value']\" name=\"EditLifer\"\n\t\t             #EditLifer=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['lifer']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('lifer')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditLifer.valid || EditLifer.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLifer.errors && EditLifer.errors.required && !(detail['lifer']?.date)\">\n    \t        Lifer is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('hack')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditHack\">Hack </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('hack')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditHack\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['hack']['_id']}\"\n\t\t             (focus)=\"onRefSelect('hack')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['hack']['value']\" name=\"EditHack\"\n\t\t             #EditHack=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['hack']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('hack')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditHack.valid || EditHack.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditHack.errors && EditHack.errors.required && !(detail['hack']?.date)\">\n    \t        Hack is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div>\n         </div>\t\n\t     <div *ngIf=\"action == 'Create' || action == 'Add' \">\n<div *ngIf=\"!hiddenFields.includes('lifer')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditLifer\">Lifer </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('lifer')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditLifer\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['lifer']['_id']}\"\n\t\t             (focus)=\"onRefSelect('lifer')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['lifer']['value']\" name=\"EditLifer\"\n\t\t             #EditLifer=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['lifer']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('lifer')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditLifer.valid || EditLifer.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditLifer.errors && EditLifer.errors.required && !(detail['lifer']?.date)\">\n    \t        Lifer is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div><div *ngIf=\"!hiddenFields.includes('hack')\">\n\n\t      <fieldset class=\"form-group\">\n\t        <label for=\"EditHack\">Hack </label>\n\t        \n\t\t    <!-- <a class=\"icon-search\" [routerLink]=\"['.']\" (click)=\"onRefSelect('hack')\"><i class=\"fas fa-list\" title=\"Search\"></i></a>  -->\n\t\t    <div class=\"input-group\">\n\t\t    \t<!--  [attr.disabled]=\"true\" -->\n\t\t        <input class=\"form-control rounded\" id=\"EditHack\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['hack']['_id']}\"\n\t\t             (focus)=\"onRefSelect('hack')\"\n\t                 required\n\t\t        \t  \n\t\t             [ngModel]=\"detail['hack']['value']\" name=\"EditHack\"\n\t\t             #EditHack=\"ngModel\"> \n\t\t        <div *ngIf=\"detail['hack']['value']\" \n\t\t          class=\"input-group-append icon-clear-inside \" (click)=\"clearValueFromDetail('hack')\">\n\t\t          <i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t\t\t</div>\n\t        <div [hidden]=\"EditHack.valid || EditHack.pristine\"\n\t             class=\"alert alert-danger\">\n\n\t          <div *ngIf=\"EditHack.errors && EditHack.errors.required && !(detail['hack']?.date)\">\n    \t        Hack is required.\n  \t          </div>\n \n\t        </div>\n\t      </fieldset>\n    \n</div>\n         </div>\t\n         \n\t\t<div class=\"action-buttons-center\">\n\t     \t<button type=\"submit\" class=\"btn btn-success\" \n     \t\t\t[disabled]=\"!editForm.form.valid\">Submit</button>\n\t     \t<button class=\"btn btn-outline-success\" \n     \t\t\ttype=\"button\" (click)=\"editCancel()\">Cancel</button>\n\t\t</div>\n\t    </form>\n\t  </div>\n\t</div>\n</div>\n\n<ng-template lifehacks-ref-select></ng-template>\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: LiferhackEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackEditComponent", function() { return LiferhackEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _liferhack_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../liferhack.component */ "./src/app/lifehacks/liferhack/liferhack.component.ts");
+/* harmony import */ var _liferhack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../liferhack.service */ "./src/app/lifehacks/liferhack/liferhack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var LiferhackEditComponent = /** @class */ (function (_super) {
+    __extends(LiferhackEditComponent, _super);
+    function LiferhackEditComponent(componentFactoryResolver, liferhackService, injector, router, route, location) {
+        var _this = _super.call(this, componentFactoryResolver, liferhackService, injector, router, route, location, _liferhack_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].EDIT) || this;
+        _this.componentFactoryResolver = componentFactoryResolver;
+        _this.liferhackService = liferhackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.done = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this.referenceFields = ['lifer', 'hack',];
+        _this.referenceFieldsMap = { 'lifer': 'lifer', 'hack': 'hack', };
+        var detail = {};
+        _this.detail = _this.formatDetail(detail);
+        return _this;
+    }
+    LiferhackEditComponent.prototype.ngOnInit = function () {
+        if (!this.id)
+            this.id = this.route.snapshot.paramMap.get('id');
+        if (this.id) {
+            this.action = "Edit";
+            this.populateDetailForAction(this.id, "edit"); //populate with action as "edit"
+        }
+        else {
+            this.action = "Create";
+            if (!this.cid)
+                this.cid = this.route.snapshot.queryParamMap.get('cid');
+            if (this.cid) {
+                this.populateDetailFromCopy(this.cid);
+            }
+            else if (this.initData) {
+                this.action = "Add";
+                this.subEdit = true;
+                var detail = {};
+                for (var prop in this.initData) {
+                    detail[prop] = this.initData[prop];
+                    this.hiddenFields.push(prop);
+                }
+                this.detail = this.formatDetail(detail);
+            }
+            else {
+                var detail = {};
+                this.detail = this.formatDetail(detail);
+            }
+        }
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], LiferhackEditComponent.prototype, "id", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], LiferhackEditComponent.prototype, "cid", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], LiferhackEditComponent.prototype, "initData", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], LiferhackEditComponent.prototype, "done", void 0);
+    LiferhackEditComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-liferhack-edit',
+            template: __webpack_require__(/*! ./liferhack-edit.component.html */ "./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.html"),
+            styles: [__webpack_require__(/*! ./liferhack-edit.component.css */ "./src/app/lifehacks/liferhack/liferhack-edit/liferhack-edit.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
+            _liferhack_service__WEBPACK_IMPORTED_MODULE_4__["LiferhackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferhackEditComponent);
+    return LiferhackEditComponent;
+}(_liferhack_component__WEBPACK_IMPORTED_MODULE_3__["LiferhackComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list-sub.component.html":
+/*!**************************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-list/liferhack-list-sub.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n      <div class=\"add-area\">\n        <a href=\"javascript:void(0)\" (click)=\"onAdd()\"><i class=\"fas fa-plus-square\" title=\"Add\"></i></a>\n        <div *ngIf=\"isAdding\">\n            <app-liferhack-edit [initData]=\"parentData\" (done)=\"onAddDone($event)\"></app-liferhack-edit>\n        </div>\n    </div>\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table\">\n\t    <thead>\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th *ngIf=\"referenceFieldsMap['lifer'] != parentItem\"  scope=\"col\">\n\t\t        \tLifer\n\t\t        </th>\n\t\t        <th *ngIf=\"referenceFieldsMap['hack'] != parentItem\"  scope=\"col\">\n\t\t        \tHack\n\t\t        </th>\t\t        \n                <th scope=\"col\" style=\"width:2rem;\"></th>\n\n\t\t        <th scope=\"col\" style=\"width:2rem;\"></th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t      <ng-template ngFor let-detail [ngForOf]=\"list\" let-i=\"index\">\n\t        <tr [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\"> <!-- *ngFor=\"let detail of list;  let i = index\" -->\n\t            <td scope=\"row\">{{(page-1)*per_page+i+1}}</td>\n\n\t            <td *ngIf=\"referenceFieldsMap['lifer'] != parentItem\"  >\n\t            \t                \n               \t  \n\t            \t{{detail['lifer']?detail['lifer']['value']:\"\"}}\n\t              \n\n                </td>\n\t            <td *ngIf=\"referenceFieldsMap['hack'] != parentItem\"  >\n\t            \t                \n               \t  \n\t            \t{{detail['hack']?detail['hack']['value']:\"\"}}\n\t              \n\n                </td>\n\t            <td>\n\n                </td>\n\n\t            <td>\n\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\n                </td>\n\t        </tr>\n\n\t        <tr *ngIf=\"checkedItem[i]\" >\n\t        \t<td colspan=\"2\"><app-liferhack-detail-sub [inputData]=\"detail['_id']\"></app-liferhack-detail-sub></td>\n\t        </tr>\n\t      </ng-template>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list-sub.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-list/liferhack-list-sub.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: LiferhackListSubComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackListSubComponent", function() { return LiferhackListSubComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _liferhack_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./liferhack-list.component */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.ts");
+/* harmony import */ var _liferhack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../liferhack.service */ "./src/app/lifehacks/liferhack/liferhack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LiferhackListSubComponent = /** @class */ (function (_super) {
+    __extends(LiferhackListSubComponent, _super);
+    function LiferhackListSubComponent(liferhackService, injector, router, route, location) {
+        var _this = _super.call(this, null, liferhackService, injector, router, route, location) || this;
+        _this.liferhackService = liferhackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.parentData = {};
+        return _this;
+    }
+    LiferhackListSubComponent.prototype.ngOnInit = function () {
+        var ref = this.getParentRouteRefField();
+        var id = this.getParentRouteItemId();
+        this.detail = {};
+        if (this.arrayFields.some(function (x) { return x[0] == ref; })) {
+            this.parentData[ref] = { 'selection': [{ '_id': id }] };
+            this.detail[ref] = { 'selection': [{ '_id': id }] }; //search on array list
+        }
+        else {
+            this.parentData[ref] = { '_id': id };
+            this.detail[ref] = { '_id': id }; //make this as the search context
+        }
+        this.processSearchContext();
+        this.populateList();
+    };
+    LiferhackListSubComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-liferhack-list-sub',
+            template: __webpack_require__(/*! ./liferhack-list-sub.component.html */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list-sub.component.html"),
+            styles: [__webpack_require__(/*! ./liferhack-list.component.css */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_liferhack_service__WEBPACK_IMPORTED_MODULE_4__["LiferhackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferhackListSubComponent);
+    return LiferhackListSubComponent;
+}(_liferhack_list_component__WEBPACK_IMPORTED_MODULE_3__["LiferhackListComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "table {\n\tmargin-top: 0.5rem;\n}\n\ntd i {\n\tcolor:black;\n\tmargin-left: 0.5rem;\n\tmargin-right: 0.5rem;\n}\n\ntd a i:hover {\n\tcolor: blue;\n}\n\ntd a i.fa-trash-alt:hover {\n\tcolor: red;\n}\n\n.action-buttons {\n\twidth: 100%;\n\tfloat:right; \n\ttext-align: right;\n}\n\n.action-buttons .btn {\n\tdisplay: inline-block;\n\tmargin-left: 1rem;\n}\n\n.pagination li {\n\tmin-width: 2.8rem;\n}\n\n.total_counts {\n\tpadding-top: 0.8rem;\n}\n\n::-ms-clear {\n  display: none;\n}\n\n.icon-clear {\ncursor: pointer;\nmargin-top: 0.5rem;\n}\n\n.icon-clear-inside {\n    z-index: 3;\n    vertical-align: middle;\n    padding: 0.5rem 0.5rem 0rem 0.5rem;\n    cursor: pointer;\n    position: relative;\n    margin-left: -2rem;   /* text 1 + left 0.5 + right 0.5 = 2 rem*/\n    border: 0;\n}\n\n.icon-clear-badge {\ncursor: pointer;\nmargin-left: 1rem;\n}\n\n.pointer {\n  cursor: pointer;\n}\n\n.ref-badge {\n  border: 1px solid #eceff3; /*rgba(0,0,0,.125); */\n  background-color: #eceff3;\n}\n\n.refine-search-text {\n  font-size: 0.8rem; /*rgba(0,0,0,.125); */\n  color: #868181;\n}\n\n.select-model {\n    display: block; \n    position: fixed; \n    z-index: 1000; \n    padding-top: 100px; \n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; \n    overflow: auto; \n    background-color: rgb(0,0,0);\n    background-color: rgba(0,0,0,0.4);\n}\n\n.select-model.show {\n    display: block; \n}\n\n.select-model-content {\n    position: relative;\n    float:right;\n    background-color: #fefefe;\n    /*margin: auto;*/\n    margin-right: 50px;\n    padding: 0;\n    border: 1px solid #888;\n    width: 60%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n}\n\ntable {\n    table-layout: fixed;\n    word-wrap: break-word;\n}\n\n.clicked-row {\nbackground-color: #dcdfe0;\n}\n\n.selected-row {\nbackground-color: #c9f5eb;\n}\n\ntr th:first-child{\n    width:8%;\n    white-space:nowrap;\n}\n\n.single-line-edit {\n\t\n}\n\n.single-line-edit > .row {\n\tpadding-bottom: 2px;\n}\n\n/*NdbDatePicker Range Selector */\n\n.custom-day {\n      text-align: center;\n      padding: 0.185rem 0.25rem;\n      display: inline-block;\n      height: 2rem;\n      width: 2rem;\n    }\n\n.custom-day.focused {\n      background-color: #e6e6e6;\n    }\n\n.custom-day.range, .custom-day:hover {\n      background-color: rgb(2, 117, 216);\n      color: white;\n    }\n\n.custom-day.faded {\n      background-color: rgba(2, 117, 216, 0.5);\n    }\n\n.date-selection-pop {\n\t\tposition:absolute;\n\t\ttop:100%;\n\t\tleft:0;\n\t\tz-index:1000;\n\t\tdisplay:block;\n\t\tfloat:left;\n\t\tmin-width:10rem;\n\t\t/*padding:.5rem 0;*/\n\t\tmargin:.125rem 0 0;\n\t\tfont-size:1rem;\n\t\tcolor:#212529;\n\t\ttext-align:left;\n\t\tlist-style:none;\n\t\tbackground-color:#fff;\n\t\tbackground-clip:padding-box;\n\t\tborder: 1px solid #dfdfdf;\n\t\tborder-radius:.25rem;\n    }\n\n.add-area {\n    margin-left: 0.75rem;\n}\n\n.badge-click {\n  cursor: pointer;\n}\n\ndiv.badge-click:hover {\n  background-color: #495057 !important;\n  text-decoration: underline;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyaGFjay9saWZlcmhhY2stbGlzdC9saWZlcmhhY2stbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0Msa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztDQUNYLG1CQUFtQjtDQUNuQixvQkFBb0I7QUFDckI7O0FBQ0E7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0FBQ1g7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsV0FBVztDQUNYLGlCQUFpQjtBQUNsQjs7QUFDQTtDQUNDLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBR0E7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBQ0E7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7QUFDQSxlQUFlO0FBQ2Ysa0JBQWtCO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixrQ0FBa0M7SUFDbEMsZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0IsSUFBSSx5Q0FBeUM7SUFDL0QsU0FBUztBQUNiOztBQUVBO0FBQ0EsZUFBZTtBQUNmLGlCQUFpQjtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUIsRUFBRSxxQkFBcUI7RUFDaEQseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsaUJBQWlCLEVBQUUscUJBQXFCO0VBQ3hDLGNBQWM7QUFDaEI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7SUFDbEIsT0FBTztJQUNQLE1BQU07SUFDTixXQUFXO0lBQ1gsWUFBWTtJQUNaLGNBQWM7SUFDZCw0QkFBNEI7SUFDNUIsaUNBQWlDO0FBQ3JDOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YscUVBQXFFO0FBQ3pFOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLHFCQUFxQjtBQUN6Qjs7QUFFQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFDQTtBQUNBLHlCQUF5QjtBQUN6Qjs7QUFHQTtJQUNJLFFBQVE7SUFDUixrQkFBa0I7QUFDdEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxtQkFBbUI7QUFDcEI7O0FBRUEsZ0NBQWdDOztBQUM1QjtNQUNFLGtCQUFrQjtNQUNsQix5QkFBeUI7TUFDekIscUJBQXFCO01BQ3JCLFlBQVk7TUFDWixXQUFXO0lBQ2I7O0FBQ0E7TUFDRSx5QkFBeUI7SUFDM0I7O0FBQ0E7TUFDRSxrQ0FBa0M7TUFDbEMsWUFBWTtJQUNkOztBQUNBO01BQ0Usd0NBQXdDO0lBQzFDOztBQUVBO0VBQ0YsaUJBQWlCO0VBQ2pCLFFBQVE7RUFDUixNQUFNO0VBQ04sWUFBWTtFQUNaLGFBQWE7RUFDYixVQUFVO0VBQ1YsZUFBZTtFQUNmLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGFBQWE7RUFDYixlQUFlO0VBQ2YsZUFBZTtFQUNmLHFCQUFxQjtFQUNyQiwyQkFBMkI7RUFDM0IseUJBQXlCO0VBQ3pCLG9CQUFvQjtJQUNsQjs7QUFFSjtJQUNJLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxvQ0FBb0M7RUFDcEMsMEJBQTBCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvbGlmZWhhY2tzL2xpZmVyaGFjay9saWZlcmhhY2stbGlzdC9saWZlcmhhY2stbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xuXHRtYXJnaW4tdG9wOiAwLjVyZW07XG59XG5cbnRkIGkge1xuXHRjb2xvcjpibGFjaztcblx0bWFyZ2luLWxlZnQ6IDAuNXJlbTtcblx0bWFyZ2luLXJpZ2h0OiAwLjVyZW07XG59XG50ZCBhIGk6aG92ZXIge1xuXHRjb2xvcjogYmx1ZTtcbn1cbnRkIGEgaS5mYS10cmFzaC1hbHQ6aG92ZXIge1xuXHRjb2xvcjogcmVkO1xufVxuXG4uYWN0aW9uLWJ1dHRvbnMge1xuXHR3aWR0aDogMTAwJTtcblx0ZmxvYXQ6cmlnaHQ7IFxuXHR0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5hY3Rpb24tYnV0dG9ucyAuYnRuIHtcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xuXHRtYXJnaW4tbGVmdDogMXJlbTtcbn1cblxuXG4ucGFnaW5hdGlvbiBsaSB7XG5cdG1pbi13aWR0aDogMi44cmVtO1xufVxuLnRvdGFsX2NvdW50cyB7XG5cdHBhZGRpbmctdG9wOiAwLjhyZW07XG59XG5cbjo6LW1zLWNsZWFyIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cblxuLmljb24tY2xlYXIge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLXRvcDogMC41cmVtO1xufVxuXG4uaWNvbi1jbGVhci1pbnNpZGUge1xuICAgIHotaW5kZXg6IDM7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICBwYWRkaW5nOiAwLjVyZW0gMC41cmVtIDByZW0gMC41cmVtO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWxlZnQ6IC0ycmVtOyAgIC8qIHRleHQgMSArIGxlZnQgMC41ICsgcmlnaHQgMC41ID0gMiByZW0qL1xuICAgIGJvcmRlcjogMDtcbn1cblxuLmljb24tY2xlYXItYmFkZ2Uge1xuY3Vyc29yOiBwb2ludGVyO1xubWFyZ2luLWxlZnQ6IDFyZW07XG59XG5cbi5wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucmVmLWJhZGdlIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VjZWZmMzsgLypyZ2JhKDAsMCwwLC4xMjUpOyAqL1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZWNlZmYzO1xufVxuXG4ucmVmaW5lLXNlYXJjaC10ZXh0IHtcbiAgZm9udC1zaXplOiAwLjhyZW07IC8qcmdiYSgwLDAsMCwuMTI1KTsgKi9cbiAgY29sb3I6ICM4NjgxODE7XG59XG5cbi5zZWxlY3QtbW9kZWwge1xuICAgIGRpc3BsYXk6IGJsb2NrOyBcbiAgICBwb3NpdGlvbjogZml4ZWQ7IFxuICAgIHotaW5kZXg6IDEwMDA7IFxuICAgIHBhZGRpbmctdG9wOiAxMDBweDsgXG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlOyBcbiAgICBvdmVyZmxvdzogYXV0bzsgXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwKTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNCk7XG59XG5cbi5zZWxlY3QtbW9kZWwuc2hvdyB7XG4gICAgZGlzcGxheTogYmxvY2s7IFxufVxuXG4uc2VsZWN0LW1vZGVsLWNvbnRlbnQge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBmbG9hdDpyaWdodDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmVmZWZlO1xuICAgIC8qbWFyZ2luOiBhdXRvOyovXG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xuICAgIHBhZGRpbmc6IDA7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzg4ODtcbiAgICB3aWR0aDogNjAlO1xuICAgIGJveC1zaGFkb3c6IDAgNHB4IDhweCAwIHJnYmEoMCwwLDAsMC4yKSwwIDZweCAyMHB4IDAgcmdiYSgwLDAsMCwwLjE5KTtcbn1cblxudGFibGUge1xuICAgIHRhYmxlLWxheW91dDogZml4ZWQ7XG4gICAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuXG4uY2xpY2tlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2RjZGZlMDtcbn1cbi5zZWxlY3RlZC1yb3cge1xuYmFja2dyb3VuZC1jb2xvcjogI2M5ZjVlYjtcbn1cblxuXG50ciB0aDpmaXJzdC1jaGlsZHtcbiAgICB3aWR0aDo4JTtcbiAgICB3aGl0ZS1zcGFjZTpub3dyYXA7XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0IHtcblx0XG59XG5cbi5zaW5nbGUtbGluZS1lZGl0ID4gLnJvdyB7XG5cdHBhZGRpbmctYm90dG9tOiAycHg7XG59XG5cbi8qTmRiRGF0ZVBpY2tlciBSYW5nZSBTZWxlY3RvciAqL1xuICAgIC5jdXN0b20tZGF5IHtcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIHBhZGRpbmc6IDAuMTg1cmVtIDAuMjVyZW07XG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICBoZWlnaHQ6IDJyZW07XG4gICAgICB3aWR0aDogMnJlbTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZm9jdXNlZCB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTZlNmU2O1xuICAgIH1cbiAgICAuY3VzdG9tLWRheS5yYW5nZSwgLmN1c3RvbS1kYXk6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDIsIDExNywgMjE2KTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gICAgLmN1c3RvbS1kYXkuZmFkZWQge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyLCAxMTcsIDIxNiwgMC41KTtcbiAgICB9XG4gICAgXG4gICAgLmRhdGUtc2VsZWN0aW9uLXBvcCB7XG5cdFx0cG9zaXRpb246YWJzb2x1dGU7XG5cdFx0dG9wOjEwMCU7XG5cdFx0bGVmdDowO1xuXHRcdHotaW5kZXg6MTAwMDtcblx0XHRkaXNwbGF5OmJsb2NrO1xuXHRcdGZsb2F0OmxlZnQ7XG5cdFx0bWluLXdpZHRoOjEwcmVtO1xuXHRcdC8qcGFkZGluZzouNXJlbSAwOyovXG5cdFx0bWFyZ2luOi4xMjVyZW0gMCAwO1xuXHRcdGZvbnQtc2l6ZToxcmVtO1xuXHRcdGNvbG9yOiMyMTI1Mjk7XG5cdFx0dGV4dC1hbGlnbjpsZWZ0O1xuXHRcdGxpc3Qtc3R5bGU6bm9uZTtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiNmZmY7XG5cdFx0YmFja2dyb3VuZC1jbGlwOnBhZGRpbmctYm94O1xuXHRcdGJvcmRlcjrCoDFweCBzb2xpZMKgI2RmZGZkZjtcblx0XHRib3JkZXItcmFkaXVzOi4yNXJlbTtcbiAgICB9XG4gICAgXG4uYWRkLWFyZWEge1xuICAgIG1hcmdpbi1sZWZ0OiAwLjc1cmVtO1xufVxuXG4uYmFkZ2UtY2xpY2sge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5kaXYuYmFkZ2UtY2xpY2s6aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNDk1MDU3ICFpbXBvcnRhbnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\n\t<div class=\"container search\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-9\">\n\n\n\n\t\t\t\t<div class=\"text-center\">\n                    <span  class=\"pointer\" (click)=\"toggleMoreSearch()\">\n                        <span class=\"refine-search-text\">Refine Search &nbsp;</span>\n                        <span>\n                            <i *ngIf=\"!moreSearchOpened\"  class=\"fas fa-plus-circle\" title=\"More\"></i>\n                            <i *ngIf=\"moreSearchOpened\" class=\"fas fa-minus-circle\"  title=\"Less\"></i>\n                        </span>\n                    </span>\n\t\t\t\t</div>\n\t\t\t    <div class=\"shadow\" *ngIf=\"moreSearchOpened\">\n\t\t\t\t\t<div class=\"card\">\n\t\t\t\t\t\t<div class=\"card-body\">\n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"liferhackEditLifer\">Lifer</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"liferhackEditLifer\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['lifer']['_id']}\"\n\t\t             (focus)=\"detail['lifer']['_id']?onRefShow('lifer', 'select', detail['lifer']['_id']):onRefSelect('lifer')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['lifer']['value']\" name=\"liferhackEditLifer\"\n\t\t             #liferhackEditLifer=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('lifer')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('lifer')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\t    <div class=\"single-line-edit\">\n\t      <div class=\"row\">\n\t        <div class=\"col-3\"><label for=\"liferhackEditHack\">Hack</label></div>\n\t        <div class=\"col-8\">\n\n\n\t\t    <div class=\"input-group\">\n\t\t        <input class=\"form-control rounded\" id=\"liferhackEditHack\" \n\t\t             [ngClass]=\"{'pointer ref-badge': detail['hack']['_id']}\"\n\t\t             (focus)=\"detail['hack']['_id']?onRefShow('hack', 'select', detail['hack']['_id']):onRefSelect('hack')\"\n\t\t        \t  \n\t\t             [ngModel]=\"detail['hack']['value']\" name=\"liferhackEditHack\"\n\t\t             #liferhackEditHack=\"ngModel\"> \n\t\t\t</div>\n\n\t      </div>\n\t      \n\t      <div class=\"col-1\">\n\t\t    <div class=\"icon-clear\" (click)=\"clearValueFromDetail('hack')\"\n\t\t        *ngIf=\"checkValueDefinedFromDetail('hack')\"\n\t\t        ><i class=\"fas fa-times-circle\" title=\"Clear\"></i></div>\n\t      </div>\n\t    </div>\n      </div>\n      \n \n\n\t\t\t\t\t\t  <div class=\"action-buttons\" style=\"margin-top: 10px;\">\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onSearchClear()\">Reset</button>\n\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\" (click)=\"searchList()\">Search</button>\n\t\t\t\t\t\t  </div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t        </div>\n\t\t        <div *ngIf=\"!moreSearchOpened\" style=\"text-align: left;\">\n\t\t\t\t\t<span class=\"badge badge-pill badge-info\" *ngFor=\"let value of searchMoreDetail\">\n\t\t\t\t\t    <a (click)=\"toggleMoreSearch()\" class=\"pointer\"> {{value[0]}}: {{value[1]}}</a>\n\t\t\t\t\t    <i class=\"fas fa-times-circle icon-clear-badge\" (click)=\"clearValueFromDetailAndSearchList(value[0])\" title=\"Clear\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t    \n\t\t\t\n\t\t    </div>\n\t\t\t<div class=\"col-3\">\n\t\t        <div class=\"action-buttons\">\n\t\t\t\t\t<a [routerLink]=\"['../new' ]\" [skipLocationChange]=\"false\" class=\"btn btn-outline-primary\">Create</a>\n\t\t\t\t\t<a routerLink=\".\" class=\"btn btn-outline-primary\" (click)=\"onDeleteSelected()\"\n\t\t\t\t\t\t[ngClass]=\"{'disabled': !isItemSelected()}\">Delete</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<hr/>\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t\t<a class=\"float-right\" routerLink=\".\" (click)=\"onRefresh()\"><i class=\"fa fa-sync-alt\"></i></a>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n\t<table class=\"table table-bordered table-hover\">\n\t    <thead class=\"thead-light\">\n\t    \t<tr>\n\t\t        <th scope=\"col\">#</th>\n\n\t\t        <th scope=\"col\">Lifer</th>\n\t\t        <th scope=\"col\">Hack</th>\t\t        \n\t\t        <th scope=\"col\" style=\"width:6rem;\"></th>\n\t\t        <th scope=\"col\" style=\"width:2rem;\">\n\t\t        \t<input type=\"checkbox\" [(ngModel)]=\"checkAll\" (change)=\"onCheckAllChange()\">\n\t\t        </th>\n\t        </tr>\n\t    </thead>\n\t    <tbody>\n\t        <tr *ngFor=\"let detail of list;  let i = index\" [ngClass]=\"{'clicked-row': clickedId==detail['_id']}\">\n\t            <td scope=\"row\" (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t{{(page-1)*per_page+i+1}}\n\t            </td>\n\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n               \t  \n\t            \t{{detail['lifer']?detail['lifer']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            <td (click)=\"onDetailLinkClicked(detail['_id'])\"  class=\"pointer\">\n\t            \t                \n               \t  \n\t            \t{{detail['hack']?detail['hack']['value']:\"\"}}\n\t              \n\n\t            </td>\n\t            \n\t            <td>\n\t            \t<a [routerLink]=\"['../edit', detail['_id'] ]\" [skipLocationChange]=\"false\"><i class=\"fas fa-edit\" title=\"Edit\"></i></a>\n\t            \t<a routerLink=\".\" (click)=\"onDelete(detail['_id'], i)\"><i class=\"fas fa-trash-alt\" title=\"Delete\"></i></a>\n\t            </td>\n\t            \n\t            <td>      \n\t            \t<input type=\"checkbox\" [(ngModel)]=\"checkedItem[i]\"/>\n\t            </td>\n\t        </tr>\n\t    </tbody>\n\t</table>\n\t\n\t<div class=\"container\">\n\t\t<div class=\"row\">\t\t\t<div class=\"col-3\">\n\t\t\t</div>\n\t\t\t<div class=\"col-6\">\n\t\t\t  <div *ngIf=\"total_pages > 1\">\n\t\t\t\t  <ul class=\"pagination justify-content-center\">\n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page<=1}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onPreviousPage()\"\n\t\t\t\t         aria-label=\"Previous\">\n\t\t\t\t        <span aria-hidden=\"true\">&laquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Previous</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"left_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li *ngFor=\"let p of pages;  let i = index\" class=\"page-item\"\n\t\t\t\t    \t\t[ngClass]=\"{'active': p==page}\">\n\t\t\t\t    \t<a class=\"page-link\" routerLink=\".\" (click)=\"onGotoPage(p)\">{{p}}</a>\n\t\t\t\t    </li>\n\t\t\t\t    \n\t\t\t\t    <li *ngIf=\"right_more\" class=\"page-item\"><a class=\"page-link\">...</a></li>\n\t\t\t\t    \n\t\t\t\t    <li class=\"page-item\"\n\t\t\t\t            [ngClass]=\"{'disabled': page>=total_pages}\">\n\t\t\t\t      <a class=\"page-link\" routerLink=\".\" (click)=\"onNextPage()\"\n\t\t\t\t         aria-label=\"Next\">\n\t\t\t\t        <span aria-hidden=\"true\">&raquo;</span>\n\t\t\t\t        <span class=\"sr-only\">Next</span>\n\t\t\t\t      </a>\n\t\t\t\t    </li>\n\t\t\t\t  </ul>\n\t\t\t  </div>\n\t\t\t</div>\n\t\t\t<div class=\"col-3\">\n\t\t\t\t<div class=\"total_counts\">\n\t\t\t\t\tTotal: <b>{{total_count}}</b> items\n\t\t\t\t</div>\n\t\t\t</div>\t\t\t\n\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n<ng-template lifehacks-ref-select></ng-template>\n"
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: LiferhackListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackListComponent", function() { return LiferhackListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _liferhack_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../liferhack.component */ "./src/app/lifehacks/liferhack/liferhack.component.ts");
+/* harmony import */ var _liferhack_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../liferhack.service */ "./src/app/lifehacks/liferhack/liferhack.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var LiferhackListComponent = /** @class */ (function (_super) {
+    __extends(LiferhackListComponent, _super);
+    function LiferhackListComponent(componentFactoryResolver, liferhackService, injector, router, route, location) {
+        var _this = _super.call(this, componentFactoryResolver, liferhackService, injector, router, route, location, _liferhack_component__WEBPACK_IMPORTED_MODULE_3__["ViewType"].LIST) || this;
+        _this.componentFactoryResolver = componentFactoryResolver;
+        _this.liferhackService = liferhackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.referenceFields = ['lifer', 'hack',];
+        _this.referenceFieldsMap = { 'lifer': 'lifer', 'hack': 'hack', };
+        // this is to initialize the detail that will be used for search condition selection
+        var detail = {};
+        _this.detail = _this.formatDetail(detail);
+        return _this;
+    }
+    LiferhackListComponent.prototype.ngOnInit = function () {
+        this.populateList();
+    };
+    LiferhackListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-liferhack-list',
+            template: __webpack_require__(/*! ./liferhack-list.component.html */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.html"),
+            styles: [__webpack_require__(/*! ./liferhack-list.component.css */ "./src/app/lifehacks/liferhack/liferhack-list/liferhack-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"],
+            _liferhack_service__WEBPACK_IMPORTED_MODULE_4__["LiferhackService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
+    ], LiferhackListComponent);
+    return LiferhackListComponent;
+}(_liferhack_component__WEBPACK_IMPORTED_MODULE_3__["LiferhackComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack.base.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack.base.service.ts ***!
+  \***************************************************************/
+/*! exports provided: LiferhackBaseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackBaseService", function() { return LiferhackBaseService; });
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var servicePath = '/liferhack/';
+var LiferhackBaseService = /** @class */ (function (_super) {
+    __extends(LiferhackBaseService, _super);
+    function LiferhackBaseService(http, serverRootUrl) {
+        var _this = this;
+        var serviceUrl = serverRootUrl + servicePath;
+        _this = _super.call(this, http, serviceUrl) || this;
+        return _this;
+    }
+    return LiferhackBaseService;
+}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseService"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack.component.ts ***!
+  \************************************************************/
+/*! exports provided: ViewType, LiferhackComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackComponent", function() { return LiferhackComponent; });
+/* harmony import */ var mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mean-rest-angular */ "./node_modules/mean-rest-angular/fesm5/mean-rest-angular.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewType", function() { return mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["ViewType"]; });
+
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _lifehacks_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lifehacks.component */ "./src/app/lifehacks/lifehacks.component.ts");
+/* harmony import */ var _lifer_lifer_detail_lifer_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifer/lifer-detail/lifer-detail-sel.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-sel.component.ts");
+/* harmony import */ var _lifer_lifer_detail_lifer_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lifer/lifer-detail/lifer-detail-pop.component */ "./src/app/lifehacks/lifer/lifer-detail/lifer-detail-pop.component.ts");
+/* harmony import */ var _lifer_lifer_list_lifer_select_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lifer/lifer-list/lifer-select.component */ "./src/app/lifehacks/lifer/lifer-list/lifer-select.component.ts");
+/* harmony import */ var _hack_hack_detail_hack_detail_sel_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hack/hack-detail/hack-detail-sel.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail-sel.component.ts");
+/* harmony import */ var _hack_hack_detail_hack_detail_pop_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../hack/hack-detail/hack-detail-pop.component */ "./src/app/lifehacks/hack/hack-detail/hack-detail-pop.component.ts");
+/* harmony import */ var _hack_hack_list_hack_select_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hack/hack-list/hack-select.component */ "./src/app/lifehacks/hack/hack-list/hack-select.component.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var itemCamelName = 'liferHack';
+
+
+
+
+
+
+
+
+
+var LiferhackComponent = /** @class */ (function (_super) {
+    __extends(LiferhackComponent, _super);
+    function LiferhackComponent(componentFactoryResolver, liferhackService, injector, router, route, location, view) {
+        var _this = _super.call(this, liferhackService, injector, router, route, location, view, itemCamelName) || this;
+        _this.componentFactoryResolver = componentFactoryResolver;
+        _this.liferhackService = liferhackService;
+        _this.injector = injector;
+        _this.router = router;
+        _this.route = route;
+        _this.location = location;
+        _this.view = view;
+        _this.selectComponents = {
+            'lifer': {
+                'select-type': _lifer_lifer_list_lifer_select_component__WEBPACK_IMPORTED_MODULE_5__["LiferSelectComponent"],
+                'select-detail-type': _lifer_lifer_detail_lifer_detail_sel_component__WEBPACK_IMPORTED_MODULE_3__["LiferDetailSelComponent"],
+                'pop-detail-type': _lifer_lifer_detail_lifer_detail_pop_component__WEBPACK_IMPORTED_MODULE_4__["LiferDetailPopComponent"],
+                'componentRef': null
+            },
+            'hack': {
+                'select-type': _hack_hack_list_hack_select_component__WEBPACK_IMPORTED_MODULE_8__["HackSelectComponent"],
+                'select-detail-type': _hack_hack_detail_hack_detail_sel_component__WEBPACK_IMPORTED_MODULE_6__["HackDetailSelComponent"],
+                'pop-detail-type': _hack_hack_detail_hack_detail_pop_component__WEBPACK_IMPORTED_MODULE_7__["HackDetailPopComponent"],
+                'componentRef': null
+            },
+        };
+        _this.indexFields = ['lifer',];
+        return _this;
+    }
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_lifehacks_component__WEBPACK_IMPORTED_MODULE_2__["LifehacksRefSelectDirective"]),
+        __metadata("design:type", _lifehacks_component__WEBPACK_IMPORTED_MODULE_2__["LifehacksRefSelectDirective"])
+    ], LiferhackComponent.prototype, "refSelectDirective", void 0);
+    return LiferhackComponent;
+}(mean_rest_angular__WEBPACK_IMPORTED_MODULE_0__["BaseComponent"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/lifehacks/liferhack/liferhack.service.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/lifehacks/liferhack/liferhack.service.ts ***!
+  \**********************************************************/
+/*! exports provided: LiferhackService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LiferhackService", function() { return LiferhackService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _liferhack_base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./liferhack.base.service */ "./src/app/lifehacks/liferhack/liferhack.base.service.ts");
+/* harmony import */ var _lifehacks_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lifehacks.tokens */ "./src/app/lifehacks/lifehacks.tokens.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+var LiferhackService = /** @class */ (function (_super) {
+    __extends(LiferhackService, _super);
+    function LiferhackService(http, lifehacksServerRootUri) {
+        var _this = _super.call(this, http, lifehacksServerRootUri) || this;
+        _this.lifehacksServerRootUri = lifehacksServerRootUri;
+        return _this;
+    }
+    LiferhackService.prototype.ngOnDestroy = function () { };
+    LiferhackService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_lifehacks_tokens__WEBPACK_IMPORTED_MODULE_3__["Lifehacks_SERVER_ROOT_URI"])),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+    ], LiferhackService);
+    return LiferhackService;
+}(_liferhack_base_service__WEBPACK_IMPORTED_MODULE_2__["LiferhackBaseService"]));
 
 
 
@@ -17160,7 +14721,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jackliu/Documents/workspace/web/lka/front-end-admin/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/jackliu/Documents/workspace/web/Lifers/front-end-admin/src/main.ts */"./src/main.ts");
 
 
 /***/ })

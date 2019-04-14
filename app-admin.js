@@ -22,9 +22,9 @@ const authzRolesRouter = authServer.GetDefaultRolesManageRouter("Roles", authFun
 const defaultUserDef = authServer.authUserDef;
 const usersRouter = meanRestExpress.RestRouter(defaultUserDef, 'Users', authFuncs);
 
-//for academics models
-const academicsDbDefinition = require('./models/academics/index');
-const academicsRouter = meanRestExpress.RestRouter(academicsDbDefinition, 'Academics', authFuncs);
+//for lifehacks models
+const lifehacksDbDefinition = require('./models/lifehacks/index');
+const lifehacksRouter = meanRestExpress.RestRouter(lifehacksDbDefinition, 'Lifehacks', authFuncs);
 
 //for public models
 const publicInfoDbDefinition = require('./models/publicInfo/index');
@@ -45,7 +45,7 @@ const dbSOption = {
 const fileSvrRouter = fileSvr.ExpressRouter(defaultAdminSysDef, 'Files', authFuncs, dbSOption);
 
 //Authorization App Client. Call it after all meanRestExpress resources are generated.
-const manageModule = ['Users', 'Academics', 'PublicInfo', 'Access', 'Roles', 'Files']; //the modules that manages
+const manageModule = ['Users', 'Lifehacks', 'PublicInfo', 'Access', 'Roles', 'Files']; //the modules that manages
 authApp.run('local', 'app-key', 'app-secrete', {'roleModules': manageModule});
 
 const app = express();
@@ -62,7 +62,7 @@ app.use(cookieParser());
 //app.use('/', indexRouter);
 app.use(express.static(path.join(__dirname, 'public-admin')));
 
-app.use('/api/academics', academicsRouter);
+app.use('/api/lifehacks', lifehacksRouter);
 app.use('/api/publicinfo', publicInfoRouter);
 app.use('/api/files', fileSvrRouter);
 app.use('/api/users', usersRouter);

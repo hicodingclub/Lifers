@@ -17,16 +17,16 @@ const option = {authz: 'group'}; //user group based authorization
 const authRouter = authServer.GetDefaultAuthnRouter(defaultUserDef, option);
 const usersRouter = meanRestExpress.RestRouter(defaultUserDef, 'Users', authFuncs);
 
-//for academics models
-const academicsDbDefinition = require('./models/academics/index');
-const academicsRouter = meanRestExpress.RestRouter(academicsDbDefinition, 'Academics', authFuncs);
+//for lifehacks models
+const lifehacksDbDefinition = require('./models/lifehacks/index');
+const lifehacksRouter = meanRestExpress.RestRouter(lifehacksDbDefinition, 'Lifehacks', authFuncs);
 
 //for public models
 const publicInfoDbDefinition = require('./models/publicInfo/index');
 const publicInfoRouter = meanRestExpress.RestRouter(publicInfoDbDefinition, 'PublicInfo', authFuncs);
 
 //Authorization App Client. Call it after all meanRestExpress resources are generated.
-const publicModules = ['Users', 'Academics', 'PublicInfo']; //the modules that for public access
+const publicModules = ['Users', 'Lifehacks', 'PublicInfo']; //the modules that for public access
 authApp.run('local', 'app-key', 'app-secrete', {'accessModules': publicModules});
 
 const app = express();
@@ -43,7 +43,7 @@ app.use(cookieParser());
 //app.use('/', indexRouter);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/academics', academicsRouter);
+app.use('/api/lifehacks', lifehacksRouter);
 app.use('/api/publicinfo', publicInfoRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);

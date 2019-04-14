@@ -1,0 +1,145 @@
+<div class="edit" *ngIf="detail">
+	<div *ngIf="!subEdit" class="action-buttons">
+        <!-- <a href="javascript:void(0)" (click)="goBack()" ><i class="fas fa-angle-double-left" title="Back"></i></a> -->
+	</div>
+	
+	<div class="card" style="text-align: left;">
+	  <div class="card-body">
+	    <h4 class="card-title" *ngIf="!subEdit">{{action}} LiferHack</h4>    
+	    <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+	    
+	     <div *ngIf="action == 'Edit'">
+<div *ngIf="!hiddenFields.includes('lifer')">
+
+	      <fieldset class="form-group">
+	        <label for="EditLifer">Lifer </label>
+	        
+		    <!-- <a class="icon-search" [routerLink]="['.']" (click)="onRefSelect('lifer')"><i class="fas fa-list" title="Search"></i></a>  -->
+		    <div class="input-group">
+		    	<!--  [attr.disabled]="true" -->
+		        <input class="form-control rounded" id="EditLifer" 
+		             [ngClass]="{'pointer ref-badge': detail['lifer']['_id']}"
+		             (focus)="onRefSelect('lifer')"
+	                 required
+		        	  
+		             [ngModel]="detail['lifer']['value']" name="EditLifer"
+		             #EditLifer="ngModel"> 
+		        <div *ngIf="detail['lifer']['value']" 
+		          class="input-group-append icon-clear-inside " (click)="clearValueFromDetail('lifer')">
+		          <i class="fas fa-times-circle" title="Clear"></i></div>
+			</div>
+	        <div [hidden]="EditLifer.valid || EditLifer.pristine"
+	             class="alert alert-danger">
+
+	          <div *ngIf="EditLifer.errors && EditLifer.errors.required && !(detail['lifer']?.date)">
+    	        Lifer is required.
+  	          </div>
+ 
+	        </div>
+	      </fieldset>
+    
+</div><div *ngIf="!hiddenFields.includes('hack')">
+
+	      <fieldset class="form-group">
+	        <label for="EditHack">Hack </label>
+	        
+		    <!-- <a class="icon-search" [routerLink]="['.']" (click)="onRefSelect('hack')"><i class="fas fa-list" title="Search"></i></a>  -->
+		    <div class="input-group">
+		    	<!--  [attr.disabled]="true" -->
+		        <input class="form-control rounded" id="EditHack" 
+		             [ngClass]="{'pointer ref-badge': detail['hack']['_id']}"
+		             (focus)="onRefSelect('hack')"
+	                 required
+		        	  
+		             [ngModel]="detail['hack']['value']" name="EditHack"
+		             #EditHack="ngModel"> 
+		        <div *ngIf="detail['hack']['value']" 
+		          class="input-group-append icon-clear-inside " (click)="clearValueFromDetail('hack')">
+		          <i class="fas fa-times-circle" title="Clear"></i></div>
+			</div>
+	        <div [hidden]="EditHack.valid || EditHack.pristine"
+	             class="alert alert-danger">
+
+	          <div *ngIf="EditHack.errors && EditHack.errors.required && !(detail['hack']?.date)">
+    	        Hack is required.
+  	          </div>
+ 
+	        </div>
+	      </fieldset>
+    
+</div>
+         </div>	
+	     <div *ngIf="action == 'Create' || action == 'Add' ">
+<div *ngIf="!hiddenFields.includes('lifer')">
+
+	      <fieldset class="form-group">
+	        <label for="EditLifer">Lifer </label>
+	        
+		    <!-- <a class="icon-search" [routerLink]="['.']" (click)="onRefSelect('lifer')"><i class="fas fa-list" title="Search"></i></a>  -->
+		    <div class="input-group">
+		    	<!--  [attr.disabled]="true" -->
+		        <input class="form-control rounded" id="EditLifer" 
+		             [ngClass]="{'pointer ref-badge': detail['lifer']['_id']}"
+		             (focus)="onRefSelect('lifer')"
+	                 required
+		        	  
+		             [ngModel]="detail['lifer']['value']" name="EditLifer"
+		             #EditLifer="ngModel"> 
+		        <div *ngIf="detail['lifer']['value']" 
+		          class="input-group-append icon-clear-inside " (click)="clearValueFromDetail('lifer')">
+		          <i class="fas fa-times-circle" title="Clear"></i></div>
+			</div>
+	        <div [hidden]="EditLifer.valid || EditLifer.pristine"
+	             class="alert alert-danger">
+
+	          <div *ngIf="EditLifer.errors && EditLifer.errors.required && !(detail['lifer']?.date)">
+    	        Lifer is required.
+  	          </div>
+ 
+	        </div>
+	      </fieldset>
+    
+</div><div *ngIf="!hiddenFields.includes('hack')">
+
+	      <fieldset class="form-group">
+	        <label for="EditHack">Hack </label>
+	        
+		    <!-- <a class="icon-search" [routerLink]="['.']" (click)="onRefSelect('hack')"><i class="fas fa-list" title="Search"></i></a>  -->
+		    <div class="input-group">
+		    	<!--  [attr.disabled]="true" -->
+		        <input class="form-control rounded" id="EditHack" 
+		             [ngClass]="{'pointer ref-badge': detail['hack']['_id']}"
+		             (focus)="onRefSelect('hack')"
+	                 required
+		        	  
+		             [ngModel]="detail['hack']['value']" name="EditHack"
+		             #EditHack="ngModel"> 
+		        <div *ngIf="detail['hack']['value']" 
+		          class="input-group-append icon-clear-inside " (click)="clearValueFromDetail('hack')">
+		          <i class="fas fa-times-circle" title="Clear"></i></div>
+			</div>
+	        <div [hidden]="EditHack.valid || EditHack.pristine"
+	             class="alert alert-danger">
+
+	          <div *ngIf="EditHack.errors && EditHack.errors.required && !(detail['hack']?.date)">
+    	        Hack is required.
+  	          </div>
+ 
+	        </div>
+	      </fieldset>
+    
+</div>
+         </div>	
+         
+		<div class="action-buttons-center">
+	     	<button type="submit" class="btn btn-success" 
+     			[disabled]="!editForm.form.valid">Submit</button>
+	     	<button class="btn btn-outline-success" 
+     			type="button" (click)="editCancel()">Cancel</button>
+		</div>
+	    </form>
+	  </div>
+	</div>
+</div>
+
+<ng-template lifehacks-ref-select></ng-template>

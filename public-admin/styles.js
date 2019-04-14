@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jackliu/Documents/workspace/web/lka/front-end-admin/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/jackliu/Documents/workspace/web/Lifers/front-end-admin/src/styles.css */"./src/styles.css");
 
 
 /***/ })
