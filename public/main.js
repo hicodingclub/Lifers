@@ -23,6 +23,191 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/allHacks/Hacks/Hacks.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/allHacks/Hacks/Hacks.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsbEhhY2tzL0hhY2tzL0hhY2tzLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/allHacks/Hacks/Hacks.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/allHacks/Hacks/Hacks.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul>\n  <li class=\"\" *ngFor=\"let hack of hacks\">\n  \t\t<p style=\"font-size:1.5em\">{{hack.title}}: {{hack.description}}</p>\n  </li>\n</ul>  "
+
+/***/ }),
+
+/***/ "./src/app/allHacks/Hacks/Hacks.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/allHacks/Hacks/Hacks.component.ts ***!
+  \***************************************************/
+/*! exports provided: HacksComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HacksComponent", function() { return HacksComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _lifehacks_hack_hack_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lifehacks/hack/hack.service */ "./src/app/lifehacks/hack/hack.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HacksComponent = /** @class */ (function () {
+    function HacksComponent(hackService) {
+        var _this = this;
+        this.hackService = hackService;
+        var result = this.hackService.getList(1, 25, {}).subscribe(function (result) {
+            _this.hacks = result.items;
+        });
+    }
+    HacksComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'allHacks-hack-component',
+            template: __webpack_require__(/*! ./Hacks.component.html */ "./src/app/allHacks/Hacks/Hacks.component.html"),
+            styles: [__webpack_require__(/*! ./Hacks.component.css */ "./src/app/allHacks/Hacks/Hacks.component.css")]
+        }),
+        __metadata("design:paramtypes", [_lifehacks_hack_hack_service__WEBPACK_IMPORTED_MODULE_1__["HackService"]])
+    ], HacksComponent);
+    return HacksComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/allHacks/allHacks.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/allHacks/allHacks.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".carousel-caption {\n\tbottom: 300px;\n}\n\n.new-carousel-subcaption {\n\tfont-size: 2rem;\n}\n\n.carousel-inner img {\n\twidth: 100%;\n}\n\n.horizontal {\n\twidth: 80%;\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWxsSGFja3MvYWxsSGFja3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLGFBQWE7QUFDZDs7QUFFQTtDQUNDLGVBQWU7QUFDaEI7O0FBRUE7Q0FDQyxXQUFXO0FBQ1o7O0FBQ0E7Q0FDQyxVQUFVO0NBQ1YsaUJBQWlCO0NBQ2pCLGtCQUFrQjtBQUNuQiIsImZpbGUiOiJzcmMvYXBwL2FsbEhhY2tzL2FsbEhhY2tzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2Fyb3VzZWwtY2FwdGlvbiB7XG5cdGJvdHRvbTogMzAwcHg7XG59XG5cbi5uZXctY2Fyb3VzZWwtc3ViY2FwdGlvbiB7XG5cdGZvbnQtc2l6ZTogMnJlbTtcbn1cblxuLmNhcm91c2VsLWlubmVyIGltZyB7XG5cdHdpZHRoOiAxMDAlO1xufVxuLmhvcml6b250YWwge1xuXHR3aWR0aDogODAlO1xuXHRtYXJnaW4tbGVmdDogYXV0bztcblx0bWFyZ2luLXJpZ2h0OiBhdXRvO1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/allHacks/allHacks.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/allHacks/allHacks.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"mt-3\">\n    <div class=\"horizontal\">\n            <allHacks-hack-component></allHacks-hack-component>\n    </div>\n    \n    <hr/>\n </div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/allHacks/allHacks.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/allHacks/allHacks.component.ts ***!
+  \************************************************/
+/*! exports provided: allHacksComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allHacksComponent", function() { return allHacksComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var allHacksComponent = /** @class */ (function () {
+    function allHacksComponent() {
+    }
+    allHacksComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-allHacks',
+            template: __webpack_require__(/*! ./allHacks.component.html */ "./src/app/allHacks/allHacks.component.html"),
+            styles: [__webpack_require__(/*! ./allHacks.component.css */ "./src/app/allHacks/allHacks.component.css")]
+        })
+    ], allHacksComponent);
+    return allHacksComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/allHacks/allHacks.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/allHacks/allHacks.module.ts ***!
+  \*********************************************/
+/*! exports provided: allHacksModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "allHacksModule", function() { return allHacksModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _Hacks_Hacks_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Hacks/Hacks.component */ "./src/app/allHacks/Hacks/Hacks.component.ts");
+/* harmony import */ var _allHacks_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./allHacks.component */ "./src/app/allHacks/allHacks.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var allHacksModule = /** @class */ (function () {
+    function allHacksModule() {
+    }
+    allHacksModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            ],
+            declarations: [
+                _Hacks_Hacks_component__WEBPACK_IMPORTED_MODULE_4__["HacksComponent"],
+                _allHacks_component__WEBPACK_IMPORTED_MODULE_5__["allHacksComponent"],
+            ],
+            providers: [],
+            exports: [
+                _Hacks_Hacks_component__WEBPACK_IMPORTED_MODULE_4__["HacksComponent"],
+                _allHacks_component__WEBPACK_IMPORTED_MODULE_5__["allHacksComponent"],
+            ],
+            entryComponents: []
+        })
+    ], allHacksModule);
+    return allHacksModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -36,7 +221,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _home_public_routing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/public-routing */ "./src/app/home/public-routing.ts");
+/* harmony import */ var _allHacks_allHacks_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./allHacks/allHacks.component */ "./src/app/allHacks/allHacks.component.ts");
+/* harmony import */ var _home_public_routing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/public-routing */ "./src/app/home/public-routing.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -47,10 +233,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: "home", component: _home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
-    { path: "public", children: _home_public_routing__WEBPACK_IMPORTED_MODULE_3__["publicRoutingPath"] }
+    { path: "public", children: _home_public_routing__WEBPACK_IMPORTED_MODULE_4__["publicRoutingPath"] },
+    { path: "allHacks", component: _allHacks_allHacks_component__WEBPACK_IMPORTED_MODULE_3__["allHacksComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -75,7 +263,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header {\n  background-color: #00BFFF;\n  height: 70px;\n}\n\n.logo {\n    max-width:60px;\n}\n\n.logo-text {\n    margin-left: 70px; /*logo max-width + 10 */\n}\n\n.contact-info {\n\t\n}\n\n.content {\n\tpadding-top: 70px; /*same height with .header*/\n\twidth: 100%;\n\tmin-height: calc(100vh - 70px);  /*viewport height substracts footer height*/\n}\n\n.footer {\n  background-color: #00BFFF;\n  color: white;\n  font-size: 0.75rem;\n  \n  width: 100%;\n  height: 70px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5QkFBeUI7RUFDekIsWUFBWTtBQUNkOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLGlCQUFpQixFQUFFLHVCQUF1QjtBQUM5Qzs7QUFFQTs7QUFFQTs7QUFFQTtDQUNDLGlCQUFpQixFQUFFLDJCQUEyQjtDQUM5QyxXQUFXO0NBQ1gsOEJBQThCLEdBQUcsMkNBQTJDO0FBQzdFOztBQUdBO0VBQ0UseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixrQkFBa0I7O0VBRWxCLFdBQVc7RUFDWCxZQUFZO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDBCRkZGO1xuICBoZWlnaHQ6IDcwcHg7XG59XG5cbi5sb2dvIHtcbiAgICBtYXgtd2lkdGg6NjBweDtcbn1cblxuLmxvZ28tdGV4dCB7XG4gICAgbWFyZ2luLWxlZnQ6IDcwcHg7IC8qbG9nbyBtYXgtd2lkdGggKyAxMCAqL1xufVxuXG4uY29udGFjdC1pbmZvIHtcblx0XG59XG5cbi5jb250ZW50IHtcblx0cGFkZGluZy10b3A6IDcwcHg7IC8qc2FtZSBoZWlnaHQgd2l0aCAuaGVhZGVyKi9cblx0d2lkdGg6IDEwMCU7XG5cdG1pbi1oZWlnaHQ6IGNhbGMoMTAwdmggLSA3MHB4KTsgIC8qdmlld3BvcnQgaGVpZ2h0IHN1YnN0cmFjdHMgZm9vdGVyIGhlaWdodCovXG59XG5cblxuLmZvb3RlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMEJGRkY7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAwLjc1cmVtO1xuICBcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNzBweDtcbn1cbiJdfQ== */"
+module.exports = ".header {\n  background-color: #3CB371;\n  height: 70px;\n  color: white;\n}\n\n.logo {\n    max-width:60px;\n}\n\n.logo-text {\n    margin-left: 70px; /*logo max-width + 10 */\n    color: white;\n    \n}\n\n.contact-info {\n\t\n}\n\n.content {\n\tpadding-top: 70px; /*same height with .header*/\n\twidth: 100%;\n\tmin-height: calc(100vh - 70px);  /*viewport height substracts footer height*/\n\tbackground-color:#DCDCDC;\n}\n\n.footer {\n  background-color:#FFFFFF;\n  color: black;\n  font-size: 0.75rem;\n  \n  width: 100%;\n  height: 70px;\n  \n}\n\n.fa-facebook {\n  background: #3B5998;\n  color: white;\n  padding: 20px;\n  font-size: 30px;\n  width: 50px;\n  text-align: center;\n  text-decoration: none;\n  margin: 5px 2px;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5QkFBeUI7RUFDekIsWUFBWTtFQUNaLFlBQVk7QUFDZDs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxpQkFBaUIsRUFBRSx1QkFBdUI7SUFDMUMsWUFBWTs7QUFFaEI7O0FBRUE7O0FBRUE7O0FBRUE7Q0FDQyxpQkFBaUIsRUFBRSwyQkFBMkI7Q0FDOUMsV0FBVztDQUNYLDhCQUE4QixHQUFHLDJDQUEyQztDQUM1RSx3QkFBd0I7QUFDekI7O0FBR0E7RUFDRSx3QkFBd0I7RUFDeEIsWUFBWTtFQUNaLGtCQUFrQjs7RUFFbEIsV0FBVztFQUNYLFlBQVk7O0FBRWQ7O0FBR0E7RUFDRSxtQkFBbUI7RUFDbkIsWUFBWTtFQUNaLGFBQWE7RUFDYixlQUFlO0VBQ2YsV0FBVztFQUNYLGtCQUFrQjtFQUNsQixxQkFBcUI7RUFDckIsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMzQ0IzNzE7XG4gIGhlaWdodDogNzBweDtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4ubG9nbyB7XG4gICAgbWF4LXdpZHRoOjYwcHg7XG59XG5cbi5sb2dvLXRleHQge1xuICAgIG1hcmdpbi1sZWZ0OiA3MHB4OyAvKmxvZ28gbWF4LXdpZHRoICsgMTAgKi9cbiAgICBjb2xvcjogd2hpdGU7XG4gICAgXG59XG5cbi5jb250YWN0LWluZm8ge1xuXHRcbn1cblxuLmNvbnRlbnQge1xuXHRwYWRkaW5nLXRvcDogNzBweDsgLypzYW1lIGhlaWdodCB3aXRoIC5oZWFkZXIqL1xuXHR3aWR0aDogMTAwJTtcblx0bWluLWhlaWdodDogY2FsYygxMDB2aCAtIDcwcHgpOyAgLyp2aWV3cG9ydCBoZWlnaHQgc3Vic3RyYWN0cyBmb290ZXIgaGVpZ2h0Ki9cblx0YmFja2dyb3VuZC1jb2xvcjojRENEQ0RDO1xufVxuXG5cbi5mb290ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiNGRkZGRkY7XG4gIGNvbG9yOiBibGFjaztcbiAgZm9udC1zaXplOiAwLjc1cmVtO1xuICBcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNzBweDtcbiAgXG59XG5cblxuLmZhLWZhY2Vib29rIHtcbiAgYmFja2dyb3VuZDogIzNCNTk5ODtcbiAgY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nOiAyMHB4O1xuICBmb250LXNpemU6IDMwcHg7XG4gIHdpZHRoOiA1MHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgbWFyZ2luOiA1cHggMnB4O1xufVxuXG4iXX0= */"
 
 /***/ }),
 
@@ -86,7 +274,7 @@ module.exports = ".header {\n  background-color: #00BFFF;\n  height: 70px;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"header navbar fixed-top navbar-light navbar-expand-lg\">\n\t<a class=\"navbar-brand\" routerLink=\"/home\">\n\t\t<img src=\"assets/LKA.png\" align=\"left\" class=\"logo\">\n\t\t<div class=\"logo-text mt-2 h3\">Light of Knowledge Academy </div>\n\t</a>\n\t<div class=\"ml-3 mr-5\">\n\t\t<i class=\"fas fa-phone\"></i> (408) 996-1236\n\t</div>\n\t\n\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarItems\" aria-controls=\"navbarItems\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\t\n\t<div class=\"collapse navbar-collapse ml-auto mr-auto\" id=\"navbarItems\">\n\t    <ul class=\"navbar-nav\">\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/lifehacks/hack\">Hacks</a>\n\t      </li>\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/lifehacks/lifer\">Lifer</a>\n\t      </li>\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/academics/teacher\">FAQ</a>\n\t      </li>\n\t    </ul>\n\t</div>\n    \n\t<div class=\"mr-4 pt-2\">\n\t\t<app-auth-icon></app-auth-icon>\n\t</div>\n</nav>\n\n<div class=\"content\">\n\t<router-outlet></router-outlet>\n</div>\n\n<nav class=\"footer footer-font navbar navbar-light\">\n  <div class=\"mx-auto mb-2\">\n\t  <div>© 2019 Light of Knowledge Academy, Inc. All rights reserved.</div>\n\t  <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> 20432 Silverado Ave STE 6, Cupertino, CA 95014</div>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"header navbar fixed-top navbar-light navbar-expand-lg\">\n\t<a class=\"navbar-brand\" routerLink=\"/home\">\n\t\t<img src=\"https://cdn3.iconfinder.com/data/icons/leaves-1-1/50/51-512.png\" align=\"left\" class=\"logo\">\n\t\t<div class=\"logo-text mt-2 h3\"> Lifers 101</div>\n\t</a>\n\t<div class=\"ml-3 mr-5\">\n\t\t<i class=\"fas fa-phone\"></i> (408) 996-1236\n\t</div>\n\t\n\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarItems\" aria-controls=\"navbarItems\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\t\n\t<div class=\"collapse navbar-collapse ml-auto mr-auto\" id=\"navbarItems\">\n\t    <ul class=\"navbar-nav\">\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/lifehacks/hack\">Hacks</a>\n\t      </li>\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/lifehacks/lifer\">Lifer</a>\n\t      </li>\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/academics/teacher\">FAQ</a>\n\t      </li>\n\t    </ul>\n\t</div>\n    \n\t<div class=\"mr-4 pt-2\">\n\t\t<app-auth-icon></app-auth-icon>\n\t</div>\n</nav>\n\n<div class=\"content\">\n\t<router-outlet></router-outlet>\n</div>\n\n<nav class=\"footer footer-font navbar navbar-light\">\n  <div class=\"mx-auto mb-2\">\n\t  <div>© 2019 Light of Knowledge Academy, Inc. All rights reserved.</div>\n\t  <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> 20432 Silverado Ave STE 6, Cupertino, CA 95014</div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -145,12 +333,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_users_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./users/users.module */ "./src/app/users/users.module.ts");
 /* harmony import */ var _publicinfo_publicinfo_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./publicinfo/publicinfo.module */ "./src/app/publicinfo/publicinfo.module.ts");
 /* harmony import */ var _lifehacks_lifehacks_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lifehacks/lifehacks.module */ "./src/app/lifehacks/lifehacks.module.ts");
+/* harmony import */ var _allHacks_allHacks_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./allHacks/allHacks.module */ "./src/app/allHacks/allHacks.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -175,7 +365,8 @@ var AppModule = /** @class */ (function () {
                 _home_home_module__WEBPACK_IMPORTED_MODULE_5__["HomeModule"],
                 _users_users_module__WEBPACK_IMPORTED_MODULE_6__["UsersModule"],
                 _publicinfo_publicinfo_module__WEBPACK_IMPORTED_MODULE_7__["PublicinfoModule"],
-                _lifehacks_lifehacks_module__WEBPACK_IMPORTED_MODULE_8__["LifehacksModule"]
+                _lifehacks_lifehacks_module__WEBPACK_IMPORTED_MODULE_8__["LifehacksModule"],
+                _allHacks_allHacks_module__WEBPACK_IMPORTED_MODULE_9__["allHacksModule"],
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -7577,7 +7768,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jackliu/Documents/workspace/web/Lifers/front-end/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/ericsheng/eclipse-workspace/Lifers/front-end/src/main.ts */"./src/main.ts");
 
 
 /***/ })

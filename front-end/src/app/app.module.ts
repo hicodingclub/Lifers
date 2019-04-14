@@ -10,6 +10,7 @@ import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
 import { PublicinfoModule } from './publicinfo/publicinfo.module';
 import { LifehacksModule } from './lifehacks/lifehacks.module';
+import { allHacksModule } from './allHacks/allHacks.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LifehacksModule } from './lifehacks/lifehacks.module';
     HomeModule,
     UsersModule,
     PublicinfoModule,
-    LifehacksModule
+    LifehacksModule,
+    allHacksModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
