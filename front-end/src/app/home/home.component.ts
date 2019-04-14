@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
   imageObject = [ {
-     imageURL: 'assets/images/work.jpg',
+     imageURL: 'assets/images/life hacks.jpg',
      heading: 'We Work Together for a Better Tomorrow',
    }] 
 
