@@ -1,0 +1,27 @@
+{
+  "name": "lka",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "DEBUG=express:*; nodemon ./bin/www",
+    "windevstart": "set DEBUG=express:* & nodemon ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.6.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "file-upload": "0.0.0",
+    "http-errors": "~1.6.2",
+    "mdds-express-auth-app": "~0.2.5",
+    "mdds-mongoose-express-auth-server": "^0.2.3",
+    "mdds-mongoose-express-file-server": "^0.1.5",
+    "mean-rest-express": "~0.5.15",
+    "mongoose": "^5.2.15",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {}
+}
