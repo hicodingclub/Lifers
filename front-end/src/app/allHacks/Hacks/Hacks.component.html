@@ -1,5 +1,8 @@
-<ul>
-  <li class="" *ngFor="let hack of hacks">
-  		<p style="font-size:1.5em">{{hack.title}}: {{hack.description}}</p>
-  </li>
-</ul>  
+<div *ngFor="let hack of hacks">
+  <div class="card" style="width: 25rem; margin: 2rem">
+    <div class="card-body">
+      <h5 class="card-title">{{hack.title}}</h5>
+      <p class="card-text">{{hack.description}}</p>
+      <a href="#" class="btn btn-primary" style="background-color: #00BFFF">Check out more about {{hack.title}} </a>
+    </div>
+</div>

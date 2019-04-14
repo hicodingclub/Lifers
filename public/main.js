@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul>\n  <li class=\"\" *ngFor=\"let hack of hacks\">\n  \t\t<p style=\"font-size:1.5em\">{{hack.title}}: {{hack.description}}</p>\n  </li>\n</ul>  "
+module.exports = "<div *ngFor=\"let hack of hacks\">\n  <div class=\"card\" style=\"width: 25rem; margin: 2rem\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{hack.title}}</h5>\n      <p class=\"card-text\">{{hack.description}}</p>\n      <a href=\"#\" class=\"btn btn-primary\" style=\"background-color: #00BFFF\">Check out more about {{hack.title}} </a>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -274,7 +274,7 @@ module.exports = ".header {\n  background-color: #3CB371;\n  height: 70px;\n  co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"header navbar fixed-top navbar-light navbar-expand-lg\">\n\t<a class=\"navbar-brand\" routerLink=\"/home\">\n\t\t<img src=\"https://cdn3.iconfinder.com/data/icons/leaves-1-1/50/51-512.png\" align=\"left\" class=\"logo\">\n\t\t<div class=\"logo-text mt-2 h3\"> Lifers 101</div>\n\t</a>\n\t<div class=\"ml-3 mr-5\">\n\t\t<i class=\"fas fa-phone\"></i> (408) 996-1236\n\t</div>\n\t\n\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarItems\" aria-controls=\"navbarItems\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\t\n\t<div class=\"collapse navbar-collapse ml-auto mr-auto\" id=\"navbarItems\">\n\t    <ul class=\"navbar-nav\">\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/lifehacks/hack\">Hacks</a>\n\t      </li>\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/lifehacks/lifer\">Lifer</a>\n\t      </li>\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/academics/teacher\">FAQ</a>\n\t      </li>\n\t    </ul>\n\t</div>\n    \n\t<div class=\"mr-4 pt-2\">\n\t\t<app-auth-icon></app-auth-icon>\n\t</div>\n</nav>\n\n<div class=\"content\">\n\t<router-outlet></router-outlet>\n</div>\n\n<nav class=\"footer footer-font navbar navbar-light\">\n  <div class=\"mx-auto mb-2\">\n\t  <div>© 2019 Light of Knowledge Academy, Inc. All rights reserved.</div>\n\t  <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> 20432 Silverado Ave STE 6, Cupertino, CA 95014</div>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"header navbar fixed-top navbar-light navbar-expand-lg\">\n\t<a class=\"navbar-brand\" routerLink=\"/home\">\n\t\t<img src=\"https://cdn3.iconfinder.com/data/icons/leaves-1-1/50/51-512.png\" align=\"left\" class=\"logo\">\n\t\t<div class=\"logo-text mt-2 h3\"> Lifers 101</div>\n\t</a>\n\t<div class=\"ml-3 mr-5\">\n\t\t<i class=\"fas fa-phone\"></i> (408) 996-1236\n\t</div>\n\t\n\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarItems\" aria-controls=\"navbarItems\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\t\n\t<div class=\"collapse navbar-collapse ml-auto mr-auto\" id=\"navbarItems\">\n\t    <ul class=\"navbar-nav\">\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/allHacks\">Explore Hacks</a>\n\t      </li>\n\t    </ul>\n\t</div>\n    \n\t<div class=\"mr-4 pt-2\">\n\t\t<app-auth-icon></app-auth-icon>\n\t</div>\n</nav>\n\n<div class=\"content\">\n\t<router-outlet></router-outlet>\n</div>\n\n<nav class=\"footer footer-font navbar navbar-light\">\n  <div class=\"mx-auto mb-2\">\n\t  <div>2019 LiferIOI</div>\n\t  <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> 1645 Natalie Ct, San Jose, California</div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -7768,7 +7768,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ericsheng/eclipse-workspace/Lifers/front-end/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/jackliu/Documents/workspace/web/Lifers/front-end/src/main.ts */"./src/main.ts");
 
 
 /***/ })
