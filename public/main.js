@@ -222,7 +222,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _allHacks_allHacks_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./allHacks/allHacks.component */ "./src/app/allHacks/allHacks.component.ts");
-/* harmony import */ var _home_public_routing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/public-routing */ "./src/app/home/public-routing.ts");
+/* harmony import */ var _lifehacks_lifehacks_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lifehacks/lifehacks.component */ "./src/app/lifehacks/lifehacks.component.ts");
+/* harmony import */ var _home_public_routing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home/public-routing */ "./src/app/home/public-routing.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -234,11 +235,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: "home", component: _home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
-    { path: "public", children: _home_public_routing__WEBPACK_IMPORTED_MODULE_4__["publicRoutingPath"] },
-    { path: "allHacks", component: _allHacks_allHacks_component__WEBPACK_IMPORTED_MODULE_3__["allHacksComponent"] }
+    { path: "public", children: _home_public_routing__WEBPACK_IMPORTED_MODULE_5__["publicRoutingPath"] },
+    { path: "allHacks", component: _allHacks_allHacks_component__WEBPACK_IMPORTED_MODULE_3__["allHacksComponent"] },
+    { path: "lifehacks", component: _lifehacks_lifehacks_component__WEBPACK_IMPORTED_MODULE_4__["LifehacksComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -274,7 +277,7 @@ module.exports = ".header {\n  background-color: #3CB371;\n  height: 70px;\n  co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"header navbar fixed-top navbar-light navbar-expand-lg\">\n\t<a class=\"navbar-brand\" routerLink=\"/home\">\n\t\t<img src=\"https://cdn3.iconfinder.com/data/icons/leaves-1-1/50/51-512.png\" align=\"left\" class=\"logo\">\n\t\t<div class=\"logo-text mt-2 h3\"> Lifers 101</div>\n\t</a>\n\t<div class=\"ml-3 mr-5\">\n\t\t<i class=\"fas fa-phone\"></i> (408) 996-1236\n\t</div>\n\t\n\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarItems\" aria-controls=\"navbarItems\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\t\n\t<div class=\"collapse navbar-collapse ml-auto mr-auto\" id=\"navbarItems\">\n\t    <ul class=\"navbar-nav\">\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/allHacks\">Explore Hacks</a>\n\t      </li>\n\t    </ul>\n\t</div>\n    \n\t<div class=\"mr-4 pt-2\">\n\t\t<app-auth-icon></app-auth-icon>\n\t</div>\n</nav>\n\n<div class=\"content\">\n\t<router-outlet></router-outlet>\n</div>\n\n<nav class=\"footer footer-font navbar navbar-light\">\n  <div class=\"mx-auto mb-2\">\n\t  <div>2019 LiferIOI</div>\n\t  <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> 1645 Natalie Ct, San Jose, California</div>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"header navbar fixed-top navbar-light navbar-expand-lg\">\n\t<a class=\"navbar-brand\" routerLink=\"/home\">\n\t\t<img src=\"https://cdn3.iconfinder.com/data/icons/leaves-1-1/50/51-512.png\" align=\"left\" class=\"logo\">\n\t\t<div class=\"logo-text mt-2 h3\"> Lifers 101</div>\n\t</a>\n\t<div class=\"ml-3 mr-5\">\n\t\t<i class=\"fas fa-phone\"></i> (408) 996-1236\n\t</div>\n\t\n\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarItems\" aria-controls=\"navbarItems\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\t\n\t<div class=\"collapse navbar-collapse ml-auto mr-auto\" id=\"navbarItems\">\n\t    <ul class=\"navbar-nav\">\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/allHacks\">Explore Hacks</a>\n\t      </li>\n\t      <li class=\"nav-item\">\n\t        <a class=\"nav-link\" routerLink=\"/lifehacks\">Lifer</a>\n\t      </li>\n\t    </ul>\n\t</div>\n    \n\t<div class=\"mr-4 pt-2\">\n\t\t<app-auth-icon></app-auth-icon>\n\t</div>\n</nav>\n\n<div class=\"content\">\n\t<router-outlet></router-outlet>\n</div>\n\n<nav class=\"footer footer-font navbar navbar-light\">\n  <div class=\"mx-auto mb-2\">\n\t  <div>2019 LiferIOI</div>\n\t  <div><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> 1645 Natalie Ct, San Jose, California</div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -7768,7 +7771,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ericsheng/eclipse-workspace/Lifers/front-end/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/jackliu/Documents/workspace/web/Lifers/front-end/src/main.ts */"./src/main.ts");
 
 
 /***/ })
